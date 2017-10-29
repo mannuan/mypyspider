@@ -54,7 +54,8 @@
     <section>
       <div class="global-btn clearfix">
         <div class="create-btn-div">
-          <button class="project-create btn btn-default btn-primary" data-toggle="modal" data-target="#create-project-modal">Create</button>
+          <button class="project-create btn btn-default btn-primary" data-toggle="modal" onclick="window.location.replace('templates/setting.html')" >Setting</button>
+            <button class="project-create btn btn-default btn-primary" data-toggle="modal" data-target="#create-project-modal">Create</button>
         </div>
 
         <div class="active-btn-div">
@@ -83,6 +84,16 @@
                     <label class="col-sm-3 control-label" for="start-urls">Start URL(s)</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="start-urls">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="start-urls">Key Word</label>
+                    <div class="col-sm-9">
+{#                      <input class="form-control" type="text" name="start-urls">#}
+                        <select class="form-control" id="section" onchange="sectionSeclect()" style="width: 225px;"><option value="devicecurrentqosdb">devicecurrentqosdb</option>
+                            <option value="devicehistoryqoslistdb">devicehistoryqoslistdb</option>
+                            <option value="qos/all">qos/all</option>
+                        </select>
                     </div>
                   </div>
                   <div class="form-group">
