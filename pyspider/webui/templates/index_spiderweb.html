@@ -23,7 +23,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         Project is not started, please set status to RUNNING or DEBUG.
       </div>
-      <h1>Spider Web</h1>
+      <h1 class="text-center">爬虫管理</h1>
 {#      <table class="table queue-info">#}
 {#        <tr>#}
 {#          <th>scheduler</th>#}
@@ -87,37 +87,37 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="key-name">关键名称</label>
+                    <label class="col-sm-3 control-label" for="key-name">关键名</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="key-name" value="水利要闻">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="key-tag-selector">关键标签选择器</label>
+                    <label class="col-sm-3 control-label" for="key-tag-selector">关键名标签css样式选择器</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="key-tag-selector" value="#one1 > a">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="key-attr">关键标签属性</label>
+                    <label class="col-sm-3 control-label" for="key-attr">关键名标签属性</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="key-attr" value="href">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="nextpage-name">下一页名称</label>
+                    <label class="col-sm-3 control-label" for="nextpage-name">下一页名</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="nextpage-name" value="下一页">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="nextpage-tag-selector">下一页标签css选择器</label>
+                    <label class="col-sm-3 control-label" for="nextpage-tag-selector">下一页名标签css样式选择器</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="nextpage-tag-selector" value="tr>td>div.list_paging>table>tbody>tr>td>a.pagingNormal">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="nextpage-attr">下一页标签属性</label>
+                    <label class="col-sm-3 control-label" for="nextpage-attr">下一页名标签属性</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="nextpage-attr" value="tagname">
                     </div>
@@ -129,7 +129,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="title-tag-selector">文章标题标签css选择器</label>
+                    <label class="col-sm-3 control-label" for="title-tag-selector">文章标题标签css样式选择器</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="title-tag-selector" value="td.tit_list>a">
                     </div>
@@ -141,7 +141,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="content-tag-selector">文章内容标签css选择器</label>
+                    <label class="col-sm-3 control-label" for="content-tag-selector">文章内容标签css样式选择器</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="content-tag-selector" value="tr>td#xilan_cont.xilan_all>p>span">
                     </div>
@@ -153,7 +153,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="publish-time-tag-selector">文章发布时间标签css选择器</label>
+                    <label class="col-sm-3 control-label" for="publish-time-tag-selector">文章发布时间标签css样式选择器</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="publish-time-tag-selector" value="table.xilan_tab>tbody>tr>td">
                     </div>
@@ -180,8 +180,8 @@
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Create</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-primary">确认</button>
                 </div>
               </form>
             </div>
