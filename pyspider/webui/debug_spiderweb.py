@@ -32,11 +32,11 @@ default_task = {
         'callback': 'on_start',
     },
 }
-default_script = inspect.getsource(sample_handler)
+default_script_spiderweb = inspect.getsource(sample_handler_spiderweb)
 
 
-@app.route('/debug/<project>', methods=['GET', 'POST'])
-def debug(project):
+@app.route('/spiderweb/debug/<project>', methods=['GET', 'POST'])
+def spiderweb_debug(project):
     print(request.values)
     print(len(request.values))
     projectdb = app.config['projectdb']
@@ -46,10 +46,27 @@ def debug(project):
     if info:
         script = info['script']
     else:
-        script = (default_script
+        script = (default_script_spiderweb
                   .replace('__DATE__', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                   .replace('__PROJECT_NAME__', project)
-                  .replace('__START_URL__', request.values.get('start-urls') or '__START_URL__'))
+                  .replace('__START_URL__', request.values.get('start-urls') or '__START_URL__')
+                  .replace('__KEY_NAME__', request.values.get('key-name') or '__KEY_NAME__')
+                  .replace('__KEY_TAG_SELECTOR__', request.values.get('key-tag-selector') or '__KEY_TAG_SELECTOR__')
+                  .replace('__KEY_ATTR__', request.values.get('key-attr') or '__KEY_ATTR__')
+
+                  .replace('__NEXTPAGE_NAME__', request.values.get('nextpage-name') or '__NEXTPAGE_NAME__')
+                  .replace('__NEXTPAGE_TAG_SELECTOR__', request.values.get('nextpage-tag-selector') or '__NEXTPAGE_TAG_SELECTOR__')
+                  .replace('__NEXTPAGE_ATTR__', request.values.get('nextpage-attr') or '__NEXTPAGE_ATTR__')
+                  .replace('__PAGE_NUM__', request.values.get('page-num') or '__PAGE_NUM__')
+
+                  .replace('__TITLE_TAG_SELECTOR__', request.values.get('title-tag-selector') or '__TITLE_TAG_SELECTOR__')
+                  .replace('__TITLE_ATTR__', request.values.get('title-attr') or '__TITLE_ATTR__')
+
+                  .replace('__CONTENT_TAG_SELECTOR__', request.values.get('content-tag-selector') or '__CONTENT_TAG_SELECTOR__')
+                  .replace('__PUBLISH_TIME_NAME__', request.values.get('publish-time-name') or '__PUBLISH_TIME_NAME__')
+                  .replace('__PUBLISH_TIME_TAG_SELECTOR__', request.values.get('publish-time-tag-selector') or '__PUBLISH_TIME_TAG_SELECTOR__')
+
+                  .replace('__FILTER_WORDS__', request.values.get('filter-words') or ''))
 
 
     taskid = request.args.get('taskid')
@@ -61,16 +78,16 @@ def debug(project):
         task = default_task
 
     default_task['project'] = project
-    return render_template("debug.html", task=task, script=script, project_name=project)
+    return render_template("debug_spiderweb.html", task=task, script=script, project_name=project)
 
 
 @app.before_first_request
-def enable_projects_import():
+def spiderweb_enable_projects_import():
     sys.meta_path.append(ProjectFinder(app.config['projectdb']))
 
 
-@app.route('/debug/<project>/run', methods=['POST', ])
-def run(project):
+@app.route('/spiderweb/debug/<project>/run', methods=['POST', ])
+def spiderweb_run(project):
     start_time = time.time()
     try:
         task = utils.decode_unicode_obj(json.loads(request.form['task']))
@@ -169,8 +186,8 @@ def run(project):
         return json.dumps(utils.unicode_obj(result)), 200, {'Content-Type': 'application/json'}
 
 
-@app.route('/debug/<project>/save', methods=['POST', ])
-def save(project):
+@app.route('/spiderweb/debug/<project>/save', methods=['POST', ])
+def spiderweb_save(project):
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
@@ -208,8 +225,8 @@ def save(project):
     return 'ok', 200
 
 
-@app.route('/debug/<project>/get')
-def get_script(project):
+@app.route('/spiderweb/debug/<project>/get')
+def spiderweb_get_script(project):
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
@@ -218,6 +235,6 @@ def get_script(project):
         200, {'Content-Type': 'application/json'}
 
 
-@app.route('/blank.html')
-def blank_html():
+@app.route('/spiderweb/blank.html')
+def spiderweb_blank_html():
     return ""
