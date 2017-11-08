@@ -37,8 +37,6 @@ default_script = inspect.getsource(sample_handler)
 
 @app.route('/debug/<project>', methods=['GET', 'POST'])
 def debug(project):
-    print(request.values)
-    print(len(request.values))
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400

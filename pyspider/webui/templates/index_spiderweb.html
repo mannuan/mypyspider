@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Dashboard - pyspider</title>
+    <title>爬虫管理模块</title>
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -21,9 +21,9 @@
     <header>
       <div id="need-set-status-alert" class="alert alert-danger alert-dismissible" style="display:none;" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        Project is not started, please set status to RUNNING or DEBUG.
+        项目未启动，请将状态设置为RUNNING或DEBUG。
       </div>
-      <h1 class="text-center">爬虫管理</h1>
+{#      <h1 class="text-center">爬虫管理</h1>#}
 {#      <table class="table queue-info">#}
 {#        <tr>#}
 {#          <th>scheduler</th>#}
@@ -76,92 +76,105 @@
                     <label class="col-sm-3 control-label" for="project-name">项目名</label>
                     <div class="col-sm-9">
                       <input class="form-control" type="text" name="project-name" autocomplete="off" >
-                      <span class="help-block" style="display: none;">项目名必须由数字和字母组成</span>
+                      <span class="help-block" style="display: none;">项目名只能包含数字和字母</span>
                     </div>
                   </div>
 {#                    #}
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="start-urls">起始网址</label>
+                    <label class="col-sm-3 control-label" for="start-url">起始网址</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="start-urls" value="http://www.scwater.gov.cn/">
+                      <input class="form-control" type="text" name="start-url" autocomplete="on" placeholder="http://www.scwater.gov.cn/">
+                      <span class="help-block" style="display: none;">请输入正确的网址</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="key-name">关键名</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="key-name" value="水利要闻">
+                      <input class="form-control" type="text" name="key-name" autocomplete="on" placeholder="水利要闻">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="key-tag-selector">关键名标签css样式选择器</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="key-tag-selector" value="#one1 > a">
+                      <input class="form-control" type="text" name="key-tag-selector" autocomplete="on" placeholder="#one1 > a">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="key-attr">关键名标签属性</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="key-attr" value="href">
+                      <input class="form-control" type="text" name="key-attr" autocomplete="on" placeholder="href">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="nextpage-name">下一页名</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="nextpage-name" value="下一页">
+                      <input class="form-control" type="text" name="nextpage-name" autocomplete="on" placeholder="下一页">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="nextpage-tag-selector">下一页名标签css样式选择器</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="nextpage-tag-selector" value="tr>td>div.list_paging>table>tbody>tr>td>a.pagingNormal">
+                      <input class="form-control" type="text" name="nextpage-tag-selector" autocomplete="on" placeholder="tr>td>div.list_paging>table>tbody>tr>td>a.pagingNormal">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="nextpage-attr">下一页名标签属性</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="nextpage-attr" value="tagname">
+                      <input class="form-control" type="text" name="nextpage-attr" autocomplete="on" placeholder="tagname">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="page-num">页数</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="page-num" value="20">
+                      <input class="form-control" type="text" name="page-num" autocomplete="on" placeholder="20">
+                      <span class="help-block" style="display: none;">请输入数字</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="title-tag-selector">文章标题标签css样式选择器</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="title-tag-selector" value="td.tit_list>a">
+                      <input class="form-control" type="text" name="title-tag-selector" autocomplete="on" placeholder="td.tit_list>a">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="title-attr">文章标题标签属性</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="title-attr" value="href">
+                      <input class="form-control" type="text" name="title-attr" autocomplete="on" placeholder="href">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="content-tag-selector">文章内容标签css样式选择器</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="content-tag-selector" value="tr>td#xilan_cont.xilan_all>p>span">
+                      <input class="form-control" type="text" name="content-tag-selector" autocomplete="on" placeholder="tr>td#xilan_cont.xilan_all>p>span">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="publish-time-name">文章发布时间名</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="publish-time-name" value="时间">
+                      <input class="form-control" type="text" name="publish-time-name" autocomplete="on" placeholder="时间">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="publish-time-tag-selector">文章发布时间标签css样式选择器</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="publish-time-tag-selector" value="table.xilan_tab>tbody>tr>td">
+                      <input class="form-control" type="text" name="publish-time-tag-selector" autocomplete="on" placeholder="table.xilan_tab>tbody>tr>td">
+                      <span class="help-block" style="display: none;">不可以为空</span>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-3 control-label" for="filter-words">过滤词（用逗号分割）</label>
                     <div class="col-sm-9">
-                      <input class="form-control" type="text" name="filter-words" value="">
+                      <input class="form-control" type="text" name="filter-words" autocomplete="on" placeholder="河长,水治理">
                     </div>
                   </div>
 {#                  #}
@@ -250,6 +263,47 @@
               <a class="btn btn-default btn-xs" href="/spiderweb/results?project={{ project.name }}" target=_blank>结果</a>
               {% endraw %}
               # endif
+{#              # if config.resultdb:#}
+{#              {% raw %}#}
+{#              <a type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-project-modal" data-project-name="{{ project.name }}">删除</a>#}
+{#              {% endraw %}#}
+{#              # endif#}
+                <!-- 信息删除确认 -->
+                <div class="modal fade" id="delete-project-modal">
+                  <div class="modal-dialog">
+                    <div class="modal-content message_align">
+                      <div class="modal-header">
+                        <h4 class="modal-title">提示信息</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>您确认要删除吗？</p>
+                      </div>
+                      <div class="modal-footer">
+                         <input type="hidden" id="url"/>
+                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                         <a  onclick="spiderweb_delete()" class="btn btn-danger" data-dismiss="modal">确定</a>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <script type="text/javascript">
+                    $('#delete-project-modal').on('show.bs.modal', function (event) {
+                      var button = $(event.relatedTarget);
+                      var data = button.data('project-name');
+                      console.log(data);
+                      $(this).find('.modal-title').text(data);
+                    });
+                    function spiderweb_delete(){
+{#                        $.ajax({#}
+{#                            url:'/spiderweb/delete',#}
+{#                            type:'get',#}
+{#                            success:function(data){#}
+{#                              console.log(data);#}
+{#                            },#}
+{#                        });#}
+{#                       window.location.reload(true);#}
+                    }
+                </script>
             </td>
           </tr>
         </tbody>
@@ -264,6 +318,152 @@
     <script src="{{ url_for('cdn', path='sortable/0.6.0/js/sortable.min.js') }}"></script>
     <script src="{{ url_for('cdn', path='vue/1.0.26/vue.min.js') }}"></script>
     <script src="{{ url_for('static', filename='index_spiderweb.min.js') }}"></script>
+    <script type="text/javascript">
+        function CheckUrl(str) {
+            var strRegex ='(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]';
+            var re=new RegExp(strRegex);
+            if (!re.test(str)) {
+                return true;
+            }
+            return false;
+        }
+        function CheckNum(n) {
+            var re = new RegExp("^[0-9]*$");
+            if (!re.test(n)) {
+                return true;
+            }
+            return false;
+        }
+        $("#create-project-modal form").on('submit', function(ev) {
+            var $this = $(this);
+            var project_name = $this.find('[name=project-name]').val();
+            if (project_name.length == 0 || project_name.search(/[^\w]/) != -1) {
+              $this.find('[name=project-name]').parents('.form-group').addClass('has-error');
+              $this.find('[name=project-name] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=project-name]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=project-name] ~ .help-block').hide();
+            }
+            var start_url = $this.find('[name=start-url]').val();
+            if (start_url.length == 0 || CheckUrl(start_url)) {
+              $this.find('[name=start-url]').parents('.form-group').addClass('has-error');
+              $this.find('[name=start-url] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=start-url]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=start-url] ~ .help-block').hide();
+            }
+            var key_name = $this.find('[name=key-name]').val();
+            if (key_name.length == 0) {
+              $this.find('[name=key-name]').parents('.form-group').addClass('has-error');
+              $this.find('[name=key-name] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=key-name]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=key-name] ~ .help-block').hide();
+            }
+            var key_tag_selector = $this.find('[name=key-tag-selector]').val();
+            if (key_tag_selector.length == 0) {
+              $this.find('[name=key-tag-selector]').parents('.form-group').addClass('has-error');
+              $this.find('[name=key-tag-selector] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=key-tag-selector]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=key-tag-selector] ~ .help-block').hide();
+            }
+            var key_attr = $this.find('[name=key-attr]').val();
+            if (key_attr.length == 0) {
+              $this.find('[name=key-attr]').parents('.form-group').addClass('has-error');
+              $this.find('[name=key-attr] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=key-attr]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=key-attr] ~ .help-block').hide();
+            }
+            var nextpage_name = $this.find('[name=nextpage-name]').val();
+            if (nextpage_name.length == 0) {
+              $this.find('[name=nextpage-name]').parents('.form-group').addClass('has-error');
+              $this.find('[name=nextpage-name] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=nextpage-name]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=nextpage-name] ~ .help-block').hide();
+            }
+            var nextpage_tag_selector = $this.find('[name=nextpage-tag-selector]').val();
+            if (nextpage_tag_selector.length == 0) {
+              $this.find('[name=nextpage-tag-selector]').parents('.form-group').addClass('has-error');
+              $this.find('[name=nextpage-tag-selector] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=nextpage-tag-selector]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=nextpage-tag-selector] ~ .help-block').hide();
+            }
+            var nextpage_attr = $this.find('[name=nextpage-attr]').val();
+            if (nextpage_attr.length == 0) {
+              $this.find('[name=nextpage-attr]').parents('.form-group').addClass('has-error');
+              $this.find('[name=nextpage-attr] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=nextpage-attr]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=nextpage-attr] ~ .help-block').hide();
+            }
+            var page_num = $this.find('[name=page-num]').val();
+            if (page_num.length == 0 || CheckNum(page_num)) {
+              $this.find('[name=page-num]').parents('.form-group').addClass('has-error');
+              $this.find('[name=page-num] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=page-num]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=page-num] ~ .help-block').hide();
+            }
+            var title_tag_selector = $this.find('[name=title-tag-selector]').val();
+            if (title_tag_selector.length == 0) {
+              $this.find('[name=title-tag-selector]').parents('.form-group').addClass('has-error');
+              $this.find('[name=title-tag-selector] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=title-tag-selector]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=title-tag-selector] ~ .help-block').hide();
+            }
+            var title_attr = $this.find('[name=title-attr]').val();
+            if (title_attr.length == 0) {
+              $this.find('[name=title-attr]').parents('.form-group').addClass('has-error');
+              $this.find('[name=title-attr] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=title-attr]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=title-attr] ~ .help-block').hide();
+            }
+            var content_tag_selector = $this.find('[name=content-tag-selector]').val();
+            if (content_tag_selector.length == 0) {
+              $this.find('[name=content-tag-selector]').parents('.form-group').addClass('has-error');
+              $this.find('[name=content-tag-selector] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=content-tag-selector]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=content-tag-selector] ~ .help-block').hide();
+            }
+            var publish_time_name = $this.find('[name=publish-time-name]').val();
+            if (publish_time_name.length == 0) {
+              $this.find('[name=publish-time-name]').parents('.form-group').addClass('has-error');
+              $this.find('[name=publish-time-name] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=publish-time-name]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=publish-time-name] ~ .help-block').hide();
+            }
+            var publish_time_tag_selector = $this.find('[name=publish-time-tag-selector]').val();
+            if (publish_time_tag_selector.length == 0) {
+              $this.find('[name=publish-time-tag-selector]').parents('.form-group').addClass('has-error');
+              $this.find('[name=publish-time-tag-selector] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=publish-time-tag-selector]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=publish-time-tag-selector] ~ .help-block').hide();
+            }
+        });
+    </script>
   </body>
 </html>
 <!-- vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8 syntax=htmldjango: -->

@@ -37,8 +37,7 @@ default_script_spiderweb = inspect.getsource(sample_handler_spiderweb)
 
 @app.route('/spiderweb/debug/<project>', methods=['GET', 'POST'])
 def spiderweb_debug(project):
-    print(request.values)
-    print(len(request.values))
+    # print(request.values)
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
@@ -49,7 +48,7 @@ def spiderweb_debug(project):
         script = (default_script_spiderweb
                   .replace('__DATE__', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                   .replace('__PROJECT_NAME__', project)
-                  .replace('__START_URL__', request.values.get('start-urls') or '__START_URL__')
+                  .replace('__START_URL__', request.values.get('start-url') or '__START_URL__')
                   .replace('__KEY_NAME__', request.values.get('key-name') or '__KEY_NAME__')
                   .replace('__KEY_TAG_SELECTOR__', request.values.get('key-tag-selector') or '__KEY_TAG_SELECTOR__')
                   .replace('__KEY_ATTR__', request.values.get('key-attr') or '__KEY_ATTR__')
