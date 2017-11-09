@@ -159,16 +159,11 @@ Disallow: /spiderweb/debug/*?taskid=*
 
 @app.route('/spiderweb/delete')
 def spiderweb_delete():
-    # resultdb = app.config['resultdb']
     project = request.args.get('project')
-    # offset = int(request.args.get('offset', 0))
-    # limit = int(request.args.get('limit', 20))
-    #
-    # count = resultdb.count(project)
-    # results = list(resultdb.select(project, offset=offset, limit=limit))
-
-    # return render_template(
-    #     "result_spiderweb.html", count=count, results=results,
-    #     result_formater=result_dump.result_formater,
-    #     project=project, offset=offset, limit=limit, json=json
-    return "你阿米"
+    projectdb = app.config['projectdb']
+    # resultdb = app.config['resultdb']
+    # taskdb = app.config['taskdb']
+    projectdb.drop(project)
+    # resultdb.drop(project)
+    # taskdb.drop(project)
+    return "删除项目 '"+project+"' 成功!!!"

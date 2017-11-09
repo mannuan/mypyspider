@@ -23,6 +23,10 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         项目未启动，请将状态设置为RUNNING或DEBUG。
       </div>
+      <div id="delete-status-alert" class="alert alert-danger alert-dismissible" style="display:none;" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        在删除项目之前，请将状态设置为TODO或STOP。
+      </div>
 {#      <h1 class="text-center">爬虫管理</h1>#}
 {#      <table class="table queue-info">#}
 {#        <tr>#}
@@ -263,46 +267,58 @@
               <a class="btn btn-default btn-xs" href="/spiderweb/results?project={{ project.name }}" target=_blank>结果</a>
               {% endraw %}
               # endif
-{#              # if config.resultdb:#}
-{#              {% raw %}#}
-{#              <a type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete-project-modal" data-project-name="{{ project.name }}">删除</a>#}
-{#              {% endraw %}#}
-{#              # endif#}
-                <!-- 信息删除确认 -->
+              # if config.resultdb:
+              {% raw %}
+              <a type="button" class="btn btn-default btn-xs" onClick="delcfm('{{ project.name }}','{{ project.status }}',this)">删除</a>
+              {% endraw %}
+              # endif
+              <!-- 信息删除确认 -->
                 <div class="modal fade" id="delete-project-modal">
                   <div class="modal-dialog">
                     <div class="modal-content message_align">
                       <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                         <h4 class="modal-title">提示信息</h4>
                       </div>
                       <div class="modal-body">
-                        <p>您确认要删除吗？</p>
+                        <p id="confirm-deletion">您确认要删除吗？</p>
                       </div>
                       <div class="modal-footer">
-                         <input type="hidden" id="url"/>
-                         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                         <a  onclick="spiderweb_delete()" class="btn btn-danger" data-dismiss="modal">确定</a>
+                         <input type="hidden" id="project-name-selected"/>
+                         <button type="button" class="btn btn-success" data-dismiss="modal">取消</button>
+                         <a onclick="urlSubmit()" class="btn btn-danger" data-dismiss="modal">确定</a>
                       </div>
                     </div><!-- /.modal-content -->
                   </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
+
                 <script type="text/javascript">
-                    $('#delete-project-modal').on('show.bs.modal', function (event) {
-                      var button = $(event.relatedTarget);
-                      var data = button.data('project-name');
-                      console.log(data);
-                      $(this).find('.modal-title').text(data);
-                    });
-                    function spiderweb_delete(){
-{#                        $.ajax({#}
-{#                            url:'/spiderweb/delete',#}
-{#                            type:'get',#}
-{#                            success:function(data){#}
-{#                              console.log(data);#}
-{#                            },#}
-{#                        });#}
-{#                       window.location.reload(true);#}
-                    }
+                function delcfm(name,status,that) {
+                   $("#delete-status-alert").hide();
+                   if (status != "TODO" && status != "STOP") {
+                       $("#delete-status-alert").show();
+                       that.setAttribute("class","btn btn-danger btn-xs");
+                       return false;
+                   }
+                   $('#project-name-selected').val(name);
+                   $('#confirm-deletion').text("您确认要删除 ‘"+name+"’ 这个项目吗？");
+                   $('#delete-project-modal').modal();
+                }
+                function urlSubmit(){
+                   var project_name=$.trim($("#project-name-selected").val());
+                   $.ajax({
+                       url:"/spiderweb/delete?project="+project_name,
+                       type:"GET",
+                       dataType:"text",
+                       success:function(data){
+                           alert(data);
+                       },
+                       error:function(){
+                           alert("删除失败");
+                       }
+                   });
+                   window.location.reload(true);
+                }
                 </script>
             </td>
           </tr>
