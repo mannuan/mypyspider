@@ -34,12 +34,12 @@ class Tool:
 
 class Weibo(object):
 
-    def get_weibo(self,id,page): #个人id
+    def get_weibo(self,uid,page): #个人id
         '''
         获取指定博主的所有微博
         :return: list_cards
         '''
-        url = "https://m.weibo.cn/api/container/getIndex?uid={}&type=uid&value={}&containerid=107603{}".format(id,id,id)
+        url = "https://m.weibo.cn/api/container/getIndex?uid={}&type=uid&value={}&containerid=107603{}&page={}".format(uid,uid,uid,page)
         reponse = requests.get(url)
         ob_json = json.loads(reponse.text)
         list_cards = ob_json.get('cards')
@@ -56,6 +56,7 @@ class Weibo(object):
         response = requests.get(url)
         ob_json = json.loads(response.text)
         list_comments = ob_json.get('hot_data')
+        list_comments.append(ob_json.get('data'))
         return list_comments
 
     def main(self,id,page):
@@ -90,4 +91,5 @@ class Weibo(object):
 if __name__ == '__main__':
     weibo = Weibo()
     # weibo.main("4174382769192599",1)
-    print weibo.get_weibo('5044281310',1)
+    # print weibo.get_weibo('5044281310',1)
+    print weibo.get_comment('4174645047160883',1)
