@@ -12,14 +12,14 @@ CREATE TABLE `weibo_user` (
 DROP TABLE IF EXISTS `weibo_weibo`;
 CREATE TABLE `weibo_weibo` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `weibo_id` varchar(50) NOT NULL,
   `user_id` varchar(50) NOT NULL,
-  `text` varchar(5000) NOT NULL,
+  `weibo_id` varchar(50) NOT NULL,
   `created_at` varchar(20) NOT NULL,
+  `source` varchar(50) NOT NUll,
+  `text` varchar(5000) NOT NULL,
   `reposts_count` int(10) NOT NULL,
   `comments_count` int(10) NOT NULL,
   `attitudes_count` int(10) NOT NULL,
-  `source` varchar(50) NOT NUll,
   `crawl_time` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

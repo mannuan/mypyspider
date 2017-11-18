@@ -5,6 +5,7 @@
 
 from pyspider.libs.base_handler import *
 import time, pymysql,re
+from lxml import html
 
 class Tool:
     #去除img标签
@@ -35,38 +36,46 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
         # 先查找是否存在
-        cur.execute("select user_id from weibo_user")
+        cur.execute("select weibo_id from weibo_weibo")
         rows = cur.fetchall()
         conn.commit()
         cur.close()
         conn.close()
         for id in rows:
-            url = "https://m.weibo.cn/api/container/getIndex?uid={}&type=uid&value={}&containerid=107603{}&page={}".format(id[0], id[0], id[0], 1)
-            self.crawl(url, callback=self.index_page)
+            url = "https://m.weibo.cn/api/comments/show?id={}&page={}".format(id[0], 1)
+            self.crawl(url, callback=self.index_page,save={'weibo_id':id[0]})
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         ob_json = response.json
-        list_cards = ob_json.get('cards')
-        if list_cards is None:
-            return
+        list_comments = ob_json.get('hot_data')
+        if list_comments is None:
+            list_comments = ob_json.get('data')
+            if list_comments is None:
+                return
+            elif len(list_comments) >=9:
+                list_comments = list_comments[0:9]
         result = []
-        for card in list_cards:  # 遍历
-            if card.get('card_type') == 9:  # 等于9的微博才是正文,其他的都是推荐或者其他,`weibo_user`的唯一标识
-                user_id = card.get('mblog').get('user').get('id')  # 微博用户的id
-                weibo_id = card.get('mblog').get('id')  # 微博的id,`weibo_weibo`table的唯一标识
-                created_at = card.get('mblog').get('created_at')  # 微博创建的时间
-                source = card.get('mblog').get('source')  # 微博的来源
-                if source == '':
-                    source = u'未知'
-                text = card.get('mblog').get('text')
-                text = Tool.replace(text)  # 微博的内容
-                reposts_count = card.get('mblog').get('reposts_count')  # 微博的转发数
-                comments_count = card.get('mblog').get('comments_count')  # 微博的评论数
-                attitudes_count = card.get('mblog').get('attitudes_count')  # 微博的点赞数
-                crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-                result.append([user_id,weibo_id,created_at,source,text,reposts_count,comments_count,attitudes_count,crawl_time])
-        return result
+        for comment in list_comments:
+            weibo_id = response.save['weibo_id']#评论所对应的微博的id
+            user_id = comment.get('user').get('id')  # 发表评论者的id
+            user_name = comment.get('user').get('screen_name')  # 发表评论者的昵称
+            created_at = comment.get('created_at')  # 创建的时间
+            text = comment.get('text')
+            tree = html.fromstring(text)
+            text = tree.xpath('string(.)')  # 微博内容,用string函数过滤多余标签
+            like_counts = comment.get('like_counts')  # 点赞数
+            source = comment.get('source')  # 来自那个哪个设备
+            if source == '':
+                source = u'未知'
+
+
+    @config(priority=2)
+    def detail_page(self, response):
+        return {
+            "url": response.url,
+            "title": response.doc('title').text(),
+        }
 
     def on_result(self, result):
         if not result:
