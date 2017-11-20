@@ -1,1 +1,7 @@
-http://blog.csdn.net/aaa123524457/article/details/46558399
+#pl_weibo_direct > div > div.feed_lists.search_notes > div:nth-child(2) > div
+
+#pl_weibo_direct > div > div.feed_lists.search_notes > div:nth-child(3) > div
+
+
+
+#pl_weibo_direct > div > div:nth-child(3) > div > div:nth-child(3) > div

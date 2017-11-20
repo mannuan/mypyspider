@@ -31,7 +31,7 @@ class Handler(BaseHandler):
     crawl_config = {
     }
 
-    @every(minutes=12 * 60)#12小时
+    @every(minutes=24 * 60)#24小时
     def on_start(self):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
@@ -45,7 +45,7 @@ class Handler(BaseHandler):
             url = "https://m.weibo.cn/api/comments/show?id={}&page={}".format(id[0], 1)#热门评论都在第一页
             self.crawl(url, callback=self.index_page,save={'weibo_id':id[0]})
 
-    @config(age=12 * 60 * 60)#12小时
+    @config(age=24 * 60 * 60)#24小时
     def index_page(self, response):
         ob_json = response.json
         list_comments = ob_json.get('hot_data')
@@ -55,10 +55,13 @@ class Handler(BaseHandler):
                 return
             elif len(list_comments) >=9:
                 list_comments = list_comments[0:9]
-        result = []
+        result = {'user':[],'comment':[]}
         for comment in list_comments:
             user_id = comment.get('user').get('id')  # 发表评论者的id
             user_name = comment.get('user').get('screen_name')  # 发表评论者的昵称
+            user_verified_reason = comment.get('user').get('verified_reason')  # 微博用户的认证
+            if user_verified_reason is None:
+                user_verified_reason = u'未认证'
             weibo_id = response.save['weibo_id']#评论所对应的微博的id
             comment_id = comment.get('id')#评论的id
             created_at = comment.get('created_at')#创建的时间
@@ -70,7 +73,8 @@ class Handler(BaseHandler):
             text = tree.xpath('string(.)')  # 微博内容,用string函数过滤多余标签
             like_counts = comment.get('like_counts')  # 点赞数
             crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-            result.append([user_id,user_name,weibo_id,comment_id,created_at,source,text,like_counts,crawl_time])
+            result['comment'].append([user_id,user_name,weibo_id,comment_id,created_at,source,text,like_counts,crawl_time])
+            result['user'].append([user_id,user_name,user_verified_reason,crawl_time])
         return result
 
     def on_result(self, result):
@@ -79,9 +83,17 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO weibo_comment values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO weibo_comment(user_id,user_name,weibo_id,comment_id,created_at,source,text,like_counts,crawl_time) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
-            cur.executemany(sql,result)
+            cur.executemany(sql,result['comment'])
+            conn.commit()
+        except Exception as e:
+            print e
+            conn.rollback()
+        try:
+            sql = 'REPLACE INTO weibo_user(user_id,user_name,user_verified_reason,crawl_time) values(%s,%s,%s,%s)'
+            # 批量插入
+            cur.executemany(sql,result['user'])
             conn.commit()
         except Exception as e:
             print e

@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-# Created on 2017-11-18 09:06:44
-# Project: weibo_weibo
+# Created on 2017-11-20 13:26:05
+# Project: weibo_user_test
 
 from pyspider.libs.base_handler import *
-import time, pymysql,re
+import time,pymysql,re
 
 class Tool:
     #去除img标签
@@ -28,45 +28,55 @@ class Tool:
 
 class Handler(BaseHandler):
     crawl_config = {
+        "headers":{
+            "Proxy-Connection": "keep-alive",
+            "Pragma": "no-cache",
+            "Cache-Control": "no-cache",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36",
+            "Accept": "*/*",
+            "DNT": "1",
+            "Accept-Encoding": "gzip, deflate, sdch",
+            "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
+        }
     }
 
-    @every(minutes=24 * 60)#24个小时
-    def on_start(self):
-        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
-        cur = conn.cursor()
-        # 先查找是否存在
-        cur.execute("select user_id from weibo_user")
-        rows = cur.fetchall()
-        conn.commit()
-        cur.close()
-        conn.close()
-        for id in rows:
-            url = "https://m.weibo.cn/api/container/getIndex?uid={}&type=uid&value={}&containerid=107603{}&page={}".format(id[0], id[0], id[0], 1)
-            self.crawl(url, callback=self.index_page)
+    key_words = ["河长制", "智慧治水", "水利厅", "污水治理", "一河一策", "水政执法", "水资源保护", "河湖水域岸线保护", "水污染防治", "水生态修复", "水利工程管理", "环境改善","水质监测", "涉河水利工程", "岸线规划", "污水治理", "水环境治理"]
 
-    @config(age=24 * 60 * 60)#24个小时
+    @every(minutes=12 * 60)
+    def on_start(self):
+        for kw in self.key_words:
+            url = 'http://s.weibo.com/weibo/{}'.format(kw)
+            self.crawl(url, fetch_type='js', callback=self.index_page)
+
+    @config(age=12 * 60 * 60)
     def index_page(self, response):
-        ob_json = response.json
-        list_cards = ob_json.get('cards')
-        if list_cards is None:
-            return
         result = []
-        for card in list_cards:  # 遍历
-            if card.get('card_type') == 9:  # 等于9的微博才是正文,其他的都是推荐或者其他,`weibo_user`的唯一标识
-                user_id = card.get('mblog').get('user').get('id')  # 微博用户的id
-                user_name = card.get('mblog').get('user').get('screen_name')  # 微博用户的昵称
-                weibo_id = card.get('mblog').get('id')  # 微博的id,`weibo_weibo`table的唯一标识
-                created_at = card.get('mblog').get('created_at')  # 微博创建的时间
-                source = card.get('mblog').get('source')  # 微博的来源
-                if source == '':
-                    source = u'未知'
-                text = card.get('mblog').get('text')
-                text = Tool.replace(text)  # 微博的内容
-                reposts_count = card.get('mblog').get('reposts_count')  # 微博的转发数
-                comments_count = card.get('mblog').get('comments_count')  # 微博的评论数
-                attitudes_count = card.get('mblog').get('attitudes_count')  # 微博的点赞数
-                crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-                result.append([user_id,user_name,weibo_id,created_at,source,text,reposts_count,comments_count,attitudes_count,crawl_time])
+        for each in response.doc('div').items():
+            user_id = each.attr.tbinfo
+            user_name = each('div.WB_feed_detail.clearfix > dl > div > div.content.clearfix > div.feed_content.wbcon > a.W_texta.W_fb').attr.title
+            weibo_id = each.attr.mid
+            created_at = each('div.WB_feed_detail.clearfix > dl > div > div.content.clearfix > div.feed_from.W_textb > a.W_textb').text()
+            source = each('div.WB_feed_detail.clearfix > dl > div > div.content.clearfix > div.feed_from.W_textb > a:nth-child(2)').text()
+            if user_id and user_name and weibo_id and created_at and source:
+                user_id = user_id.replace('ouid=','')#微博用户的id
+                url = "https://m.weibo.cn/statuses/extend?id={}".format(weibo_id)
+                self.crawl(url, callback=self.detail_page, save={'user_id':user_id,'user_name':user_name,'weibo_id':weibo_id,'created_at':created_at,'source':source})
+
+    @config(priority=2)
+    def detail_page(self, response):
+        result = []
+        ob_json = response.json
+        user_id = response.save['user_id']
+        user_name = response.save['user_name']
+        weibo_id = response.save['weibo_id']
+        created_at = response.save['created_at']
+        source = response.save['source']
+        longTextContent = Tool.replace(ob_json.get('longTextContent'))
+        reposts_count = ob_json.get('reposts_count')
+        comments_count = ob_json.get('comments_count')
+        attitudes_count = ob_json.get('attitudes_count')
+        crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
+        result.append([user_id,user_name,weibo_id,created_at,source,longTextContent,reposts_count,comments_count,attitudes_count,crawl_time])
         return result
 
     def on_result(self, result):
@@ -75,7 +85,7 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO weibo_weibo(user_id,user_name,weibo_id,created_at,source,text,reposts_count,comments_count,attitudes_count,crawl_time) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO weibo_weibo values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
             cur.executemany(sql,result)
             conn.commit()
