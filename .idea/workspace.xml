@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/weibo/weibo_comment.py" afterPath="$PROJECT_DIR$/weibo/weibo_comment_abandoned.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/weibo/weibo_user.py" afterPath="$PROJECT_DIR$/weibo/weibo_user_abandoned.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/weibo/weibo_weibo.py" afterPath="$PROJECT_DIR$/weibo/weibo_weibo_abandoned.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baidubaike/baidubaike_test.py" afterPath="$PROJECT_DIR$/baidubaike/baidubaike_test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/baidubaike/temp.html" afterPath="$PROJECT_DIR$/baidubaike/temp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/url_list" afterPath="$PROJECT_DIR$/tmp/url_list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weibo/weibo.sql" afterPath="$PROJECT_DIR$/weibo/weibo.sql" />
-    </list>
+    <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,7 +76,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pyspider/webui/templates/setting.html" />
         <option value="$PROJECT_DIR$/pyspider/webui/templates/index.html" />
         <option value="$PROJECT_DIR$/pyspider/webui/index.py" />
         <option value="$PROJECT_DIR$/pyspider/libs/spiderweb_template.py" />
@@ -136,6 +126,7 @@
         <option value="$PROJECT_DIR$/weibo/weibo.sql" />
         <option value="$PROJECT_DIR$/weibo/weibo_weibo.py" />
         <option value="$PROJECT_DIR$/weibo/weibo_comment.py" />
+        <option value="$PROJECT_DIR$/other_crawl/水利部河长制/zhongyangjingshen.py" />
       </list>
     </option>
   </component>
@@ -177,12 +168,24 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="baidubaike" type="462c0819:PsiDirectoryNode" />
+              <item name="other_crawl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="tmp" type="462c0819:PsiDirectoryNode" />
+              <item name="other_crawl" type="462c0819:PsiDirectoryNode" />
+              <item name="水利部河长制" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
@@ -482,13 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/static/task.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="1" column="35" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyspider/webui/static/tasks.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -654,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-806">
-          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/GetWebPageSourceCode.py" />
     <entry file="file://$PROJECT_DIR$/tmp/weibo_user.sql" />
     <entry file="file://$PROJECT_DIR$/pyspider/webui/index_spiderweb.py">
@@ -801,14 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weibo/weibo.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="53" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weibo/weibo_comment.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -825,6 +806,37 @@
           <caret line="91" column="30" lean-forward="true" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
           <folding>
             <element signature="e#109#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weibo/weibo.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="33" column="35" lean-forward="true" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="136" column="32" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding>
+            <marker date="1510984840315" expanded="true" signature="5551:5590" ph="select * fro... shuiliting" />
+            <marker date="1510984840315" expanded="true" signature="5690:5778" ph="insert into shuiliting... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other_crawl/水利部河长制/zhongyangjingshen.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="5" column="70" lean-forward="false" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+          <folding>
+            <element signature="e#679#719#0" expanded="true" />
+            <marker date="1511168919536" expanded="true" signature="5175:5214" ph="select * fro... shuiliting" />
+            <marker date="1511168919536" expanded="true" signature="5314:5402" ph="insert into shuiliting... " />
           </folding>
         </state>
       </provider>
