@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/wb.py" afterPath="$PROJECT_DIR$/tmp/weibo_local_test.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo.py" afterPath="$PROJECT_DIR$/tmp/test_weibo.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo_hot_comment.py" afterPath="$PROJECT_DIR$/tmp/weibo_comment.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo_hot_user.py" afterPath="$PROJECT_DIR$/tmp/weibo_user.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/test_weibo.py" afterPath="$PROJECT_DIR$/weibo/test_weibo.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/test_weibo_source.py" afterPath="$PROJECT_DIR$/weibo/test_weibo_source.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo.sql" afterPath="$PROJECT_DIR$/weibo/weibo.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo_comment.py" afterPath="$PROJECT_DIR$/weibo/weibo_comment.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo_local_test.py" afterPath="$PROJECT_DIR$/weibo/weibo_local_test.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo_user.py" afterPath="$PROJECT_DIR$/weibo/weibo_user.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tmp/weibo_weibo.py" afterPath="$PROJECT_DIR$/weibo/weibo_weibo.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/weibo.sql" afterPath="$PROJECT_DIR$/tmp/weibo.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/weibo_weibo.py" afterPath="$PROJECT_DIR$/tmp/weibo_weibo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tmp/temp.html" afterPath="$PROJECT_DIR$/tmp/temp.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,12 +24,34 @@
     <SUITE FILE_PATH="coverage/mypyspider$wb.coverage" NAME="wb Coverage Results" MODIFIED="1510933839857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/mypyspider$test_weibo_source.coverage" NAME="test_weibo_source Coverage Results" MODIFIED="1510970614239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/mypyspider$weibo_user_spider.coverage" NAME="weibo_user_spider Coverage Results" MODIFIED="1510930079914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
+    <SUITE FILE_PATH="coverage/mypyspider$baidubaike_test.coverage" NAME="baidubaike_test Coverage Results" MODIFIED="1511149333095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baidubaike" />
     <SUITE FILE_PATH="coverage/mypyspider$test_pymysql.coverage" NAME="test_pymysql Coverage Results" MODIFIED="1510932369363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/mypyspider$weibo_userid.coverage" NAME="weibo_userid Coverage Results" MODIFIED="1510928066092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/mypyspider$test.coverage" NAME="test Coverage Results" MODIFIED="1510800259631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="baidubaike_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/baidubaike/baidubaike_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="2" selection-end-line="19" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/baidubaike/temp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,6 +149,8 @@
         <option value="$PROJECT_DIR$/tmp/weibo_weibo.py" />
         <option value="$PROJECT_DIR$/tmp/weibo_hot_comment.py" />
         <option value="$PROJECT_DIR$/tmp/weibo_user.py" />
+        <option value="$PROJECT_DIR$/tmp/temp.html" />
+        <option value="$PROJECT_DIR$/baidubaike/baidubaike_test.py" />
       </list>
     </option>
   </component>
@@ -166,12 +192,17 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="baidubaike" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
               <item name="tmp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="weibo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -188,10 +219,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/weibo" />
       <recent name="$PROJECT_DIR$/tmp" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tmp" />
     </key>
   </component>
@@ -207,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test_weibo_source">
+  <component name="RunManager" selected="Python.baidubaike_test">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -289,6 +321,24 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <configuration name="baidubaike_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/baidubaike" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="mypyspider" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baidubaike/baidubaike_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="test_pymysql" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -320,7 +370,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="mypyspider" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/test_weibo_source.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weibo/test_weibo_source.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -338,7 +388,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="mypyspider" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/weibo_local_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weibo/weibo_local_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -356,43 +406,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="mypyspider" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/weibo_user.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="weibo_userid" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tmp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="mypyspider" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp/weibo_user.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weibo/weibo_user.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.weibo_userid" />
-      <item index="1" class="java.lang.String" itemvalue="Python.wb" />
-      <item index="2" class="java.lang.String" itemvalue="Python.weibo_user_spider" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_pymysql" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test_weibo_source" />
+      <item index="0" class="java.lang.String" itemvalue="Python.wb" />
+      <item index="1" class="java.lang.String" itemvalue="Python.weibo_user_spider" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_pymysql" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_weibo_source" />
+      <item index="4" class="java.lang.String" itemvalue="Python.baidubaike_test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_weibo_source" />
-        <item index="1" class="java.lang.String" itemvalue="Python.wb" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test_pymysql" />
-        <item index="3" class="java.lang.String" itemvalue="Python.weibo_user_spider" />
-        <item index="4" class="java.lang.String" itemvalue="Python.weibo_userid" />
+        <item index="0" class="java.lang.String" itemvalue="Python.baidubaike_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_weibo_source" />
+        <item index="2" class="java.lang.String" itemvalue="Python.wb" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test_pymysql" />
+        <item index="4" class="java.lang.String" itemvalue="Python.weibo_user_spider" />
       </list>
     </recent_temporary>
   </component>
@@ -418,18 +450,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1680" height="990" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18988095" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18988095" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3632184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3632184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39965987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39965987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SFDX" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -465,20 +498,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/task.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/tasks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/task_spiderweb.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -672,20 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/temp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="169" column="68" lean-forward="false" selection-start-line="169" selection-start-column="68" selection-end-line="169" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-806">
@@ -709,8 +714,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_user.py" />
-    <entry file="file://$PROJECT_DIR$/tmp/test_weibo_source.py">
+    <entry file="file://$PROJECT_DIR$/weibo/weibo_user.py" />
+    <entry file="file://$PROJECT_DIR$/weibo/test_weibo_source.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="37" column="52" lean-forward="true" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
@@ -721,80 +726,49 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_hot_comment_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/weibo.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_user.py">
+    <entry file="file://$PROJECT_DIR$/tmp/weibo_hot_comment_user.py" />
+    <entry file="file://$PROJECT_DIR$/weibo/weibo_user.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="19" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="24" />
           <folding>
-            <element signature="e#104#144#0" expanded="true" />
+            <element signature="e#104#144#0" expanded="false" />
             <marker date="1510992746826" expanded="true" signature="1591:1678" ph="INSERT INTO weibo_user... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_weibo.py">
+    <entry file="file://$PROJECT_DIR$/weibo/weibo_weibo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="68" column="51" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="88" selection-end-column="24" />
           <folding>
-            <element signature="e#105#145#0" expanded="true" />
+            <element signature="e#105#145#0" expanded="false" />
             <marker date="1510992254356" expanded="true" signature="975:1005" ph="select user_... weibo_user" />
             <marker date="1510992254356" expanded="true" signature="3022:3184" ph="INSERT INTO weibo_weibo... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_comment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="76" column="72" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="104" selection-end-column="24" />
-          <folding>
-            <element signature="e#111#151#0" expanded="true" />
-            <marker date="1510992626673" expanded="true" signature="1002:1034" ph="select weibo... weibo_weibo" />
-            <marker date="1510992626673" expanded="true" signature="3211:3350" ph="INSERT INTO weibo_weibo... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/test_weibo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-703">
-          <caret line="33" column="46" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <marker date="1510984840331" expanded="true" signature="1663:1706" ph="select * fro... weibo_user" />
-            <marker date="1510984840331" expanded="true" signature="1836:1905" ph="insert into weibo_user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_local_test.py">
+    <entry file="file://$PROJECT_DIR$/weibo/weibo_local_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1045">
           <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
-            <element signature="e#24#45#0" expanded="true" />
+            <element signature="e#24#45#0" expanded="false" />
             <marker date="1510984840331" expanded="true" signature="4939:4969" ph="select user_... weibo_user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weibo/weibo.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -805,6 +779,60 @@
           <folding>
             <marker date="1510984840331" expanded="true" signature="272:302" ph="select user_... weibo_user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/temp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weibo/test_weibo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="65" />
+          <folding>
+            <marker date="1510984840331" expanded="true" signature="1663:1706" ph="select * fro... weibo_user" />
+            <marker date="1510984840331" expanded="true" signature="1836:1905" ph="insert into weibo_user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weibo/weibo_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="63" selection-end-column="45" />
+          <folding>
+            <marker date="1510992626673" expanded="true" signature="1002:1034" ph="select weibo... weibo_weibo" />
+            <marker date="1510992626673" expanded="true" signature="3211:3350" ph="INSERT INTO weibo_weibo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baidubaike/baidubaike_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="2" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baidubaike/temp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="52" lean-forward="true" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

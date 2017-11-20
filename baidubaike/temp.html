@@ -1,0 +1,140 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-Frame-Options" content="DENY " />
+<meta content="IE=8" http-equiv="X-UA-Compatible" />
+<title>微博搜索 - 微博</title>
+<noscript>
+<meta http-equiv="refresh" content="0;url=/home?nojs=1">
+</noscript>
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/module/common.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+ 
+ <link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/patch/index4.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+ <!-- 非BP的样式 -->
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/module/search_directarea.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/module/general.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/module/hot_ranktit.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+<script type="text/javascript">
+ var $CONFIG = {};
+  $CONFIG['islogin'] = '0';
+ $CONFIG['uid'] = '0';
+ $CONFIG['entry'] = 'weisousuo';
+  $CONFIG['setCover'] = 1; //ie6hack
+ $CONFIG['version'] = '20171120102000';
+ $CONFIG['bigpipe'] = 'false';
+ $CONFIG['timeDiff'] = (new Date() - 1511149333000);
+ $CONFIG['product'] = 'search';
+ $CONFIG['pageid'] = 'index';
+ $CONFIG['skin'] = '';
+ $CONFIG['lang'] = 'zh-cn';
+ $CONFIG['jsPath'] = '//js.t.sinajs.cn/t4/';
+ $CONFIG['cssPath'] = '//img.t.sinajs.cn/t4/';
+ $CONFIG['imgPath'] = '//img.t.sinajs.cn/t4/';
+ $CONFIG['servertime'] = 1511149333;
+ $CONFIG['ad_url_jump'] = '';
+  $CONFIG['$webim'] = 0; //0;
+ $CONFIG['mJsPath'] = ['https://js{n}.t.sinajs.cn/t4/', 1, 2];
+ $CONFIG['mCssPath'] = ['https://img{n}.t.sinajs.cn/t4/', 1, 2];
+ $CONFIG['s_domain'] = '//s.weibo.com';
+  </script><!--[if lte IE 8]>
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/pages/ie_bug.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+<![endif]-->
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/base/usually.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/module/WB_h5video.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+</head>
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/module/rela_person.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+<body class="S_index ">
+<div class="S_wrap ">
+ <div id="weibo_top_public"></div>
+<link href="//img.t.sinajs.cn/t4/appstyle/searchV45/css_v6/module/direct_weiguantuan.css?version=20171120102000" type="text/css" rel="stylesheet" charset="utf-8" />
+ <!-- new usercard-->
+<script src="//js.t.sinajs.cn/t5/pack/js/bootstrap.js"></script>
+<script>
+WBWidget({
+  }).load();
+</script>
+<script src="https://js.t.sinajs.cn/t5/pack/static/musicplayer/musicplayer_stk_v6.1.5.js"></script>
+	<!-- // <script src="http://js.t.sinajs.cn/trunk_musicplayer/js/exports/musicplayer_stk.js"></script> -->
+	<script>
+	//设置用户uid 用于同步赞状态
+	WEIBO_MUSIC_PLAYER.load({page_id:''});
+	//监听赞事件
+	//监听分享事件
+	WEIBO_MUSIC_PLAYER.on('share', function (evt, song) {
+	alert(song.copy);
+	song //歌曲的所有信息	
+	});
+	</script>
+<div class="S_main"> 
+ <div class="S_main_bg">  
+  <div class="index_logo">
+ <h1><a class="logo_img" href="javascript:void(0);">微博搜索</a><a href="javascript:void(0);" class="logo_app"></a></h1>
+  </div>  
+  <!-- input box -->
+  <div class="search_head clearfix" id="pl_searchHead">
+ <div class="search_head_formbox">
+  <ul class="formbox_tab formbox_tab2 clearfix" node-type="searchItems">
+   <li><a class="cur" href="javascript:void(0);" action-type="type" action-data="type=weibo" suda-data="key=tblog_search_index&value=index_weibo">综合</a><a href="javascript:void(0);" action-type="type" action-data="type=wb" suda-data="key=tblog_search_index&value=index_wb" style="display:none;">微博</a><a href="javascript:void(0);" action-type="type" action-data="type=user" suda-data="key=tblog_search_index&value=index_user">找人</a><a href="javascript:void(0);" action-type="type" action-data="type=list/relpage" suda-data="key=tblog_search_index&value=index_list_relpage" style="display:none;">文章</a></li>
+  </ul>
+  <div class="search_input clearfix" node-type="searchBar">
+   <div class="search_input_wrap">
+  <div class="searchBtn_box"><a class="searchBtn" href="javascript:void(0);" node-type="submit" suda-data="key=tblog_search_index&value=index_search">搜索</a></div>
+  <div class="searchInp_box">
+   <div class="searchInp_auto">
+    <input type="text" class="searchInp_form" node-type="text" maxlength="40">
+   </div>
+  </div>
+   </div>
+  </div>
+ </div>
+   </div>
+  <!-- /input box -->
+   <!-- *************************************** -->
+ 
+ 
+ </div>
+</div>
+<div class="search_footer W_textb">
+  <div class="global_footer">
+ <div class="other_link clearfix">
+  <div class="help_link">
+   <p>
+   <a class="ico_service" href="//ir.weibo.com/?bottomnav=1&wvr=5" target="_blank">关于微博</a>
+   <a href="//help.weibo.com/?refer=didao&bottomnav=1&wvr=5" target="_blank">微博帮助</a>
+   <a href="//help.weibo.com/newtopic/suggest?bottomnav=1&wvr=5" target="_blank">意见反馈</a>
+   <a href="//open.weibo.com/?bottomnav=1&wvr=5" target="_blank">开放平台</a>
+   <a href="//hr.weibo.com/?bottomnav=1&wvr=5" target="_blank">微博招聘</a>
+   <a href="//news.sina.com.cn/guide/?bottomnav=1&wvr=5" target="_blank">新浪网导航</a>
+   <a href="//service.account.weibo.com/?bottomnav=1&wvr=5" target="_blank">社区管理中心</a>
+   <a href="//service.account.weibo.com/roles/gongyue?bottomnav=1&wvr=5" target="_blank">微博社区公约</a>
+   </p>
+   <p class="company"><span class="copy S_txt2">Copyright &copy; 2009-2017 WEIBO 北京微梦创科网络技术有限公司</span>
+   <span>
+   <a href="//weibo.com/aj/static/jww.html" target="_blank" class="S_txt2">京网文[2011]0398-130号</a><a href="http://www.miibeian.gov.cn" target="_blank" class="S_txt2">京ICP备12002058号</a>
+    </span></p>
+  </div>
+ </div>
+  </div>
+ </div>
+  <div style="display:none;" id="pl_common_base"></div>
+</div>
+</body>
+<script src="//js.t.sinajs.cn/t6/home/js/pl/top/topInit.js"></script>
+<script type="text/javascript">
+(function() { 
+ WBtopGlobal && WBtopGlobal.init({
+  'islogin': 0,
+  "backurl":"//s.weibo.com"
+});
+})();
+</script>
+ <script src="//js.t.sinajs.cn/t4/apps/search_v6/js/searchIndex.js?version=20171120102000" type="text/javascript" ></script>
+<!-- 视频播放 -->
+<script type="text/javascript" charset="UTF-8" src="https://js.t.sinajs.cn/video/sinaplayer/js/page/player.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://js.t.sinajs.cn/t6/page/js/pl/third/search/index.js?version=2017112011"></script>
+<!-- SUDA_CODE_START -->
+<noscript><img width="0" height="0" src="//beacon.sina.com.cn/a.gif?noScript" border="0" alt="" /></noscript>
+<!-- SUDA_CODE_END -->
+
+</html>
