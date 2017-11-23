@@ -6,7 +6,7 @@ CREATE TABLE `shuilibuhezhangzhi` (
   `text` varchar(10000),
   `editor` varchar(20),
   `forum_name` varchar(20) NOT NUll,
-  `forum_type` varchar(20) NOT NUll,
+  `type_id` int(3) NOT NUll,
   `crawl_time` varchar(20) NOT NULL,
   PRIMARY KEY (`url`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

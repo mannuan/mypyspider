@@ -22,43 +22,41 @@ class Handler(BaseHandler):
     }
     }
 
-    list_forums = [{'forum':'zyjs','page':1,'name':u'中央精神','type':u'政府发文'},{'forum':'zydt','page':1,'name':u'重要动态','type':u'动态'},{'forum':'gzbs','page':1,'name':u'工作部署','type':u'动态'},{'forum':'dfldt','page':2,'name':u'地方领导谈','type':u'动态'},{'forum':'dfxd','page':18,'name':u'流域地方','type':u'动态'},{'forum':'gzfa','page':2,'name':u'工作方案','type':u'政府发文'},{'forum':'mtjj','page':10,'name':u'媒体聚焦','type':u'动态'},{'forum':'gzjb','page':5,'name':u'工作简报','type':u'动态'}]
+    list_forums = [{'forum':'policy','page':429,'name':u'政策文件','type':u'政府发文'},
+                   {'forum':'law','page':47,'name':u'法律法规','type':u'政府发文'},
+                   {'forum':'standard','page':64,'name':u'标准规范','type':u'标准'}]
 
     list_text_css_selector = ['td.content>div.TRS_Editor>p','div.model#about_txt>div.mbd>div.cnt_bd>p','div.slnewscon.autoHeight','div.vintro>p','div.content1']
 
     @every(minutes=24 * 60)
     def on_start(self):
         for forum in self.list_forums:
-            url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/'.format(forum.get('forum'))
-            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
-            for p in range(1,forum.get('page')):
-                url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/index_{}.html'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+            for p in range(1,forum.get('page')+1):
+                url = 'http://www.h2o-china.com/{}/home?ordby=dateline&sort=DESC&page={}'.format(forum.get('forum'),p)
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'forum':forum.get('forum'),'name':forum.get('name'),'type':forum.get('type')})
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        for each in response.doc('div.dbgxia>div.dbgshang>table.tbg>tbody>tr>td:nth-child(2)>table:nth-child(4)>tbody>tr>td>table:nth-child(2)>tbody>tr').items():
-            url = each('td:nth-child(2)>a').attr.href
-            title = each('td:nth-child(2)>a').text()
-            created_at = each('td:nth-child(3)').text().replace('&nbsp;','')
+        for each in response.doc('div.lists.txtList>ul>li').items():
+            url = each('em.title>a.ellip.w540').attr.href
+            forum = response.save['forum']
             name = response.save['name']
             type = response.save['type']
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'forum':forum,'name':name,'type':type})
 
     @config(priority=2)
     def detail_page(self, response):
         url = response.url
-        title = response.save['title']
-        created_at = response.save['created_at']
-        text = ''
-        for cs in self.list_text_css_selector:
-            for each in response.doc(cs).items():
-                text += each.text()
-            if text is not '':
-                break
-        editor = response.doc('td.content>p').text().replace('责编：','')
+        title = response.doc('div.hd>h1').text()
+        file_type = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(2)').text()
+        created_at = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(4)').text()
+        dispatch_unit = response.doc('div.traits>table>tbody>tr:nth-child(2)>td:nth-child(2)').text()
+        key_words = response.doc('div.traits>table>tbody>tr:nth-child(4)>td:nth-child(2)').text()
+        abstract = response.doc('div.traits>table>tbody>tr:nth-child(5)>td:nth-child(2)').text()
         forum_name = response.save['name']
         forum_type = response.save['type']
+        file_id = url.split('/')[-1].replace('.html','')
+        file_url = 'http://www.h2o-china.com/{}/view/download?id={}'.format(response.save['forum'],file_id)
         type_id = None
         conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
@@ -75,7 +73,7 @@ class Handler(BaseHandler):
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
         result = []
-        result.append([url,title,created_at,text,editor,forum_name,type_id,crawl_time])
+        result.append([url,title,file_type,created_at,dispatch_unit,key_words,abstract,forum_name,type_id,file_id,file_url,crawl_time])
         return result
 
     def on_result(self, result):
@@ -84,7 +82,7 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO shuilibuhezhangzhi values(%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO zhongguoshuiwang values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
             cur.executemany(sql,result)
             conn.commit()
