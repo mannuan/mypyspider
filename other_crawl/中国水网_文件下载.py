@@ -27,14 +27,13 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         # 先查找是否存在
-        cur.execute("select file_url from zhongguoshuiwang")
+        cur.execute("select file_name from zhongguoshuiwang")
         rows = cur.fetchall()
         conn.commit()
         cur.close()
         conn.close()
         for url in rows:
             print url[0]
-        print len(list(rows))
             # self.crawl(url, callback=self.index_page)
 
     # @config(age=10 * 24 * 60 * 60)

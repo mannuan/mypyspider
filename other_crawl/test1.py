@@ -11,20 +11,22 @@ sys.setdefaultencoding('utf8')
 class Handler(BaseHandler):
     crawl_config = {
         "headers":{
-        "Proxy-Connection": "keep-alive",
-        "Pragma": "no-cache",
-        "Cache-Control": "no-cache",
-        "User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36",
-        "Accept": "*/*",
-        "DNT": "1",
-        "Accept-Encoding": "gzip, deflate, sdch",
-        "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
-    }
+            "Proxy-Connection": "keep-alive",
+            "Pragma": "no-cache",
+            "Cache-Control": "no-cache",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36",
+            "Accept": "*/*",
+            "DNT": "1",
+            "Accept-Encoding": "gzip, deflate, sdch",
+            "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
+        }
     }
 
     list_forums = [{'forum':'policy','page':429,'name':u'政策文件','type':u'政府发文'},
                    {'forum':'law','page':47,'name':u'法律法规','type':u'政府发文'},
                    {'forum':'standard','page':64,'name':u'标准规范','type':u'标准'}]
+
+    list_text_css_selector = ['td.content>div.TRS_Editor>p','div.model#about_txt>div.mbd>div.cnt_bd>p','div.slnewscon.autoHeight','div.vintro>p','div.content1']
 
     @every(minutes=24 * 60)
     def on_start(self):
@@ -42,7 +44,7 @@ class Handler(BaseHandler):
                 url = each('em.title>a.ellip.w540.i-word').attr.href
                 file_format = 'doc'
                 if url is None:
-                    url = each('em.title>a.ellip.w540').attr.href
+                    url = each('em.title>a.ellip.w540.0').attr.href
                     file_format = None
             forum = response.save['forum']
             name = response.save['name']
@@ -56,14 +58,13 @@ class Handler(BaseHandler):
         file_type = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(2)').text()
         created_at = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(4)').text()
         dispatch_unit = response.doc('div.traits>table>tbody>tr:nth-child(2)>td:nth-child(2)').text()
+        file_number = response.doc('div.traits>table>tbody>tr:nth-child(3)>td:nth-child(2)').text()
         key_words = response.doc('div.traits>table>tbody>tr:nth-child(4)>td:nth-child(2)').text()
         abstract = response.doc('div.traits>table>tbody>tr:nth-child(5)>td:nth-child(2)').text()
         forum_name = response.save['name']
         forum_type = response.save['type']
-        file_id = url.split('/')[-1].replace('.html','')
-        file_format = response.save['file_format']
-        file_name = file_id+'.'+file_format
-        file_url = 'http://www.h2o-china.com/{}/view/download?id={}'.format(response.save['forum'],file_id)
+        file_name = url.split('/')[-1].replace('.html','')+'.'+response.save['file_format']
+        file_url = 'http://www.h2o-china.com/{}/view/download?id={}'.format(response.save['forum'],url.split('/')[-1].replace('.html',''))
         type_id = None
         conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
@@ -80,16 +81,16 @@ class Handler(BaseHandler):
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
         result = []
-        result.append([url,title,created_at,dispatch_unit,abstract,forum_name,type_id,file_name,file_url,crawl_time])
+        result.append([url,title,file_type,created_at,dispatch_unit,file_number,key_words,abstract,forum_name,type_id,file_name,file_url,crawl_time])
         return result
 
     def on_result(self, result):
         if not result:
             return
-        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO website(url,title,push_time,come_from,context,page_type,type_id,file_name,file_url,spider_time) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO zhongguoshuiwang values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
             cur.executemany(sql,result)
             conn.commit()

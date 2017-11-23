@@ -81,10 +81,10 @@ class Handler(BaseHandler):
     def on_result(self, result):
         if not result:
             return
-        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO shuilibuhezhangzhi values(%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO website(url,title,push_time,context,come_from,page_type,type_id,spider_time) values(%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
             cur.executemany(sql,result)
             conn.commit()
