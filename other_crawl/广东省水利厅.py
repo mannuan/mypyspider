@@ -22,28 +22,26 @@ class Handler(BaseHandler):
     }
     }
 
-    list_forums = [{'forum':'zyjs','page':1,'name':u'中央精神','type':u'政府发文'},{'forum':'zydt','page':1,'name':u'重要动态','type':u'动态'},{'forum':'gzbs','page':1,'name':u'工作部署','type':u'动态'},{'forum':'dfldt','page':2,'name':u'地方领导谈','type':u'动态'},{'forum':'dfxd','page':18,'name':u'流域地方','type':u'动态'},{'forum':'gzfa','page':2,'name':u'工作方案','type':u'政府发文'},{'forum':'mtjj','page':10,'name':u'媒体聚焦','type':u'动态'},{'forum':'gzjb','page':5,'name':u'工作简报','type':u'动态'}]
+    list_forums = [{'forum':'/slzc/szygl/','page':1,'name':u'政策法规/水资源管理','type':u'政府发文'},{'forum':'/slfl/','page':1,'name':u'政策法规/水利法律','type':u'政府发文'},{'forum':'/xzfg/','page':1,'name':u'政策法规/水利行政法规','type':u'政府发文'},{'forum':'/dfxfg/','page':1,'name':u'政策法规/广东省地方性水事法规','type':u'政府发文'},{'forum':'/bsgz/','page':1,'name':u'政策法规/广东省人民政府水事规章','type':u'政府发文'},{'forum':'/bwgz/bwgzszygl/','page':1,'name':u'政策法规/水资源管理','type':u'政府发文'},{'forum':'/bwgz/stbcgl/','page':1,'name':u'政策法规/水土保持管理','type':u'政府发文'},{'forum':'/bwgz/swgl/','page':1,'name':u'政策法规/水文管理','type':u'政府发文'},{'forum':'/qtfg/','page':1,'name':u'其他水事法规规章性文件','type':u'政府发文'}]
 
     list_text_css_selector = ['td.content>div.TRS_Editor>p','div.model#about_txt>div.mbd>div.cnt_bd>p','div.slnewscon.autoHeight','div.vintro>p','div.content1']
 
     @every(minutes=24 * 60)
     def on_start(self):
         for forum in self.list_forums:
-            url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/'.format(forum.get('forum'))
+            url = 'http://www.gdwater.gov.cn/xxgk/wjzy/zcfg{}list.htm'.format(forum.get('forum'))
             self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
-            for p in range(1,forum.get('page')):
-                url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/index_{}.html'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        for each in response.doc('div.dbgxia>div.dbgshang>table.tbg>tbody>tr>td:nth-child(2)>table:nth-child(4)>tbody>tr>td>table:nth-child(2)>tbody>tr').items():
-            url = each('td:nth-child(2)>a').attr.href
-            title = each('td:nth-child(2)>a').text()
-            created_at = each('td:nth-child(3)').text().replace('&nbsp;','')
-            name = response.save['name']
-            type = response.save['type']
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
+        pass
+        # for each in response.doc('div.dbgxia>div.dbgshang>table.tbg>tbody>tr>td:nth-child(2)>table:nth-child(4)>tbody>tr>td>table:nth-child(2)>tbody>tr').items():
+        #     url = each('td:nth-child(2)>a').attr.href
+        #     title = each('td:nth-child(2)>a').text()
+        #     created_at = each('td:nth-child(3)').text().replace('&nbsp;','')
+        #     name = response.save['name']
+        #     type = response.save['type']
+        #     self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
 
     @config(priority=2)
     def detail_page(self, response):

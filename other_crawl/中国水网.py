@@ -43,7 +43,7 @@ class Handler(BaseHandler):
                 file_format = 'doc'
                 if url is None:
                     url = each('em.title>a.ellip.w540').attr.href
-                    file_format = None
+                    file_format = 'txt'
             forum = response.save['forum']
             name = response.save['name']
             type = response.save['type']
@@ -79,8 +79,7 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        result = []
-        result.append([url,title,created_at,dispatch_unit,abstract,forum_name,type_id,file_name,file_url,crawl_time])
+        result = [url,title,created_at,dispatch_unit,abstract,forum_name,type_id,file_name,file_url,crawl_time,u'中国水网']
         return result
 
     def on_result(self, result):
@@ -88,14 +87,27 @@ class Handler(BaseHandler):
             return
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
-        try:
-            sql = 'REPLACE INTO website(url,title,push_time,come_from,context,page_type,type_id,file_name,file_url,spider_time) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
-            # 批量插入
-            cur.executemany(sql,result)
-            conn.commit()
-        except Exception as e:
-            print e
-            conn.rollback()
+        cur.execute("select * from website where url = %s" , result[0])
+        rows = cur.fetchall()
+        if len(rows) == 0:
+            try:
+                sql = 'INSERT INTO website(url,title,push_time,come_from,context,page_type,type_id,file_name,file_url,spider_time,source) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+                # 批量插入
+                cur.execute(sql,result)
+                conn.commit()
+            except Exception as e:
+                print e
+                conn.rollback()
+        else:
+            result = result[::-1]
+            try:
+                sql = 'UPDATE website SET source=%s,spider_time=%s,file_url=%s,file_name=%s,type_id=%s,page_type=%s,context=%s,come_from=%s,push_time=%s,title=%s WHERE url=%s'
+                # 批量插入
+                cur.execute(sql,result)
+                conn.commit()
+            except Exception as e:
+                print e
+                conn.rollback()
         # 释放数据连接
         if cur:
             cur.close()
