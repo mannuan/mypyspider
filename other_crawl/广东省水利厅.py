@@ -22,39 +22,59 @@ class Handler(BaseHandler):
     }
     }
 
-    list_forums = [{'forum':'/slzc/szygl/','page':1,'name':u'政策法规/水资源管理','type':u'政府发文'},{'forum':'/slfl/','page':1,'name':u'政策法规/水利法律','type':u'政府发文'},{'forum':'/xzfg/','page':1,'name':u'政策法规/水利行政法规','type':u'政府发文'},{'forum':'/dfxfg/','page':1,'name':u'政策法规/广东省地方性水事法规','type':u'政府发文'},{'forum':'/bsgz/','page':1,'name':u'政策法规/广东省人民政府水事规章','type':u'政府发文'},{'forum':'/bwgz/bwgzszygl/','page':1,'name':u'政策法规/水资源管理','type':u'政府发文'},{'forum':'/bwgz/stbcgl/','page':1,'name':u'政策法规/水土保持管理','type':u'政府发文'},{'forum':'/bwgz/swgl/','page':1,'name':u'政策法规/水文管理','type':u'政府发文'},{'forum':'/qtfg/','page':1,'name':u'其他水事法规规章性文件','type':u'政府发文'}]
+    list_forums1 = [{'forum':'/slzc/szygl/','page':1,'name':u'政策法规/水资源管理,中央','type':u'政府发文'},
+                   {'forum':'/slfl/','page':1,'name':u'政策法规/水利法律,中央','type':u'政府发文'},
+                   {'forum':'/xzfg/','page':1,'name':u'政策法规/水利行政法规,中央','type':u'政府发文'},
+                   {'forum':'/dfxfg/','page':1,'name':u'政策法规/广东省地方性水事法规,广东省','type':u'政府发文'},
+                   {'forum':'/bsgz/','page':1,'name':u'政策法规/广东省人民政府水事规章,广东省','type':u'政府发文'},
+                   {'forum':'/bwgz/bwgzszygl/','page':1,'name':u'政策法规/水资源管理,中央','type':u'政府发文'},
+                   {'forum':'/bwgz/stbcgl/','page':1,'name':u'政策法规/水土保持管理,中央','type':u'政府发文'},
+                   {'forum':'/bwgz/swgl/','page':1,'name':u'政策法规/水文管理,中央','type':u'政府发文'},
+                   {'forum':'/qtfg/','page':1,'name':u'其他水事法规规章性文件,广东省/中央','type':u'政府发文'}]
+
+    list_forums2 = [{'forum':'mtgz','page':100,'name':u'媒体关注','type':u'动态'},
+                   {'forum':'qgss','page':81,'name':u'全国水事','type':u'动态'}]
 
     list_text_css_selector = ['td.content>div.TRS_Editor>p','div.model#about_txt>div.mbd>div.cnt_bd>p','div.slnewscon.autoHeight','div.vintro>p','div.content1']
 
     @every(minutes=24 * 60)
     def on_start(self):
-        for forum in self.list_forums:
-            url = 'http://www.gdwater.gov.cn/xxgk/wjzy/zcfg{}list.htm'.format(forum.get('forum'))
-            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+        # for forum in self.list_forums1:
+        #     url = 'http://www.gdwater.gov.cn/xxgk/wjzy/zcfg{}list.htm'.format(forum.get('forum'))
+        #     self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+        for forum in self.list_forums2:
+            url = 'http://www.gdwater.gov.cn/yszx/slyw/{}/index.html'.format(forum.get('forum'))
+            self.crawl(url, fetch_type='js', callback=self.index_page1,
+                       save={'name': forum.get('name'), 'type': forum.get('type')})
+            for p in range(1,forum.get('page')):
+                url = 'http://www.gdwater.gov.cn/yszx/slyw/{}/index_{}.html'.format(forum.get('forum'),p)
+                self.crawl(url, fetch_type='js', callback=self.index_page1,
+                           save={'name': forum.get('name'), 'type': forum.get('type')})
 
-    @config(age=10 * 24 * 60 * 60)
+    @config(age=24 * 60 * 60)
     def index_page(self, response):
-        pass
-        # for each in response.doc('div.dbgxia>div.dbgshang>table.tbg>tbody>tr>td:nth-child(2)>table:nth-child(4)>tbody>tr>td>table:nth-child(2)>tbody>tr').items():
-        #     url = each('td:nth-child(2)>a').attr.href
-        #     title = each('td:nth-child(2)>a').text()
-        #     created_at = each('td:nth-child(3)').text().replace('&nbsp;','')
-        #     name = response.save['name']
-        #     type = response.save['type']
-        #     self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
+        for each in response.doc('div.row').items():
+            url = each('li.mc>div>a').attr.href
+            title = each('li.mc>div>a').text()
+            created_at = each('li.fbrq').text()
+            name = response.save['name']
+            type = response.save['type']
+            # print url,title,created_at,name,type
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
 
     @config(priority=2)
     def detail_page(self, response):
         url = response.url
         title = response.save['title']
         created_at = response.save['created_at']
+        release_mechanism = response.doc('div.headInfo>table#headContainer>tbody>tr:nth-child(2)>td>table>tbody>tr>td:nth-child(1)>span').text()
         text = ''
-        for cs in self.list_text_css_selector:
-            for each in response.doc(cs).items():
-                text += each.text()
-            if text is not '':
-                break
-        editor = response.doc('td.content>p').text().replace('责编：','')
+        for each in response.doc('div.mainContainer>div#ContentRegion.content>p').items():
+            text += each.text()
+        file_url = response.doc('div.mainContainer>div#ContentRegion.content>p>a').attr.href
+        file_name = None
+        if file_url is not None:
+            file_name = file_url.split('/')[-1]
         forum_name = response.save['name']
         forum_type = response.save['type']
         type_id = None
@@ -72,7 +92,52 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        result = [url,title,created_at,text,editor,forum_name,type_id,crawl_time,u'水利部河长制']
+        # print release_mechanism,text,forum_type,type_id,file_url,file_name
+        result = [url,title,created_at,release_mechanism,text,file_url,file_name,forum_name,type_id,crawl_time,u'广东省水利厅']
+        return result
+
+    @config(age=24 * 60 * 60)
+    def index_page1(self, response):
+        for each in response.doc('div.gl-right>ul.gl-list>li').items():
+            url = each('a').attr.href
+            # title = each('a').text()
+            created_at = each('span').text()
+            name = response.save['name']
+            type = response.save['type']
+            # print url,title,created_at,name,type
+            self.crawl(url, fetch_type='js', callback=self.detail_page1,
+                       save={'created_at': created_at, 'name': name, 'type': type})
+
+    @config(priority=2)
+    def detail_page1(self, response):
+        url = response.url
+        title = response.doc('div.xlbox>h4').text()
+        created_at = response.save['created_at']
+        come_from = response.doc('div.xlbox>h5>label:nth-child(1)').text()
+        if come_from is not None:
+            come_from = come_from.replace('来源：','')
+        text = ''
+        for each in response.doc('div.xl-nr>div>div>div.Custom_UnionStyle>p').items():
+            text += each.text()
+        forum_name = response.save['name']
+        forum_type = response.save['type']
+        type_id = None
+        conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
+        cur = conn.cursor()
+        try:
+            cur.execute("select id from type where name=%s", forum_type)
+            row = cur.fetchone()
+            type_id = row[0]
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+        crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
+        # print release_mechanism,text,forum_type,type_id,file_url,file_name
+        result = [url,title,created_at,release_mechanism,text,file_url,file_name,forum_name,type_id,crawl_time,u'广东省水利厅']
         return result
 
     def on_result(self, result):
@@ -84,7 +149,7 @@ class Handler(BaseHandler):
         rows = cur.fetchall()
         if len(rows) == 0:
             try:
-                sql = 'INSERT INTO website(url,title,push_time,context,come_from,page_type,type_id,spider_time,source) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+                sql = 'INSERT INTO website(url,title,push_time,come_from,context,file_url,file_name,page_type,type_id,spider_time,source) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
                 # 批量插入
                 cur.execute(sql,result)
                 conn.commit()
@@ -94,7 +159,7 @@ class Handler(BaseHandler):
         else:
             result = result[::-1]
             try:
-                sql = 'UPDATE website SET source=%s,spider_time=%s,type_id=%s,page_type=%s,come_from=%s,context=%s,push_time=%s,title=%s WHERE url=%s'
+                sql = 'UPDATE website SET source=%s,spider_time=%s,type_id=%s,page_type=%s,file_name=%s,file_url=%s,context=%s,come_from=%s,push_time=%s,title=%s WHERE url=%s'
                 # 批量更新
                 cur.execute(sql,result)
                 conn.commit()

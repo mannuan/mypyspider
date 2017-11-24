@@ -12,7 +12,7 @@ CREATE TABLE `website` (
   `type_two` int(3) NOT NULL DEFAULT '0',
   `type_one` int(3) NOT NULL DEFAULT '0',
   `type_id` int(5) DEFAULT '0',
-  `file_url` varchar(100) DEFAULT NULL,
+  `file_url` varchar(500) DEFAULT NULL,
   `file_name` varchar(100) DEFAULT NULL,
   `source` varchar(100) NOT NULL DEFAULT '浙江水利厅',
   PRIMARY KEY (`id`)
