@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>爬虫管理模块</title>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <meta name="description" content="pyspider dashboard">
+    <meta name="author" content="binux">
+    <link href="{{ url_for('cdn', path='twitter-bootstrap/3.1.1/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('cdn', path='x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css') }}" rel="stylesheet">
+    <link href="{{ url_for('cdn', path='sortable/0.6.0/css/sortable-theme-bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='index.min.css') }}" rel="stylesheet">
+
+    <script src="{{ url_for('cdn', path='jquery/1.11.0/jquery.min.js') }}"></script>
+  </head>
+
+  <body>
+    <header>
+      <div id="need-set-status-alert" class="alert alert-danger alert-dismissible" style="display:none;" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        项目未启动，请将状态设置为RUNNING或DEBUG。
+      </div>
+      <div id="delete-status-alert" class="alert alert-danger alert-dismissible" style="display:none;" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        在删除项目之前，请将状态设置为TODO或STOP。
+      </div>
+{#      <h1 class="text-center">爬虫管理</h1>#}
+{#      <table class="table queue-info">#}
+{#        <tr>#}
+{#          <th>scheduler</th>#}
+{#          <td class="queue_value" title="scheduler2fetcher">???</td>#}
+{#          <th>fetcher</th>#}
+{#          <td class="queue_value" title="fetcher2processor">???</td>#}
+{#          <th>processor</th>#}
+{#          <td class="queue_value" title="processor2result">???</td>#}
+{#          <th>result_worker</th>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td style="border-width: 0px 1px;"></td>#}
+{#          <td colspan=3></td>#}
+{#          <td style="border-width: 0px 1px;"></td>#}
+{#          <td colspan=2 style="border-width: 0px;"></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#          <td style="border-width: 0px 0px 1px 1px"></td>#}
+{#          <td colspan=3 style="border-width: 1px 0px;">#}
+{#            <span class="queue_value" title="newtask_queue">???</span>#}
+{#            + <span class="queue_value" title="status_queue">???</span>#}
+{#          </td>#}
+{#          <td style="border-width: 0px 1px 1px 0px;"></td>#}
+{#          <td colspan=2 style="border-width: 0px;"></td>#}
+{#        </tr>#}
+{#      </table>#}
+    </header>
+    <section>
+      <div class="global-btn clearfix">
+        <div class="create-btn-div">
+          <button class="project-create btn btn-default btn-primary" data-toggle="modal" data-target="#create-project-modal">创建</button>
+        </div>
+
+        <div class="active-btn-div">
+          {% if config.scheduler_rpc is not none %}
+            <a class="btn btn-default btn-info" href='/hzz/tasks' target=_blank>最近的活动任务</a>
+          {% endif %}
+        </div>
+
+        <div class="modal fade" id="create-project-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">创建新项目</h4>
+              </div>
+              <form class="form-horizontal" method="POST">
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="project-name">项目名</label>
+                    <div class="col-sm-9">
+                      <input class="form-control" type="text" name="project-name" autocomplete="off" >
+                      <span class="help-block" style="display: none;">项目名只能包含数字和字母</span>
+                    </div>
+                  </div>
+{#                    #}
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="start-url">起始网址</label>
+                    <div class="col-sm-9">
+                      <input class="form-control" type="text" name="start-url" autocomplete="on" placeholder="">
+                      <span class="help-block" style="display: none;">请输入正确的网址</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="source-type">来源类型</label>
+                    <div class="col-sm-9">
+                      <select class="form-control" name="source-type">
+                          <option value="论文">论文</option>
+                          <option value="论坛">论坛</option>
+                          <option value="微信">微信</option>
+                          <option value="网页">网页</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="document-type">文档类型</label>
+                    <div class="col-sm-9">
+                      <select class="form-control" name="document-type">
+                          <option value="未分类">未分类</option>
+                          <option value="河长制动态">河长制动态</option>
+                          <option value="河长制政策">河长制政策</option>
+                          <option value="河水治理">河水治理</option>
+                          <option value="标准">标准</option>
+                          <option value="政府发文">政府发文</option>
+                          <option value="治理方案">治理方案</option>
+                          <option value="治理案例">治理案例</option>
+                          <option value="治理评估">治理评估</option>
+                          <option value="治理科技">治理科技</option>
+                          <option value="动态">动态</option>
+                      </select>
+                    </div>
+                  </div>
+{#                  #}
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label" for="script-mode">模式</label>
+                    <div class="col-sm-9">
+                      <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active">
+                          <input type="radio" name="script-mode" id="mode-script" autocomplete="off" value="script" checked> Script
+                        </label>
+                        <label class="btn btn-default">
+                          <input type="radio" name="script-mode" id="mode-slime" autocomplete="off" value="slime"> Slime
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-primary">确认</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table sortable-theme-bootstrap projects">
+        <thead>
+          <tr>
+            <th>组</th>
+            <th>项目名</th>
+            <th>状态</th>
+            <th data-type="num">比率/突发</th>
+            <th data-type="num">平均时间</th>
+            <th class="project-progress" data-type="num">&nbsp;<span>进度</span></th>
+            <th data-type="num">&nbsp;</th>
+            <th data-type="num">&nbsp;</th>
+            <th data-type="num">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th data-type="num">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% raw %}
+          <tr v-cloak v-for="project in projects" data-name="{{* project.name }}">
+            <td class="project-group"><span>{{ project.group }}</span></td>
+            <td class="project-name"><a href="/hzz/debug/{{* project.name }}">{{* project.name }}</a></td>
+            <td class="project-status">
+              <span class="status-{{ project.paused ? 'PAUSED' : project.status }}" :data-value="project.paused ? 'PAUSED' : project.status">
+                {{ project.paused ? 'PAUSED' : project.status }}
+              </span>
+            </td>
+            <td class="project-rate" :data-value="project.rate"><span>{{ project.rate }}/{{ project.burst }}</span></td>
+            <td class="project-time" :data-value="project.time.fetch_time + project.time.process_time">
+              <span v-show="project.time.fetch_time">{{ (project.time.fetch_time * 1000).toFixed(1) }}+{{ (project.time.process_time * 1000).toFixed(2) }}</span>
+            </td>
+            <td v-for="type in '5m,1h,1d,all'.split(',')"
+                class="project-progress progress-{{* type }}"
+                :title="project.progress[type].title"
+                :data-value="project.progress[type].task">
+              <div class="progress">
+                <div class="progress-text">{{* type }}<span v-show="project.progress[type].task">: {{ project.progress[type].task }}</span></div>
+                <div class="progress-bar progress-pending"
+                     :style="{ width: project.progress[type].pending/project.progress[type].task*100 + '%' }"></div>
+                <div class="progress-bar progress-bar-success progress-success"
+                     :style="{ width: project.progress[type].success/project.progress[type].task*100 + '%' }"></div>
+                <div class="progress-bar progress-bar-warning progress-retry"
+                     :style="{ width: project.progress[type].retry/project.progress[type].task*100 + '%' }"></div>
+                <div class="progress-bar progress-bar-danger progress-failed"
+                     :style="{ width: project.progress[type].failed/project.progress[type].task*100 + '%' }"
+                ></div>
+              </div>
+            </td>
+            {% endraw %}
+
+            {% raw %}
+            <td class="project-actions" data-value="{{ project.updatetime }}">
+              {% endraw %}
+              # if config.scheduler_rpc is not none:
+              {% raw %}
+              <button class="project-run btn btn-default btn-xs" @click="project_run(project, $event)">运行</button>
+              <a class="btn btn-default btn-xs" href="/hzz/tasks?project={{ project.name }}" target=_blank>活动任务</a>
+              {% endraw %}
+              # endif
+              # if config.resultdb:
+              {% raw %}
+              <a class="btn btn-default btn-xs" href="/hzz/results?project={{ project.name }}" target=_blank>结果</a>
+              {% endraw %}
+              # endif
+              # if config.resultdb:
+              {% raw %}
+              <a type="button" class="btn btn-default btn-xs" onClick="delcfm('{{ project.name }}','{{ project.status }}',this)">删除</a>
+              {% endraw %}
+              # endif
+              <!-- 信息删除确认 -->
+                <div class="modal fade" id="delete-project-modal">
+                  <div class="modal-dialog">
+                    <div class="modal-content message_align">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">提示信息</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p id="confirm-deletion">您确认要删除吗？</p>
+                      </div>
+                      <div class="modal-footer">
+                         <input type="hidden" id="project-name-selected"/>
+                         <button type="button" class="btn btn-success" data-dismiss="modal">取消</button>
+                         <a onclick="urlSubmit()" class="btn btn-danger" data-dismiss="modal">确定</a>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+                <script type="text/javascript">
+                function delcfm(name,status,that) {
+                   $("#delete-status-alert").hide();
+                   if (status != "TODO" && status != "STOP") {
+                       $("#delete-status-alert").show();
+                       that.setAttribute("class","btn btn-danger btn-xs");
+                       return false;
+                   }
+                   $('#project-name-selected').val(name);
+                   $('#confirm-deletion').text("您确认要删除 ‘"+name+"’ 这个项目吗？");
+                   $('#delete-project-modal').modal();
+                }
+                function urlSubmit(){
+                   var project_name=$.trim($("#project-name-selected").val());
+                   $.ajax({
+                       url:"/hzz/delete?project="+project_name,
+                       type:"GET",
+                       dataType:"text",
+                       success:function(data){
+                           alert(data);
+                       },
+                       error:function(){
+                           alert("删除失败");
+                       }
+                   });
+                   window.location.reload(true);
+                }
+                </script>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <script>
+      // json projects data for vue
+      var projects = {{ projects | tojson | safe }};
+    </script>
+    <script src="{{ url_for('cdn', path='twitter-bootstrap/3.1.1/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('cdn', path='x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js') }}"></script>
+    <script src="{{ url_for('cdn', path='sortable/0.6.0/js/sortable.min.js') }}"></script>
+    <script src="{{ url_for('cdn', path='vue/1.0.26/vue.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='index_hzz.min.js') }}"></script>
+    <script type="text/javascript">
+        function CheckUrl(str) {
+            var strRegex ='(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]';
+            var re=new RegExp(strRegex);
+            if (!re.test(str)) {
+                return true;
+            }
+            return false;
+        }
+        function CheckNum(n) {
+            var re = new RegExp("^[0-9]*$");
+            if (!re.test(n)) {
+                return true;
+            }
+            return false;
+        }
+        $("#create-project-modal form").on('submit', function(ev) {
+            var $this = $(this);
+            var project_name = $this.find('[name=project-name]').val();
+            if (project_name.length == 0 || project_name.search(/[^\w]/) != -1) {
+              $this.find('[name=project-name]').parents('.form-group').addClass('has-error');
+              $this.find('[name=project-name] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=project-name]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=project-name] ~ .help-block').hide();
+            }
+            var start_url = $this.find('[name=start-url]').val();
+            if (start_url.length == 0 || CheckUrl(start_url)) {
+              $this.find('[name=start-url]').parents('.form-group').addClass('has-error');
+              $this.find('[name=start-url] ~ .help-block').show();
+              return false;
+            }else{
+              $this.find('[name=start-url]').parents('.form-group').removeClass('has-error');
+              $this.find('[name=start-url] ~ .help-block').hide();
+            }
+{#            var key_name = $this.find('[name=key-name]').val();#}
+{#            if (key_name.length == 0) {#}
+{#              $this.find('[name=key-name]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=key-name] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=key-name]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=key-name] ~ .help-block').hide();#}
+{#            }#}
+{#            var key_tag_selector = $this.find('[name=key-tag-selector]').val();#}
+{#            if (key_tag_selector.length == 0) {#}
+{#              $this.find('[name=key-tag-selector]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=key-tag-selector] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=key-tag-selector]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=key-tag-selector] ~ .help-block').hide();#}
+{#            }#}
+{#            var key_attr = $this.find('[name=key-attr]').val();#}
+{#            if (key_attr.length == 0) {#}
+{#              $this.find('[name=key-attr]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=key-attr] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=key-attr]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=key-attr] ~ .help-block').hide();#}
+{#            }#}
+{#            var nextpage_name = $this.find('[name=nextpage-name]').val();#}
+{#            if (nextpage_name.length == 0) {#}
+{#              $this.find('[name=nextpage-name]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=nextpage-name] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=nextpage-name]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=nextpage-name] ~ .help-block').hide();#}
+{#            }#}
+{#            var nextpage_tag_selector = $this.find('[name=nextpage-tag-selector]').val();#}
+{#            if (nextpage_tag_selector.length == 0) {#}
+{#              $this.find('[name=nextpage-tag-selector]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=nextpage-tag-selector] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=nextpage-tag-selector]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=nextpage-tag-selector] ~ .help-block').hide();#}
+{#            }#}
+{#            var nextpage_attr = $this.find('[name=nextpage-attr]').val();#}
+{#            if (nextpage_attr.length == 0) {#}
+{#              $this.find('[name=nextpage-attr]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=nextpage-attr] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=nextpage-attr]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=nextpage-attr] ~ .help-block').hide();#}
+{#            }#}
+{#            var page_num = $this.find('[name=page-num]').val();#}
+{#            if (page_num.length == 0 || CheckNum(page_num)) {#}
+{#              $this.find('[name=page-num]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=page-num] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=page-num]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=page-num] ~ .help-block').hide();#}
+{#            }#}
+{#            var title_tag_selector = $this.find('[name=title-tag-selector]').val();#}
+{#            if (title_tag_selector.length == 0) {#}
+{#              $this.find('[name=title-tag-selector]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=title-tag-selector] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=title-tag-selector]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=title-tag-selector] ~ .help-block').hide();#}
+{#            }#}
+{#            var title_attr = $this.find('[name=title-attr]').val();#}
+{#            if (title_attr.length == 0) {#}
+{#              $this.find('[name=title-attr]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=title-attr] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=title-attr]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=title-attr] ~ .help-block').hide();#}
+{#            }#}
+{#            var content_tag_selector = $this.find('[name=content-tag-selector]').val();#}
+{#            if (content_tag_selector.length == 0) {#}
+{#              $this.find('[name=content-tag-selector]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=content-tag-selector] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=content-tag-selector]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=content-tag-selector] ~ .help-block').hide();#}
+{#            }#}
+{#            var publish_time_name = $this.find('[name=publish-time-name]').val();#}
+{#            if (publish_time_name.length == 0) {#}
+{#              $this.find('[name=publish-time-name]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=publish-time-name] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=publish-time-name]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=publish-time-name] ~ .help-block').hide();#}
+{#            }#}
+{#            var publish_time_tag_selector = $this.find('[name=publish-time-tag-selector]').val();#}
+{#            if (publish_time_tag_selector.length == 0) {#}
+{#              $this.find('[name=publish-time-tag-selector]').parents('.form-group').addClass('has-error');#}
+{#              $this.find('[name=publish-time-tag-selector] ~ .help-block').show();#}
+{#              return false;#}
+{#            }else{#}
+{#              $this.find('[name=publish-time-tag-selector]').parents('.form-group').removeClass('has-error');#}
+{#              $this.find('[name=publish-time-tag-selector] ~ .help-block').hide();#}
+{#            }#}
+        });
+    </script>
+  </body>
+</html>
+<!-- vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8 syntax=htmldjango: -->
+

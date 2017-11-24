@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/other_crawl/website.sql" afterPath="$PROJECT_DIR$/other_crawl/website.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/other_crawl/广东省水利厅.py" afterPath="$PROJECT_DIR$/other_crawl/广东省水利厅.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pyspider/webui/__init__.py" afterPath="$PROJECT_DIR$/pyspider/webui/__init__.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,35 +35,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="广东省水利厅.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/other_crawl/广东省水利厅.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="123" column="22" lean-forward="true" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
-              <folding>
-                <element signature="e#93#133#0" expanded="true" />
-                <marker date="1511503242316" expanded="true" signature="4279:4312" ph="select id fr... type" />
-                <marker date="1511503242316" expanded="true" signature="6216:6249" ph="select id fr... type" />
-                <marker date="1511503242316" expanded="true" signature="7062:7098" ph="select * fro... website" />
-                <marker date="1511503242316" expanded="true" signature="7210:7365" ph="INSERT INTO website... " />
-                <marker date="1511503242316" expanded="true" signature="7639:7790" ph="UPDATE websi... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="website.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/other_crawl/website.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -75,9 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/get</find>
-      <find>/queues</find>
-      <find>/update</find>
       <find>/counter</find>
       <find>/results</find>
       <find>/results/dump/</find>
@@ -95,7 +65,6 @@
       <find>key_name</find>
       <find>help-block</find>
       <find>project.group</find>
-      <find>create-project-modal</find>
       <find>;</find>
       <find>project-name</find>
       <find>projectdb</find>
@@ -105,6 +74,10 @@
       <find>Weibo</find>
       <find>未认证</find>
       <find>data</find>
+      <find>spiderweb</find>
+      <find>hzz</find>
+      <find>spider</find>
+      <find>create-project-modal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,22 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pyspider/webui/task_spiderweb.py" />
-        <option value="$PROJECT_DIR$/pyspider/webui/templates/tasks_spiderweb.html" />
-        <option value="$PROJECT_DIR$/pyspider/webui/templates/task_spiderweb.html" />
-        <option value="$PROJECT_DIR$/pyspider/webui/templates/result_spiderweb.html" />
-        <option value="$PROJECT_DIR$/pyspider/webui/static/debug_spiderweb.min.js" />
-        <option value="$PROJECT_DIR$/pyspider/webui/templates/debug_spiderweb.html" />
-        <option value="$PROJECT_DIR$/pyspider/webui/static/index_spiderweb.min.js" />
-        <option value="$PROJECT_DIR$/pyspider/webui/debug.py" />
-        <option value="$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py" />
-        <option value="$PROJECT_DIR$/tmp/tmp.js" />
-        <option value="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" />
-        <option value="$PROJECT_DIR$/tmp/tset.html" />
-        <option value="$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html" />
-        <option value="$PROJECT_DIR$/pyspider/webui/index_spiderweb.py" />
-        <option value="$PROJECT_DIR$/tmp/test.py" />
-        <option value="$PROJECT_DIR$/tmp/GetWebPageSourceCode.py" />
         <option value="$PROJECT_DIR$/tmp/weibo_userid.py" />
         <option value="$PROJECT_DIR$/tmp/weibo_user.sql" />
         <option value="$PROJECT_DIR$/tmp/test_pymysql.py" />
@@ -169,6 +126,22 @@
         <option value="$PROJECT_DIR$/other_crawl/中国水网.py" />
         <option value="$PROJECT_DIR$/other_crawl/website.sql" />
         <option value="$PROJECT_DIR$/other_crawl/广东省水利厅.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/__init__.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/tasks_hzz.html" />
+        <option value="$PROJECT_DIR$/pyspider/webui/static/src/index_hzz.min.js" />
+        <option value="$PROJECT_DIR$/pyspider/webui/index_hzz.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/result_hzz.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/task_hzz.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/templates/result_hzz.html" />
+        <option value="$PROJECT_DIR$/pyspider/webui/templates/task_hzz.html" />
+        <option value="$PROJECT_DIR$/pyspider/webui/templates/tasks_hzz.html" />
+        <option value="$PROJECT_DIR$/pyspider/webui/static/index_hzz.min.js" />
+        <option value="$PROJECT_DIR$/pyspider/webui/templates/debug_hzz.html" />
+        <option value="$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html" />
+        <option value="$PROJECT_DIR$/pyspider/libs/sample_handler_hzz.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/templates/index_hzz.html" />
+        <option value="$PROJECT_DIR$/pyspider/webui/debug_hzz.py" />
       </list>
     </option>
   </component>
@@ -209,12 +182,13 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="other_crawl" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="weibo" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="webui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -237,6 +211,7 @@
       <recent name="$PROJECT_DIR$/tmp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pyspider/webui/templates" />
       <recent name="$PROJECT_DIR$/other_crawl" />
       <recent name="$PROJECT_DIR$/weibo" />
       <recent name="$PROJECT_DIR$/tmp" />
@@ -465,9 +440,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="27" width="1680" height="990" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -513,139 +487,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="50" column="73" lean-forward="true" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/result_spiderweb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="52" lean-forward="true" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/bootstrap.min.js" />
-    <entry file="file://$PROJECT_DIR$/tmp/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/static/index_spiderweb.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="0" column="1940" lean-forward="false" selection-start-line="0" selection-start-column="1940" selection-end-line="0" selection-end-column="1940" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/database/sqlite/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/database/basedb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2143">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="91" column="47" lean-forward="true" selection-start-line="91" selection-start-column="47" selection-end-line="91" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/static/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="183" column="45" lean-forward="true" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/app.py" />
-    <entry file="file://$PROJECT_DIR$/pyspider/database/base/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/database/base/resultdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/database/sqlite/projectdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="683">
-          <caret line="57" column="63" lean-forward="true" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/database/sqlite/resultdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-793">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/database/base/projectdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="319" column="48" lean-forward="false" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/GetWebPageSourceCode.py" />
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_user.sql" />
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/index_spiderweb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="167" column="26" lean-forward="true" selection-start-line="167" selection-start-column="26" selection-end-line="167" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/lxml/html/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weibo/weibo_user_abandoned.py" />
-    <entry file="file://$PROJECT_DIR$/tmp/weibo_hot_comment_user.py" />
-    <entry file="file://$PROJECT_DIR$/weibo/weibo_local_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1045">
-          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/test_pymysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="2" lean-forward="false" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/temp.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -832,20 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/other_crawl/水利部河长制.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="56" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="109" selection-end-column="24" />
-          <folding>
-            <element signature="e#93#133#0" expanded="true" />
-            <marker date="1511492318211" expanded="true" signature="3337:3370" ph="select id fr... type" />
-            <marker date="1511492318211" expanded="true" signature="4076:4112" ph="select * fro... website" />
-            <marker date="1511492318211" expanded="true" signature="4224:4354" ph="INSERT INTO website... " />
-            <marker date="1511492318211" expanded="true" signature="4628:4754" ph="UPDATE websi... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/other_crawl/website.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -856,16 +683,246 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/other_crawl/广东省水利厅.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="123" column="22" lean-forward="true" selection-start-line="123" selection-start-column="22" selection-end-line="123" selection-end-column="22" />
+        <state relative-caret-position="611">
+          <caret line="148" column="29" lean-forward="true" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="29" />
           <folding>
             <element signature="e#93#133#0" expanded="true" />
-            <marker date="1511503242316" expanded="true" signature="4279:4312" ph="select id fr... type" />
-            <marker date="1511503242316" expanded="true" signature="6216:6249" ph="select id fr... type" />
-            <marker date="1511503242316" expanded="true" signature="7062:7098" ph="select * fro... website" />
-            <marker date="1511503242316" expanded="true" signature="7210:7365" ph="INSERT INTO website... " />
-            <marker date="1511503242316" expanded="true" signature="7639:7790" ph="UPDATE websi... " />
+            <marker date="1511503347045" expanded="true" signature="4279:4312" ph="select id fr... type" />
+            <marker date="1511503347045" expanded="true" signature="6216:6249" ph="select id fr... type" />
+            <marker date="1511503347045" expanded="true" signature="7012:7048" ph="select * fro... website" />
+            <marker date="1511503347045" expanded="true" signature="7160:7315" ph="INSERT INTO website... " />
+            <marker date="1511503347045" expanded="true" signature="7589:7740" ph="UPDATE websi... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weibo/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="20" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+          <folding>
+            <element signature="e#186#196#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/index_spiderweb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="143" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="168" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/result_spiderweb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/task_spiderweb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="7" column="164" lean-forward="false" selection-start-line="7" selection-start-column="164" selection-end-line="7" selection-end-column="164" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/result_spiderweb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="54" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/task_spiderweb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/tasks_spiderweb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/static/src/index_hzz.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/static/index_spiderweb.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="0" column="1760" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/index_hzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="165" column="27" lean-forward="true" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/result_hzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/task_hzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="e#185#198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/result_hzz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/task_hzz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/tasks_hzz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/debug_spiderweb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other_crawl/水利部河长制.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="75" selection-end-column="90" />
+          <folding>
+            <element signature="e#93#133#0" expanded="true" />
+            <marker date="1511492318211" expanded="true" signature="3337:3370" ph="select id fr... type" />
+            <marker date="1511492318211" expanded="true" signature="4076:4112" ph="select * fro... website" />
+            <marker date="1511492318211" expanded="true" signature="4224:4354" ph="INSERT INTO website... " />
+            <marker date="1511492318211" expanded="true" signature="4628:4754" ph="UPDATE websi... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler_hzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="50" lean-forward="false" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+          <folding>
+            <element signature="e#99#139#0" expanded="true" />
+            <marker date="1511530504912" expanded="true" signature="1001:1034" ph="select id fr... type" />
+            <marker date="1511530504912" expanded="true" signature="1559:1595" ph="select * fro... website" />
+            <marker date="1511530504912" expanded="true" signature="1707:1828" ph="INSERT INTO website... " />
+            <marker date="1511530504912" expanded="true" signature="1707:1830" ph="INSERT INTO website... " />
+            <marker date="1511530504912" expanded="true" signature="1707:1845" ph="INSERT INTO website... " />
+            <marker date="1511530504912" expanded="true" signature="1707:1864" ph="INSERT INTO website... " />
+            <marker date="1511530504912" expanded="true" signature="2138:2203" ph="UPDATE websi... " />
+            <marker date="1511530504912" expanded="true" signature="2138:2291" ph="UPDATE websi... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/debug_hzz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="84" lean-forward="true" selection-start-line="18" selection-start-column="84" selection-end-line="18" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="166" column="50" lean-forward="true" selection-start-line="166" selection-start-column="50" selection-end-line="166" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/static/index_hzz.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="0" column="284" lean-forward="false" selection-start-line="0" selection-start-column="284" selection-end-line="0" selection-end-column="284" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug_hzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+          <folding>
+            <element signature="e#186#196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/index_hzz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="303" column="63" lean-forward="false" selection-start-line="303" selection-start-column="63" selection-end-line="303" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -5,4 +5,4 @@
 #         http://binux.me
 # Created on 2014-02-22 23:20:40
 
-from . import app, index, debug, task, result, login, index_spiderweb, debug_spiderweb, result_spiderweb, task_spiderweb
+from . import app, index, debug, task, result, login, index_spiderweb, debug_spiderweb, result_spiderweb, task_spiderweb, index_hzz, debug_hzz, result_hzz, task_hzz

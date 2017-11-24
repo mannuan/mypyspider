@@ -136,8 +136,8 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        # print release_mechanism,text,forum_type,type_id,file_url,file_name
-        result = [url,title,created_at,release_mechanism,text,file_url,file_name,forum_name,type_id,crawl_time,u'广东省水利厅']
+        print title,come_from,text,forum_type,type_id
+        result = [url,title,created_at,come_from,text,forum_name,type_id,crawl_time,u'广东省水利厅']
         return result
 
     def on_result(self, result):
