@@ -32,24 +32,34 @@ class Handler(BaseHandler):
                    {'forum':'/bwgz/swgl/','page':1,'name':u'政策法规/水文管理,中央','type':u'政府发文'},
                    {'forum':'/qtfg/','page':1,'name':u'其他水事法规规章性文件,广东省/中央','type':u'政府发文'}]
 
-    list_forums2 = [{'forum':'mtgz','page':100,'name':u'媒体关注','type':u'动态'},
-                   {'forum':'qgss','page':81,'name':u'全国水事','type':u'动态'}]
+    list_forums2 = [{'forum':'slyw/mtgz','page':100,'name':u'媒体关注','type':u'动态'},
+                   {'forum':'slyw/qgss','page':81,'name':u'全国水事','type':u'动态'},
+                    {'forum': 'slbk/szybh', 'page': 9, 'name': u'河长制/水利百科/水资源保护', 'type': u'动态'},
+                    {'forum': 'slbk/stbc', 'page': 7, 'name': u'河长制/水利百科/水土保持', 'type': u'动态'}]
 
     list_text_css_selector = ['td.content>div.TRS_Editor>p','div.model#about_txt>div.mbd>div.cnt_bd>p','div.slnewscon.autoHeight','div.vintro>p','div.content1']
 
     @every(minutes=24 * 60)
     def on_start(self):
-        # for forum in self.list_forums1:
-        #     url = 'http://www.gdwater.gov.cn/xxgk/wjzy/zcfg{}list.htm'.format(forum.get('forum'))
-        #     self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+        for forum in self.list_forums1:
+            url = 'http://www.gdwater.gov.cn/xxgk/wjzy/zcfg{}list.htm'.format(forum.get('forum'))
+            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
         for forum in self.list_forums2:
-            url = 'http://www.gdwater.gov.cn/yszx/slyw/{}/index.html'.format(forum.get('forum'))
+            url = 'http://www.gdwater.gov.cn/yszx/{}/index.html'.format(forum.get('forum'))
             self.crawl(url, fetch_type='js', callback=self.index_page1,
                        save={'name': forum.get('name'), 'type': forum.get('type')})
             for p in range(1,forum.get('page')):
-                url = 'http://www.gdwater.gov.cn/yszx/slyw/{}/index_{}.html'.format(forum.get('forum'),p)
+                url = 'http://www.gdwater.gov.cn/yszx/{}/index_{}.html'.format(forum.get('forum'),p)
                 self.crawl(url, fetch_type='js', callback=self.index_page1,
                            save={'name': forum.get('name'), 'type': forum.get('type')})
+        forum = {'page':10,'name':u'河长制/工作动态','type':u'动态'}
+        url = "http://www.gdwater.gov.cn/yszx/ztjs/2017nzt/cxhcz/hczgzdt/index.html"
+        self.crawl(url, fetch_type='js', callback=self.index_page2,
+                   save={'name': forum.get('name'), 'type': forum.get('type')})
+        for p in range(1,forum.get('page')):
+            url = "http://www.gdwater.gov.cn/yszx/ztjs/2017nzt/cxhcz/hczgzdt/index_{}.html".format(p)
+            self.crawl(url, fetch_type='js', callback=self.index_page2,
+                       save={'name': forum.get('name'), 'type': forum.get('type')})
 
     @config(age=24 * 60 * 60)
     def index_page(self, response):
@@ -116,8 +126,59 @@ class Handler(BaseHandler):
         come_from = response.doc('div.xlbox>h5>label:nth-child(1)').text()
         if come_from is not None:
             come_from = come_from.replace('来源：','')
+        selector = ['div.TRS_Editor>p','div.xl-nr']
         text = ''
-        for each in response.doc('div.xl-nr>div>div>div.Custom_UnionStyle>p').items():
+        for s in selector:
+            for each in response.doc(s).items():
+                text += each.text()
+            if text is not '':
+                break
+        forum_name = response.save['name']
+        forum_type = response.save['type']
+        type_id = None
+        conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
+        cur = conn.cursor()
+        try:
+            cur.execute("select id from type where name=%s", forum_type)
+            row = cur.fetchone()
+            type_id = row[0]
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+        crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
+        # print title
+        # print come_from
+        # print text
+        # print type_id
+        result = [url,title,created_at,come_from,text,'','',forum_name,type_id,crawl_time,u'广东省水利厅']
+        return result
+
+    @config(age=24 * 60 * 60)
+    def index_page2(self, response):
+        for each in response.doc('div.gl-zw>ul.commonlist.mt20>li').items():
+            url = each('a').attr.href
+            title = each('a').attr.title
+            created_at = each('span').text()
+            name = response.save['name']
+            type = response.save['type']
+            # print url,title,created_at,name,type
+            self.crawl(url, fetch_type='js', callback=self.detail_page2,
+                       save={'title':title,'created_at': created_at, 'name': name, 'type': type})
+
+    @config(priority=2)
+    def detail_page2(self, response):
+        url = response.url
+        title = response.save['title']
+        created_at = response.save['created_at']
+        come_from = response.doc('div.clearfix>div.f-l.rqly').text()
+        if come_from is not None:
+            come_from = come_from.replace('来源：','')
+        text = ''
+        for each in response.doc('div.TRS_Editor>p').items():
             text += each.text()
         forum_name = response.save['name']
         forum_type = response.save['type']
@@ -136,8 +197,11 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        print title,come_from,text,forum_type,type_id
-        result = [url,title,created_at,come_from,text,forum_name,type_id,crawl_time,u'广东省水利厅']
+        # print title
+        # print come_from
+        # print text
+        # print type_id
+        result = [url,title,created_at,come_from,text,'','',forum_name,type_id,crawl_time,u'广东省水利厅']
         return result
 
     def on_result(self, result):

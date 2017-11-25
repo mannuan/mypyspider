@@ -26,6 +26,4 @@ CREATE TABLE `website` (
 --
 -- SET SQL_SAFE_UPDATES = 0;
 
-UPDATE website SET title=%s,push_time=%s,context=%s,come_from=%s,page_type=%s,type_id=%s,spider_time=%s,source=%s WHERE url=%s
-
-http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/mtjj/201703/t20170322_902679.html 2017-11-24 10:02:42
+ALTER TABLE `note` DEFAULT CHARACTER SET utf8mb4;

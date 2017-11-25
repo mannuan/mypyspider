@@ -19,7 +19,7 @@ try:
 except ImportError:
     from flask.ext import login
 
-from pyspider.libs import utils, sample_handler, dataurl, sample_handler_hzz
+from pyspider.libs import utils, sample_handler, dataurl, sample_handler_hzz_website
 from pyspider.libs.response import rebuild_response
 from pyspider.processor.project_module import ProjectManager, ProjectFinder
 from .app import app
@@ -32,12 +32,12 @@ default_task = {
         'callback': 'on_start',
     },
 }
-default_script_hzz = inspect.getsource(sample_handler_hzz)
+default_script_hzz_website = inspect.getsource(sample_handler_hzz_website)
 
 
 @app.route('/hzz/debug/<project>', methods=['GET', 'POST'])
 def hzz_debug(project):
-    # print(request.values)
+    print(request.values)
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
@@ -45,12 +45,18 @@ def hzz_debug(project):
     if info:
         script = info['script']
     else:
-        script = (default_script_hzz
+        # if request.values.get('source-type') is u'网页':
+        script = (default_script_hzz_website
                   .replace('__DATE__', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
                   .replace('__PROJECT_NAME__', project)
                   .replace('__START_URL__', request.values.get('start-url') or '__START_URL__')
-                  .replace('__SOURCE_TYPE__', request.values.get('source-type') or '__SOURCE_TYPE__'))
-
+                  .replace('__DOCUMENT_TYPE__', request.values.get('document-type') or '__DOCUMENT_TYPE__'))
+        # elif request.values.get('source-type') is u'论文':
+        #     pass
+        # elif request.values.get('source-type') is u'微信':
+        #     pass
+        # elif request.values.get('source-type') is u'论坛':
+        #     pass
 
     taskid = request.args.get('taskid')
     if taskid:

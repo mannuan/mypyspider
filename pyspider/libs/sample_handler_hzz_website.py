@@ -34,7 +34,7 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
         try:
-            cur.execute("select id from type where name=%s", u'__SOURCE_TYPE__')
+            cur.execute("select id from type where name=%s", u'__DOCUMENT_TYPE__')
             row = cur.fetchone()
             type_id = row[0]
             conn.commit()
