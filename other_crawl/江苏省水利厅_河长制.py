@@ -35,7 +35,7 @@ class Handler(BaseHandler):
                 url = 'http://jswater.jiangsu.gov.cn/col/{}/index.html?uid=191194&pageNum={}'.format(forum.get('forum'),p)
                 self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
 
-    @config(age=10 * 24 * 60 * 60)
+    @config(age=24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('div.default_pgContainer>table>tbody>tr').items():
             url = each('td:nth-child(1)>div>a').attr.href
