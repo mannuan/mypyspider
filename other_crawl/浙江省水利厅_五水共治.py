@@ -56,11 +56,12 @@ class Handler(BaseHandler):
             name = response.save['name']
             type = response.save['type']
             # print url,title,created_at,name,type
-            timeStamp1 = int(time.mktime(time.strptime("2015.11.10", "%Y.%m.%d")))
-            timeStamp2 = int(time.mktime(time.strptime(created_at, "%Y.%m.%d")))
-            if timeStamp2 > timeStamp1:
-                self.crawl(url, fetch_type='js', callback=self.detail_page,
-                       save={'title': title, 'created_at': created_at, 'name': name, 'type': type})
+            print type(created_at)
+            # timeStamp1 = int(time.mktime(time.strptime("2015.11.10", "%Y.%m.%d")))
+            # timeStamp2 = int(time.mktime(time.strptime(created_at, "%Y.%m.%d")))
+            # if timeStamp2 > timeStamp1:
+            #     self.crawl(url, fetch_type='js', callback=self.detail_page,
+            #            save={'title': title, 'created_at': created_at, 'name': name, 'type': type})
 
     @config(priority=2)
     def detail_page(self, response):

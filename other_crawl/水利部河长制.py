@@ -35,7 +35,7 @@ class Handler(BaseHandler):
                 url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/index_{}.html'.format(forum.get('forum'),p)
                 self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
 
-    @config(age=10 * 24 * 60 * 60)
+    @config(age=24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('div.dbgxia>div.dbgshang>table.tbg>tbody>tr>td:nth-child(2)>table:nth-child(4)>tbody>tr>td>table:nth-child(2)>tbody>tr').items():
             url = each('td:nth-child(2)>a').attr.href

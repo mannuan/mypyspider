@@ -36,18 +36,18 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         # 先查找是否存在
-        sql = "select note_url,note_id from note where note_url like %s"
-        cur.execute(sql,"https://m.weibo.cn/api/comments/show?id=%")
+        sql = "select id,note_id from invitation where source = %s"
+        cur.execute(sql,u'微博')
         rows = cur.fetchall()
         conn.commit()
         cur.close()
         conn.close()
         for row in rows:
-            url = row[0]#热门评论都在第一页
-            note_id = row[1]
-            weibo_id = url.split('&')[0].split('=')[-1]
-            # print url,weibo_id,note_id
-            self.crawl(url, callback=self.index_page,save={'weibo_id':weibo_id,'note_id':note_id})
+            url = "https://m.weibo.cn/api/comments/show?id={}&page=1".format(row[1])#热门评论都在第一页
+            id = row[0]
+            weibo_id = row[1]
+            # print url,id,weibo_id
+            self.crawl(url, callback=self.index_page,save={'id':id,'weibo_id':weibo_id})
 
     @config(age=12 * 60 * 60)#12小时
     def index_page(self, response):
@@ -64,7 +64,7 @@ class Handler(BaseHandler):
             user_id = comment.get('user').get('id')  # 发表评论者的id
             user_name = comment.get('user').get('screen_name')  # 发表评论者的昵称
             weibo_id = response.save['weibo_id']#评论所对应的微博的id
-            note_id = response.save['note_id']
+            id = response.save['id']
             comment_id = comment.get('id')#评论的id
             created_at = comment.get('created_at')#创建的时间
             source = comment.get('source')  # 来自那个哪个设备
@@ -75,7 +75,7 @@ class Handler(BaseHandler):
             text = tree.xpath('string(.)')  # 微博内容,用string函数过滤多余标签
             like_counts = comment.get('like_counts')  # 点赞数
             crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-            result.append([note_id,comment_id,text,created_at,crawl_time,user_id])
+            result.append([id,comment_id,text,crawl_time,created_at,u'微博',like_counts,user_name])
         # print result
         return result
 
@@ -85,7 +85,7 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO note_comment values(%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO invitation_comment values(%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
             cur.executemany(sql,result)
             conn.commit()

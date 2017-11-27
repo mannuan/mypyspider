@@ -22,48 +22,43 @@ class Handler(BaseHandler):
     }
     }
 
-    list_forums = [{'forum':'policy','page':429,'name':u'政策文件','type':u'政府发文'},
-                   {'forum':'law','page':47,'name':u'法律法规','type':u'政府发文'},
-                   {'forum':'standard','page':64,'name':u'标准规范','type':u'标准'}]
+    list_forums = [{'forum':'col43216','page':4,'name':u'时事要闻','type':u'动态'},
+                   {'forum':'col42975','page':5,'name':u'各地动态','type':u'动态'},
+                   {'forum':'col42896','page':2,'name':u'媒体聚焦','type':u'动态'}]
+
+    list_text_css_selector = ['td.content>div.TRS_Editor>p','div.model#about_txt>div.mbd>div.cnt_bd>p','div.slnewscon.autoHeight','div.vintro>p','div.content1']
 
     @every(minutes=24 * 60)
     def on_start(self):
         for forum in self.list_forums:
             for p in range(1,forum.get('page')+1):
-                url = 'http://www.h2o-china.com/{}/home?ordby=dateline&sort=DESC&page={}'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'forum':forum.get('forum'),'name':forum.get('name'),'type':forum.get('type')})
+                url = 'http://jswater.jiangsu.gov.cn/col/{}/index.html?uid=191194&pageNum={}'.format(forum.get('forum'),p)
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
 
-    @config(age=24 * 60 * 60)
+    @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        for each in response.doc('div.lists.txtList>ul>li').items():
-            url = each('em.title>a.ellip.w540.i-pdf').attr.href
-            file_format = 'pdf'
-            if url is None:
-                url = each('em.title>a.ellip.w540.i-word').attr.href
-                file_format = 'doc'
-                if url is None:
-                    url = each('em.title>a.ellip.w540').attr.href
-                    file_format = 'txt'
-            forum = response.save['forum']
+        for each in response.doc('div.default_pgContainer>table>tbody>tr').items():
+            url = each('td:nth-child(1)>div>a').attr.href
+            title = each('td:nth-child(1)>div>a').attr.title
+            created_at = each('td:nth-child(2)').text()
             name = response.save['name']
             type = response.save['type']
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'forum':forum,'name':name,'type':type,'file_format':file_format})
+            # print url
+            # print title
+            # print created_at
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
 
     @config(priority=2)
     def detail_page(self, response):
         url = response.url
-        title = response.doc('div.hd>h1').text()
-        file_type = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(2)').text()
-        created_at = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(4)').text()
-        dispatch_unit = response.doc('div.traits>table>tbody>tr:nth-child(2)>td:nth-child(2)').text()
-        key_words = response.doc('div.traits>table>tbody>tr:nth-child(4)>td:nth-child(2)').text()
-        abstract = response.doc('div.traits>table>tbody>tr:nth-child(5)>td:nth-child(2)').text()
+        title = response.save['title']
+        created_at = response.save['created_at']
+        text = ''
+        for each in response.doc('div#zoom>p').items():
+            text += each.text()
+        come_from = ''
         forum_name = response.save['name']
         forum_type = response.save['type']
-        file_id = url.split('/')[-1].replace('.html','')
-        file_format = response.save['file_format']
-        file_name = file_id+'.'+file_format
-        file_url = 'http://www.h2o-china.com/{}/view/download?id={}'.format(response.save['forum'],file_id)
         type_id = None
         conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
@@ -79,7 +74,8 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        result = [url,title,created_at,dispatch_unit,abstract,forum_name,type_id,file_name,file_url,crawl_time,u'中国水网']
+        result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'江苏省水利厅/河长制']
+        # print text
         return result
 
     def on_result(self, result):
@@ -91,7 +87,7 @@ class Handler(BaseHandler):
         rows = cur.fetchall()
         if len(rows) == 0:
             try:
-                sql = 'INSERT INTO website(url,title,push_time,come_from,context,page_type,type_id,file_name,file_url,spider_time,source) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+                sql = 'INSERT INTO website(url,title,push_time,context,come_from,page_type,type_id,spider_time,source) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
                 # 批量插入
                 cur.execute(sql,result)
                 conn.commit()
@@ -101,8 +97,8 @@ class Handler(BaseHandler):
         else:
             result = result[::-1]
             try:
-                sql = 'UPDATE website SET source=%s,spider_time=%s,file_url=%s,file_name=%s,type_id=%s,page_type=%s,context=%s,come_from=%s,push_time=%s,title=%s WHERE url=%s'
-                # 批量插入
+                sql = 'UPDATE website SET source=%s,spider_time=%s,type_id=%s,page_type=%s,come_from=%s,context=%s,push_time=%s,title=%s WHERE url=%s'
+                # 批量更新
                 cur.execute(sql,result)
                 conn.commit()
             except Exception as e:
