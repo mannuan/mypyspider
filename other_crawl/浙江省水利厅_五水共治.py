@@ -31,10 +31,10 @@ class Handler(BaseHandler):
         url = "http://www.zjwater.com/pages/category/0bja/index_1.htm"
         self.crawl(url, fetch_type='js', callback=self.index_page1,
                    save={'name': u"政策文件,2015年11月10日起", 'type': u"政府发文"})
-        # for forum in self.list_forums:
-        #     for p in range(1,forum.get('page')+1):
-        #         url = 'http://www.zjwater.com/pages/category/{}/index_{}.htm'.format(forum.get('forum'),p)
-        #         self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+        for forum in self.list_forums:
+            for p in range(1,forum.get('page')+1):
+                url = 'http://www.zjwater.com/pages/category/{}/index_{}.htm'.format(forum.get('forum'),p)
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
 
     @config(age=24 * 60 * 60)
     def index_page(self, response):

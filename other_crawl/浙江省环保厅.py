@@ -37,23 +37,28 @@ class Handler(BaseHandler):
             created_at = each('td:nth-child(2)').text()
             name = response.save['name']
             type = response.save['type']
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'name':name,'type':type})
+            # print url,title,created_at,name,type
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
 
     @config(priority=2)
     def detail_page(self, response):
         url = response.url
-        title = response.doc('div.hd>h1').text()
-        file_type = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(2)').text()
-        created_at = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(4)').text()
-        dispatch_unit = response.doc('div.traits>table>tbody>tr:nth-child(2)>td:nth-child(2)').text()
-        key_words = response.doc('div.traits>table>tbody>tr:nth-child(4)>td:nth-child(2)').text()
-        abstract = response.doc('div.traits>table>tbody>tr:nth-child(5)>td:nth-child(2)').text()
+        title = response.save['title']
+        created_at = response.save['created_at']
+        dispatch_unit = response.doc('table.xxgkinfo>tbody>tr:nth-child(3)>td:nth-child(2)').text()
+        text = ''
+        for cs in ['div#zoom>p','div.TRS_PreAppend>p','div.Custom_UnionStyle']:
+            for each in response.doc(cs).items():
+                text += each.text()
+            if text is not '':
+                break
+        file_url = response.doc('div#zoom>a').attr.href
+        file_name = response.doc('div#zoom>a').text()
+        # if file_name.find('.pdf') is -1 or file_name.find('.doc') is -1:
+        #     file_url = None
+        #     file_name = None
         forum_name = response.save['name']
         forum_type = response.save['type']
-        file_id = url.split('/')[-1].replace('.html','')
-        file_format = response.save['file_format']
-        file_name = file_id+'.'+file_format
-        file_url = 'http://www.h2o-china.com/{}/view/download?id={}'.format(response.save['forum'],file_id)
         type_id = None
         conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
@@ -69,7 +74,10 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        result = [url,title,created_at,dispatch_unit,abstract,forum_name,type_id,file_name,file_url,crawl_time,u'中国水网']
+        result = [url,title,created_at,dispatch_unit,text,forum_name,type_id,crawl_time,u'浙江省环保厅',file_url,file_name]
+        # print dispatch_unit
+        # print text
+        # print type_id
         return result
 
     def on_result(self, result):
@@ -81,7 +89,7 @@ class Handler(BaseHandler):
         rows = cur.fetchall()
         if len(rows) == 0:
             try:
-                sql = 'INSERT INTO website(url,title,push_time,come_from,context,page_type,type_id,file_name,file_url,spider_time,source) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+                sql = 'INSERT INTO website(url,title,push_time,come_from,context,page_type,type_id,spider_time,source,file_url,file_name) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
                 # 批量插入
                 cur.execute(sql,result)
                 conn.commit()
@@ -91,7 +99,7 @@ class Handler(BaseHandler):
         else:
             result = result[::-1]
             try:
-                sql = 'UPDATE website SET source=%s,spider_time=%s,file_url=%s,file_name=%s,type_id=%s,page_type=%s,context=%s,come_from=%s,push_time=%s,title=%s WHERE url=%s'
+                sql = 'UPDATE website SET file_name=%s,file_url=%s,source=%s,spider_time=%s,type_id=%s,page_type=%s,context=%s,come_from=%s,push_time=%s,title=%s WHERE url=%s'
                 # 批量插入
                 cur.execute(sql,result)
                 conn.commit()
