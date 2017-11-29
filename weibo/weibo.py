@@ -46,7 +46,7 @@ class Handler(BaseHandler):
     def on_start(self):
         for kw in self.key_words:
             url = 'http://s.weibo.com/weibo/{}'.format(kw)
-            self.crawl(url, fetch_type='js', callback=self.index_page, exetime=time.time()+random.randint(30*60, 12*60*60))#30分钟～12小时
+            self.crawl(url, fetch_type='js', callback=self.index_page, exetime=time.time()+random.randint(60*60, 24*60*60))#1小时～12小时
 
     @config(age=24 * 60 * 60)
     def index_page(self, response):
@@ -60,7 +60,7 @@ class Handler(BaseHandler):
             if user_id and user_name and weibo_id and created_at and source:
                 user_id = user_id.replace('ouid=','')#微博用户的id
                 url = "https://m.weibo.cn/statuses/extend?id={}".format(weibo_id)
-                self.crawl(url, callback=self.detail_page, save={'user_id':user_id,'user_name':user_name,'weibo_id':weibo_id,'created_at':created_at,'source':source}, exetime=random.randint(30*60, 12*60*60))#30分钟～12小时
+                self.crawl(url, callback=self.detail_page, save={'user_id':user_id,'user_name':user_name,'weibo_id':weibo_id,'created_at':created_at,'source':source}, exetime=time.time()+random.randint(60*60, 24*60*60))#1小时～12小时
 
     @config(priority=2)
     def detail_page(self, response):

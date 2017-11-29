@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <link href="{{ url_for('static', filename='codemirror.css') }}" rel="stylesheet">
+      <script src="{{ url_for('static', filename='codemirror.js') }}"></script>
+      <script src="{{ url_for('static', filename='python.js') }}"></script>
     <meta charset="utf-8">
     <title>爬虫管理模块</title>
     <!--[if lt IE 9]>
@@ -58,7 +61,7 @@
     <section>
       <div class="global-btn clearfix">
         <div class="create-btn-div">
-          <button class="project-create btn btn-default btn-primary" data-toggle="modal" data-target="#create-project-modal">创建</button>
+          <button class="project-create btn btn-default btn-primary" data-toggle="modal" data-target="#create-project-modal" id="create">创建</button>
         </div>
 
         <div class="active-btn-div">
@@ -67,8 +70,8 @@
           {% endif %}
         </div>
 
-        <div class="modal fade" id="create-project-modal">
-          <div class="modal-dialog">
+        <div class="modal fade" id="create-project-modal" >
+          <div class="modal-dialog" style="width:1000px">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -77,31 +80,33 @@
               <form class="form-horizontal" method="POST">
                 <div class="modal-body">
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="project-name">项目名</label>
-                    <div class="col-sm-9">
+                    <label class="col-sm-2 control-label" for="project-name">项目名</label>
+                    <div class="col-sm-10">
                       <input class="form-control" type="text" name="project-name" autocomplete="off" >
                       <span class="help-block" style="display: none;">项目名只能包含数字和字母</span>
                     </div>
                   </div>
 {#                    #}
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="start-url">url</label>
-                    <div class="col-sm-9">
+                    <label class="col-sm-2 control-label" for="start-url">url</label>
+                    <div class="col-sm-10">
                       <input class="form-control" type="text" name="start-url" autocomplete="on" placeholder="">
                       <span class="help-block" style="display: none;">请输入正确的网址</span>
                     </div>
                   </div>
-{#                  <section id="editarea">#}
-{#                      <div id="right-area" class="debug-panel" style="left: 50%">#}
-{#                        <div id="python-editor" class="editor focus">#}
-{#                          <div id="save-task-btn">save</div>#}
-{#                        </div>#}
-{#                        <div class="overlay" style="display: none;"></div>#}
-{#                      </div>#}
-{#                  </section>#}
+
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="source-type">来源类型</label>
-                    <div class="col-sm-9">
+                      <label class="col-sm-2 control-label" for="code-space">code</label>
+                  </div>
+                  <div class="form-group">
+{#                      <label class="col-sm-1 control-label" for="code-space">code</label>#}
+                      <div class="col-sm-12">
+                        <textarea id="code" name="code">ashdfjkashd</textarea>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="source-type">来源类型</label>
+                    <div class="col-sm-10">
                       <select class="form-control" name="source-type" id="source-type" onchange="document_type_select()">
                           <option value="论文">论文</option>
                           <option value="论坛">论坛</option>
@@ -111,8 +116,8 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-3 control-label" for="document-type">文档类型</label>
-                    <div class="col-sm-9">
+                    <label class="col-sm-2 control-label" for="document-type">文档类型</label>
+                    <div class="col-sm-10">
                       <select class="form-control" name="document-type" id="document-type">
 {#                          <option value="未分类" id>未分类</option>#}
 {#                          <option value="标准">标准</option>#}
@@ -263,7 +268,6 @@
                     </div><!-- /.modal-content -->
                   </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
-
                 <script type="text/javascript">
                 function delcfm(name,status,that) {
                    $("#delete-status-alert").hide();
@@ -307,6 +311,16 @@
     <script src="{{ url_for('cdn', path='vue/1.0.26/vue.min.js') }}"></script>
     <script src="{{ url_for('static', filename='index_hzz.min.js') }}"></script>
     <script type="text/javascript">
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            mode: {name: "python",version: 3,singleLineStringErrors: false},
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true,
+            lineWrapping: true,
+            styleActiveLine: true,
+            autofocus: true
+        });
+
         function CheckUrl(str) {
             var strRegex ='(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]';
             var re=new RegExp(strRegex);
