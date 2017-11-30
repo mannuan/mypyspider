@@ -37,6 +37,7 @@ class Handler(BaseHandler):
     def index_page(self, response):
         for each in response.doc('div.lists.txtList>ul>li').items():
             url = each('em.title>a.ellip.w540.i-pdf').attr.href
+            title = response.doc('em.title>a').text()
             file_format = 'pdf'
             if url is None:
                 url = each('em.title>a.ellip.w540.i-word').attr.href
@@ -47,12 +48,12 @@ class Handler(BaseHandler):
             forum = response.save['forum']
             name = response.save['name']
             type = response.save['type']
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'forum':forum,'name':name,'type':type,'file_format':file_format})
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'forum':forum,'name':name,'type':type,'file_format':file_format})
 
     @config(priority=2)
     def detail_page(self, response):
         url = response.url
-        title = response.doc('div.hd>h1').text()
+        title = response.save['title']
         file_type = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(2)').text()
         created_at = response.doc('div.traits>table>tbody>tr:nth-child(1)>td:nth-child(4)').text()
         dispatch_unit = response.doc('div.traits>table>tbody>tr:nth-child(2)>td:nth-child(2)').text()

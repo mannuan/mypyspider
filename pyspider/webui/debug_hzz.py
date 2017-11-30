@@ -37,13 +37,24 @@ default_script_hzz_website = inspect.getsource(sample_handler_hzz_website)
 
 @app.route('/hzz/debug/<project>', methods=['GET', 'POST'])
 def hzz_debug(project):
-    print(request.values)
+    # print(request.values)
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
     info = projectdb.get(project, fields=['name', 'script'])
     if info:
         script = info['script']
+        import sqlite3
+        conn = sqlite3.connect('data/hzz.db')
+        cursor = conn.cursor()
+        cursor.execute('''CREATE TABLE IF NOT EXISTS `%s` (
+                    name PRIMARY KEY,
+                    source_type,document_type
+                    )''' % "hzz")
+        result = cursor.execute('''select * from hzz where name = '%s' ''' % project).fetchone()
+        source_type = result[1]
+        document_type = result[2]
+        cursor.close()
     else:
         # if request.values.get('source-type') is u'网页':
         script = (default_script_hzz_website
@@ -57,7 +68,8 @@ def hzz_debug(project):
         #     pass
         # elif request.values.get('source-type') is u'论坛':
         #     pass
-
+        source_type = request.values.get('source-type')
+        document_type = request.values.get('document-type')
     taskid = request.args.get('taskid')
     if taskid:
         taskdb = app.config['taskdb']
@@ -67,7 +79,7 @@ def hzz_debug(project):
         task = default_task
 
     default_task['project'] = project
-    return render_template("debug_hzz.html", task=task, script=script, project_name=project)
+    return render_template("debug_hzz.html", task=task, script=script, project_name=project, source_type=source_type, document_type=document_type)
 
 
 @app.before_first_request
@@ -177,6 +189,7 @@ def hzz_run(project):
 
 @app.route('/hzz/debug/<project>/save', methods=['POST', ])
 def hzz_save(project):
+    # print(request.values)
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
@@ -202,6 +215,19 @@ def hzz_save(project):
             'burst': app.config.get('max_burst', 3),
         }
         projectdb.insert(project, info)
+    source_type = request.form['source_type']
+    document_type = request.form['document_type']
+    import sqlite3
+    conn = sqlite3.connect('data/hzz.db')
+    cursor = conn.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS `%s` (
+                name PRIMARY KEY,
+                source_type,document_type
+                )''' % "hzz")
+    sql = '''replace into hzz(name,source_type,document_type) values(:name,:source_type,:document_type)'''
+    cursor.execute(sql,{'name':project,'source_type':source_type,'document_type':document_type})
+    conn.commit()
+    cursor.close()
 
     rpc = app.config['scheduler_rpc']
     if rpc is not None:

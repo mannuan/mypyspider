@@ -33,6 +33,7 @@
     <script src="{{ url_for('cdn', path='codemirror/5.20.2/addon/lint/json-lint.min.js') }}"></script>
     <script src="{{ url_for('cdn', path='codemirror/2.36.0/formatting.min.js') }}"></script>
     <script src="{{ url_for('cdn', path='URI.js/1.11.2/URI.min.js') }}"></script>
+
   </head>
 
   <body>
@@ -91,6 +92,10 @@
 
       <div id="right-area" class="debug-panel" style="left: 50%">
         <div id="python-editor" class="editor focus">
+            <div id = "source-type">
+                <button>来源类型</button><a id="source_type">{{ source_type }}</a>
+                <button>文档类型</button><a id="document_type">{{ document_type }}</a>
+            </div>
           <div id="save-task-btn">save</div>
         </div>
         <div class="overlay" style="display: none;"></div>
@@ -101,7 +106,7 @@
       var task_content = {{ task | tojson | tojson | safe }};
       var script_content = {{ script | tojson | safe }};
     </script>
-    <script src="{{ url_for('static', filename='debug.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='debug_hzz.min.js') }}"></script>
   </body>
 </html>
 <!-- vim: set et sw=2 ts=2 sts=2 ff=unix fenc=utf8 syntax=htmldjango: -->
