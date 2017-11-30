@@ -52,8 +52,12 @@ def hzz_debug(project):
                     source_type,document_type
                     )''' % "hzz")
         result = cursor.execute('''select * from hzz where name = '%s' ''' % project).fetchone()
-        source_type = result[1]
-        document_type = result[2]
+        try:
+            source_type = result[1]
+            document_type = result[2]
+        except Exception as e:
+            source_type = None
+            document_type = None
         cursor.close()
     else:
         # if request.values.get('source-type') is u'网页':
