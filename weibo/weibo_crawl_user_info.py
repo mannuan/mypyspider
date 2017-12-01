@@ -41,8 +41,9 @@ class Handler(BaseHandler):
         cur.close()
         conn.close()
         for id in rows:
-            url = "https://m.weibo.cn/api/container/getIndex?uid={}&type=uid&value={}&containerid=107603{}&page={}".format(id[0], id[0], id[0], 1)
-            self.crawl(url, callback=self.index_page)
+            for page in range(1,101):
+                url = "https://m.weibo.cn/api/container/getIndex?uid={}&type=uid&value={}&containerid=107603{}&page={}".format(id[0], id[0], id[0], page)
+                self.crawl(url, callback=self.index_page)
 
     @config(age=24 * 60 * 60)#24个小时
     def index_page(self, response):
