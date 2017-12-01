@@ -19,26 +19,27 @@ if cur:
 if conn:
     conn.close()
 import os,requests
-file_name_list = []
 for row in rows:
-    r = requests.get(row[1], stream=True)
     file_name = os.getcwd()+'/website_document/'+row[0]
+    file_url = row[1]
+    r = requests.get(file_url, stream=True)
     f = open(file_name, "wb+")
     for chunk in r.iter_content(chunk_size=512):
         if chunk:
             f.write(chunk)
     f.close()
-    file_name_list.append(file_name)
-conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
-cur = conn.cursor()
-try:
-    sql = "UPDATE website set file_name = %s"
-    cur.executemany(sql,file_name_list)
-    conn.commit()
-except Exception as e:
-    conn.rollback()
-    print e
-if cur:
-    cur.close()
-if conn:
-    conn.close()
+    if '/website_document/' not in file_name:
+        try:
+            conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
+            cur = conn.cursor()
+            sql = "update website set file_name = %s where file_url = %s"
+            cur.execute(sql,[file_name,file_url])
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+            print e
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+        print file_name
