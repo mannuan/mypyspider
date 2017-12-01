@@ -91,7 +91,7 @@ class Handler(BaseHandler):
             cur.close()
         if conn:
             conn.close()
-        result= [[weibo_id,'',"https://m.weibo.cn/api/comments/show?id={}&page=1".format(weibo_id),longTextContent,u'微博',created_at,crawl_time,user_name,type_id],[crawl_time,reposts_count,comments_count,attitudes_count]]
+        result= [[weibo_id,longTextContent[:10]+'...', "https://m.weibo.cn/u/{}".format(user_id),longTextContent,u'微博',created_at,crawl_time,user_name,type_id],[crawl_time,reposts_count,comments_count,attitudes_count]]
         return result
 
     def on_result(self, result):
@@ -120,7 +120,7 @@ class Handler(BaseHandler):
             except Exception as e:
                 print e
                 conn.rollback()
-        time.sleep(0.1)
+        time.sleep(1)
         try:
             sql = "select id from invitation where note_id = %s"
             cur.execute(sql,result[0][-1])
