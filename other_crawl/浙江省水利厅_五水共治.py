@@ -4,7 +4,7 @@
 # Project:
 
 from pyspider.libs.base_handler import *
-import time,pymysql,sys
+import time,pymysql,sys,random
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -28,24 +28,27 @@ class Handler(BaseHandler):
 
     @every(minutes=24 * 60)
     def on_start(self):
-        url = "http://www.zjwater.com/pages/category/0bja/index_1.htm"
+        url = "http://www.zjwater.com/pages/category/0bja/"
         self.crawl(url, fetch_type='js', callback=self.index_page1,
-                   save={'name': u"政策文件,2015年11月10日起", 'type': u"政府发文"})
+                   save={'name': u"政策文件,2015年11月10日起", 'type': u"政府发文"},
+                   exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
         for forum in self.list_forums:
             for p in range(1,forum.get('page')+1):
                 url = 'http://www.zjwater.com/pages/category/{}/index_{}.htm'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},
+                           exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
-    @config(age=24 * 60 * 60)
+    @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('table#ctl00_cphBody_ctl00_dt_itemlist>tbody>tr>td>table>tbody>tr').items():
             url = each('td>div.SHORT_DIV1>a').attr.href
             title = each('td>div.SHORT_DIV1>a').attr.title
-            created_at = each('td').text()
+            created_at = each('td:nth-child(2)').text()
             name = response.save['name']
             type = response.save['type']
             # print url,title,created_at,name,type
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(priority=2)
     def detail_page(self, response):
@@ -78,7 +81,7 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'浙江省水利厅/五水共治','','']
+        result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'浙江省水利厅/五水共治']
         # print text
         # print come_from
         # print type_id
@@ -89,11 +92,11 @@ class Handler(BaseHandler):
         for each in response.doc('table#ctl00_cphBody_ctl00_dt_itemlist>tbody>tr>td>table>tbody>tr').items():
             url = each('td>div.SHORT_DIV1>a').attr.href
             title = each('td>div.SHORT_DIV1>a').attr.title
-            created_at = each('td').text().replace('.')
+            created_at = each('td:nth-child(2)').text()
             name = response.save['name']
             type = response.save['type']
             # print url,title,created_at,name,type
-            if created_at > '2015.11.10':
+            if created_at >= '2015.11.10':
                 self.crawl(url, fetch_type='js', callback=self.detail_page1,
                        save={'title': title, 'created_at': created_at, 'name': name, 'type': type})
 
@@ -103,11 +106,9 @@ class Handler(BaseHandler):
         title = response.save['title']
         created_at = response.save['created_at']
         text = ''
-        for each in response.doc('table>tbody>tr>td>p').items():
+        for each in response.doc('td#NewsContent').items():
             text += each.text()
-        come_from = response.doc('td#NewsContent>div').text().split(u'发布时间')[0].replace(u'来源：','')
-        if come_from is None:
-            come_from = text.split(u'来源：')[-1]
+        come_from = u"浙江省水利厅"
         forum_name = response.save['name']
         forum_type = response.save['type']
         type_id = None
@@ -125,14 +126,7 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        for each in response.doc('a').items():
-            file_url = each.attr.href
-            if file_url.find('/getfile.aspx?id='):
-                break
-        file_name = ''
-        if file_url is not None:
-            file_name = file_url.split('=')[-1]+'.doc'
-        result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'浙江省水利厅/五水共治',file_url,file_name]
+        result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'浙江省水利厅/五水共治']
         # print text
         # print come_from
         # print type_id
@@ -147,7 +141,7 @@ class Handler(BaseHandler):
         rows = cur.fetchall()
         if len(rows) == 0:
             try:
-                sql = 'INSERT INTO website(url,title,push_time,context,come_from,page_type,type_id,spider_time,source,file_url,file_name) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+                sql = 'INSERT INTO website(url,title,push_time,context,come_from,page_type,type_id,spider_time,source) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
                 # 批量插入
                 cur.execute(sql,result)
                 conn.commit()
@@ -157,7 +151,7 @@ class Handler(BaseHandler):
         else:
             result = result[::-1]
             try:
-                sql = 'UPDATE website SET file_name=%s,file_url=%s,source=%s,spider_time=%s,type_id=%s,page_type=%s,come_from=%s,context=%s,push_time=%s,title=%s WHERE url=%s'
+                sql = 'UPDATE website SET source=%s,spider_time=%s,type_id=%s,page_type=%s,come_from=%s,context=%s,push_time=%s,title=%s WHERE url=%s'
                 # 批量更新
                 cur.execute(sql,result)
                 conn.commit()

@@ -4,7 +4,7 @@
 # Project:
 
 from pyspider.libs.base_handler import *
-import time,pymysql,sys
+import time,pymysql,sys,random
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -43,25 +43,29 @@ class Handler(BaseHandler):
     def on_start(self):
         for forum in self.list_forums1:
             url = 'http://www.gdwater.gov.cn/xxgk/wjzy/zcfg{}list.htm'.format(forum.get('forum'))
-            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},exetime=time.time()+random.randint(60*60, 12*60*60))#1h~12h
         for forum in self.list_forums2:
             url = 'http://www.gdwater.gov.cn/yszx/{}/index.html'.format(forum.get('forum'))
             self.crawl(url, fetch_type='js', callback=self.index_page1,
-                       save={'name': forum.get('name'), 'type': forum.get('type')})
+                       save={'name': forum.get('name'), 'type': forum.get('type')},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))#1h~12h
             for p in range(1,forum.get('page')):
                 url = 'http://www.gdwater.gov.cn/yszx/{}/index_{}.html'.format(forum.get('forum'),p)
                 self.crawl(url, fetch_type='js', callback=self.index_page1,
-                           save={'name': forum.get('name'), 'type': forum.get('type')})
+                           save={'name': forum.get('name'), 'type': forum.get('type')},
+                           exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))#1h~12h
         forum = {'page':10,'name':u'河长制/工作动态','type':u'动态'}
         url = "http://www.gdwater.gov.cn/yszx/ztjs/2017nzt/cxhcz/hczgzdt/index.html"
         self.crawl(url, fetch_type='js', callback=self.index_page2,
-                   save={'name': forum.get('name'), 'type': forum.get('type')})
+                   save={'name': forum.get('name'), 'type': forum.get('type')},
+                   exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))#1h~12h
         for p in range(1,forum.get('page')):
             url = "http://www.gdwater.gov.cn/yszx/ztjs/2017nzt/cxhcz/hczgzdt/index_{}.html".format(p)
             self.crawl(url, fetch_type='js', callback=self.index_page2,
-                       save={'name': forum.get('name'), 'type': forum.get('type')})
+                       save={'name': forum.get('name'), 'type': forum.get('type')},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))#1h~12h
 
-    @config(age=24 * 60 * 60)
+    @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('div.row').items():
             url = each('li.mc>div>a').attr.href
@@ -70,7 +74,8 @@ class Handler(BaseHandler):
             name = response.save['name']
             type = response.save['type']
             # print url,title,created_at,name,type
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(priority=2)
     def detail_page(self, response):

@@ -4,7 +4,7 @@
 # Project:
 
 from pyspider.libs.base_handler import *
-import time,pymysql,sys
+import time,pymysql,sys,random
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -30,12 +30,14 @@ class Handler(BaseHandler):
     def on_start(self):
         for forum in self.list_forums:
             url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/'.format(forum.get('forum'))
-            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
             for p in range(1,forum.get('page')):
                 url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/index_{}.html'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},
+                           exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
-    @config(age=24 * 60 * 60)
+    @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('div.dbgxia>div.dbgshang>table.tbg>tbody>tr>td:nth-child(2)>table:nth-child(4)>tbody>tr>td>table:nth-child(2)>tbody>tr').items():
             url = each('td:nth-child(2)>a').attr.href
@@ -43,7 +45,8 @@ class Handler(BaseHandler):
             created_at = each('td:nth-child(3)').text().replace('&nbsp;','')
             name = response.save['name']
             type = response.save['type']
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(priority=2)
     def detail_page(self, response):

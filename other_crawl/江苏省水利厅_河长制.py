@@ -4,7 +4,7 @@
 # Project:
 
 from pyspider.libs.base_handler import *
-import time,pymysql,sys
+import time,pymysql,sys,random
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -33,9 +33,10 @@ class Handler(BaseHandler):
         for forum in self.list_forums:
             for p in range(1,forum.get('page')+1):
                 url = 'http://jswater.jiangsu.gov.cn/col/{}/index.html?uid=191194&pageNum={}'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},
+                           exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
-    @config(age=24 * 60 * 60)
+    @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('div.default_pgContainer>table>tbody>tr').items():
             url = each('td:nth-child(1)>div>a').attr.href
@@ -46,7 +47,8 @@ class Handler(BaseHandler):
             # print url
             # print title
             # print created_at
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(priority=2)
     def detail_page(self, response):

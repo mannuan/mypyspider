@@ -29,7 +29,7 @@ class Handler(BaseHandler):
             url = 'http://www.zjepb.gov.cn/module/xxgk/search.jsp?texttype=0&fbtime=-1&infotypeId=A001D001&jdid=1756&divid=div1201347&currpage={}'.format(p)
             self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
 
-    @config(age=24 * 60 * 60)
+    @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('tr.tr_main_value_odd').items():
             url = each('td:nth-child(1)>a').attr.href

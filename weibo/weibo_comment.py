@@ -4,7 +4,7 @@
 # Project: weibo_hot_comment
 
 from pyspider.libs.base_handler import *
-import time, pymysql,re
+import time, pymysql,re,random
 from lxml import html
 
 class Tool:
@@ -47,7 +47,7 @@ class Handler(BaseHandler):
             id = row[0]
             weibo_id = row[1]
             # print url,id,weibo_id
-            self.crawl(url, callback=self.index_page,save={'id':id,'weibo_id':weibo_id})
+            self.crawl(url, callback=self.index_page,save={'id':id,'weibo_id':weibo_id},exetime=time.time()+random.randint(30*60, 3*60*60))#30min~3h
 
     @config(age=12 * 60 * 60)#12小时
     def index_page(self, response):
