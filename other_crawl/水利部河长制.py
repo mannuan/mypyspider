@@ -34,7 +34,7 @@ class Handler(BaseHandler):
                        exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
             for p in range(1,forum.get('page')):
                 url = 'http://www.mwr.gov.cn/ztpd/2016ztbd/qmtxhzzhhghkxj/{}/index_{}.html'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},
+                self.crawl(url, fetch_type='js', save={'name':forum.get('name'),'type':forum.get('type')},
                            exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(age=10 * 24 * 60 * 60)
