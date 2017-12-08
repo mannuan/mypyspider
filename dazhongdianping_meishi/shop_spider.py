@@ -10,7 +10,7 @@ import json,pymysql
 class Handler(BaseHandler):
     crawl_config = {
         "headers" : {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json; charset=utf-8',
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13C75 Safari/601.1',
         }
     }
@@ -18,16 +18,13 @@ class Handler(BaseHandler):
     @every(minutes=24 * 60)
     def on_start(self):
         limit = 50
-        url = 'https://m.dianping.com/isoapi/module'
+        cityid=3602
         for i in range(120):
+            url = 'https://m.dianping.com/isoapi/module'
             start = i*limit
-            data = {"moduleInfoList": [{"moduleName": "mapiSearch", "query": {
-                "search": {"start": start, "categoryid": "10", "parentCategoryId": 10, "locatecityid": 3,
-                           "limit": limit,
-                           "sortid": "0", "cityid": 3602, "range": "1", "maptype": 0},
-                "loaders": ["list", "noResult"]}}],
-                    "pageEnName": "shopList"}
+            data = {"moduleInfoList":[{"moduleName":"mapiSearch","query":{"search":{"start":0,"locatecityid":3,"limit":50,"cityid":cityid},"loaders":["list"]}}],"pageEnName":"shopList"}
             data = json.dumps(data)
+            url += "?start={}&cityid={}".format(start,cityid)
             self.crawl(url, method='POST', data=data, callback=self.callback)
 
     @config(age=10 * 24 * 60 * 60)
@@ -88,8 +85,8 @@ class Handler(BaseHandler):
             tag = json.dumps(tag_list)
 
             result.append([adInfo,altName,authorityLabelType,bookType,branchName,categoryId,categoryName,cityId,defaultPic,dishtags,extraJson,shopDealInfos,id,matchText,memberCardId,name,newShop,orderDish,originalUrlKey,priceText,recommendReasonData,regionName,reviewCount,scoreText,shopPositionInfo,shopPower,shopStateInformation,shopType,status,tag])
-        # print result
-        return result
+        print result
+        # return result
 
     def on_result(self, result):
         if not result:

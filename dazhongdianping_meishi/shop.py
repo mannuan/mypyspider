@@ -15,7 +15,7 @@ class DaZhongDianPing(object):
         :return:
         '''
         url = 'https://m.dianping.com/isoapi/module'
-        headers = {'Content-Type': 'application/json'}
+        headers = {'Content-Type': 'application/json; charset=utf-8'}
         data = {"moduleInfoList":[{"moduleName":"mapiSearch","query":{"search":{"start":start,"categoryid":"10","parentCategoryId":10,"locatecityid":3,"limit":limit,"sortid":"0","cityid":cityid,"range":"1","maptype":0},"loaders":["list","noResult"]}}],
                 "pageEnName":"shopList"}
         response = requests.get(url,headers=headers,data=json.dumps(data))
@@ -34,9 +34,10 @@ class DaZhongDianPing(object):
     def main(cls,cityid):
         limit = 50
         count = 0
+        shop_num = 0
         while True:
             # time.sleep(0.5)
-            print count*limit
+            # print count*limit
             list_shops = DaZhongDianPing.get_shop(cityid,limit,count*limit)
             count+=1
             if list_shops is None:
@@ -87,36 +88,38 @@ class DaZhongDianPing(object):
                 tag = json.dumps(tag_list)
 
                 #打印
+                shop_num+=1
                 print adInfo
-                print u'altname : '+altName
-                print u'authorityLabelType : '+str(authorityLabelType)
-                print u'bookType : '+str(bookType)
+                print 'altname : '+altName
+                print 'authorityLabelType : '+str(authorityLabelType)
+                print 'bookType : '+str(bookType)
                 print branchName
-                print u'categoryId : '+str(categoryId)
-                print u'categoryName : '+categoryName
-                print u'cityId : '+str(cityId)
+                print 'categoryId : '+str(categoryId)
+                print 'categoryName : '+categoryName
+                print 'cityId : '+str(cityId)
                 print defaultPic
                 print dishtags
-                print u'extraJson : '+extraJson
+                print 'extraJson : '+extraJson
                 print shopDealInfos
-                print u'shop_id : '+str(shop_id)
-                print u'matchText : '+matchText
-                print u'memberCardId : '+str(memberCardId)
-                print u'shop_name : '+shop_name
-                print u'newShop : '+newShop
-                print u'orderDish : '+orderDish
+                print 'shop_id : '+str(shop_id)
+                print 'matchText : '+matchText
+                print 'memberCardId : '+str(memberCardId)
+                print 'shop_name : '+shop_name
+                print 'newShop : '+newShop
+                print 'orderDish : '+orderDish
                 print originalUrlKey
-                print u'priceText : '+priceText
-                print u'recommendReasonData : '+recommendReasonData
-                print u'regionName : '+regionName
-                print u'reviewCount : '+str(reviewCount)
-                print u'scoreText : '+scoreText
-                print u'shopPositionInfo : '+shopPositionInfo
-                print u'shopPower : '+str(shopPower)
-                print u'shopStateInformation : '+shopStateInformation
-                print u'shopType : '+str(shopType)
-                print u'status : '+str(status)
-                print u'tag : '+tag
+                print 'priceText : '+priceText
+                print 'recommendReasonData : '+recommendReasonData
+                print 'regionName : '+regionName
+                print 'reviewCount : '+str(reviewCount)
+                print 'scoreText : '+scoreText
+                print 'shopPositionInfo : '+shopPositionInfo
+                print 'shopPower : '+str(shopPower)
+                print 'shopStateInformation : '+shopStateInformation
+                print 'shopType : '+str(shopType)
+                print 'status : '+str(status)
+                print 'tag : '+tag
+                print shop_num
 
 
 
