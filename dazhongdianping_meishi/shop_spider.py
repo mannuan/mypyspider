@@ -20,11 +20,11 @@ class Handler(BaseHandler):
         limit = 50
         cityid=3602
         for i in range(120):
-            url = 'https://m.dianping.com/isoapi/module'
             start = i*limit
-            data = {"moduleInfoList":[{"moduleName":"mapiSearch","query":{"search":{"start":0,"locatecityid":3,"limit":50,"cityid":cityid},"loaders":["list"]}}],"pageEnName":"shopList"}
-            data = json.dumps(data)
+            url = 'https://m.dianping.com/isoapi/module'
             url += "?start={}&cityid={}".format(start,cityid)
+            data = {"moduleInfoList":[{"moduleName":"mapiSearch","query":{"search":{"start":start,"limit":limit,"cityid":cityid},"loaders":["list"]}}],"pageEnName":"shopList"}
+            data = json.dumps(data)
             self.crawl(url, method='POST', data=data, callback=self.callback)
 
     @config(age=10 * 24 * 60 * 60)
@@ -43,13 +43,13 @@ class Handler(BaseHandler):
             if (shop.get('adShop') is True):
                 adInfo = json.dumps(shop.get('adInfo'))  # 广告信息,一个json字符串
             else:
-                adInfo = str(None)
+                adInfo = None
             altName = shop.get('altName')
             authorityLabelType = shop.get('authorityLabelType')  # int
             if (shop.get('bookable') is True):
                 bookType = shop.get('bookType')  # str
             else:
-                bookType = str(None)
+                bookType = None
             branchName = shop.get('branchName')  # 店铺所属分支
             categoryId = shop.get('categoryId')  # 菜系id,int
             categoryName = shop.get('categoryName')  # 菜系
@@ -58,9 +58,9 @@ class Handler(BaseHandler):
             dishtags = shop.get('dishtags')  # 菜的种类
             extraJson = shop.get('extraJson')  # str
             if (shop.get('hasDeals') is True):
-                shopDealInfos = shop.get('shopDealInfos')
+                shopDealInfos = json.dumps(shop.get('shopDealInfos'))
             else:
-                shopDealInfos = str(None)
+                shopDealInfos = None
             id = shop.get('id')  # 店铺的id,int
             matchText = shop.get('matchText')  # 店铺的匹配字段
             memberCardId = shop.get('memberCardId')  # int
@@ -79,14 +79,17 @@ class Handler(BaseHandler):
             shopType = shop.get('shopType')  # 店铺的类别,int
             status = shop.get('status')  # 店铺的状态,int
             tagList = shop.get('tagList')
-            tag_list = list()
-            for tag in tagList:
-                tag_list.append(tag.get('text'))
-            tag = json.dumps(tag_list)
+            if tagList is None:
+                tag = None
+            else:
+                tag_list = list()
+                for tag in tagList:
+                    tag_list.append(tag.get('text'))
+                tag = json.dumps(tag_list)
 
             result.append([adInfo,altName,authorityLabelType,bookType,branchName,categoryId,categoryName,cityId,defaultPic,dishtags,extraJson,shopDealInfos,id,matchText,memberCardId,name,newShop,orderDish,originalUrlKey,priceText,recommendReasonData,regionName,reviewCount,scoreText,shopPositionInfo,shopPower,shopStateInformation,shopType,status,tag])
-        print result
-        # return result
+        # print result
+        return result
 
     def on_result(self, result):
         if not result:
@@ -94,7 +97,7 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO dazhongdianping_meishi_shop(adInfo,altName,authorityLabelType,bookType,branchName,categoryId,categoryName,cityId,defaultPic,dishtags,extraJson,shopDealInfos,id,matchText,memberCardId,name,newShop,orderDish,originalUrlKey,priceText,recommendReasonData,regionName,reviewCount,scoreText,shopPositionInfo,shopPower,shopStateInformation,shopType,status,tag) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO dazhongdianping_meishi_shop values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
             cur.executemany(sql,result)
             conn.commit()
