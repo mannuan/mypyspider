@@ -23,36 +23,22 @@ class Handler(BaseHandler):
         if list_shops is None:
             return None
         for shop in list_shops:  # 遍历
-            activityTags = json.dumps(shop.get('activityTags'))
-            baiduLatitude = shop.get('baiduLatitude')
-            baiduLongitude = shop.get('baiduLongitude')
             businessAreaName = shop.get('businessAreaName')
-            calDistanceType = shop.get('calDistanceType')  # int
             commentPoint = shop.get('commentPoint')
             commentScore = shop.get('commentScore')  # int
-            id = str(shop.get('detailPageUrl')).split('hotel/')[1].split('/#indate')[0]
-            distance = shop.get('distance')
-            distanceName = shop.get('distanceName')
             districtName = shop.get('districtName')
-            facilityList = json.dumps(shop.get('facilityList'))
-            hongbao = shop.get('hongbao')  # int
-            hotelBadge = shop.get('hotelBadge')  # int
             hotelName = shop.get('hotelName')
-            leftRoomCountShow = shop.get('leftRoomCountShow')
+            id = str(shop.get('detailPageUrl')).split('hotel/')[1].split('/#indate')[0]
             lmOriPrice = shop.get('lmOriPrice')  # int
             lowestPrice = shop.get('lowestPrice')  # int
             minPriceInventories = shop.get('minPriceInventories')
             minPriceSubCouponInventories = json.dumps(shop.get('minPriceSubCouponInventories'))
-            newRecallReason = shop.get('newRecallReason')
             picUrl = shop.get('picUrl')
             placeName = shop.get('placeName')
-            specialDay = shop.get('specialDay')
             starLevel = shop.get('starLevel')  # int
-            syncfacilityList = shop.get('syncfacilityList')
-            tags = json.dumps(shop.get('tags'))
             totalCommentCount = shop.get('totalCommentCount')#int
             trafficInfo = shop.get('trafficInfo')
-            result.append([activityTags,baiduLatitude,baiduLongitude,businessAreaName,calDistanceType,commentPoint,commentScore,id,distance,distanceName,districtName,facilityList,hongbao,hotelBadge,hotelName,leftRoomCountShow,lmOriPrice,lowestPrice,minPriceInventories,minPriceSubCouponInventories,newRecallReason,picUrl,placeName,specialDay,starLevel,syncfacilityList,tags,totalCommentCount,trafficInfo])
+            result.append([businessAreaName,commentPoint,commentScore,districtName,hotelName,id,lmOriPrice,lowestPrice,minPriceInventories,minPriceSubCouponInventories,picUrl,placeName,starLevel,totalCommentCount,trafficInfo])
         return result
 
     @config(priority=2)
@@ -68,9 +54,9 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO elong_shop values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO elong_shop values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
-            cur.execute(sql,result)
+            cur.executemany(sql,result)
             conn.commit()
         except Exception as e:
             print e
