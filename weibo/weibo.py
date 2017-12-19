@@ -62,16 +62,16 @@ class Handler(BaseHandler):
                 for j in card_group:
                     if j.get('card_type') is 9:
                         result.append(self.detail_page(j))
-        return result[0]
+        return result
 
     @config(priority=2)
     def detail_page(self, response):
         ob_json = response
         user_id = ob_json.get('mblog').get('user').get('id')
         user_name = ob_json.get('mblog').get('user').get('screen_name')
-        weibo_id = ob_json.get('id')
-        created_at = ob_json.get('created_at')
-        source = ob_json.get('source')
+        weibo_id = ob_json.get('mblog').get('id')
+        created_at = ob_json.get('mblog').get('created_at')
+        source = ob_json.get('mblog').get('source')
         longTextContent = Tool.replace(ob_json.get('mblog').get('text'))
         reposts_count = ob_json.get('mblog').get('reposts_count')
         comments_count = ob_json.get('mblog').get('comments_count')
@@ -97,44 +97,42 @@ class Handler(BaseHandler):
     def on_result(self, result):
         if not result:
             return
-        print result
-        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
-        cur = conn.cursor()
-        cur.execute("select * from invitation where note_id = %s" , result[0][0])
-        rows = cur.fetchall()
-        if len(rows) == 0:
+        for r in result:
+            conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
+            cur = conn.cursor()
+            cur.execute('select max(id) from invitation')
+            trend_id = cur.fetchone()[0] + 1
+            cur.execute("select * from invitation where note_id = %s" , r[0][0])
+            rows = cur.fetchall()
+            if len(rows) == 0:
+                try:
+                    sql = 'INSERT INTO invitation(note_id,note_title,note_url,note_context,source,push_time,crawl_time,push_name,type_id) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+                    # 批量插入
+                    cur.execute(sql,r[0])
+                    conn.commit()
+                except Exception as e:
+                    print e
+                    conn.rollback()
+            else:
+                r[0] = r[0][::-1]
+                try:
+                    sql = 'UPDATE invitation SET type_id=%s,push_name=%s,crawl_time=%s,push_time=%s,source=%s,note_context=%s,note_url=%s,note_title=%s WHERE note_id=%s'
+                    # 批量更新
+                    cur.execute(sql,r[0])
+                    conn.commit()
+                except Exception as e:
+                    print e
+                    conn.rollback()
             try:
-                sql = 'INSERT INTO invitation(note_id,note_title,note_url,note_context,source,push_time,crawl_time,push_name,type_id) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
-                # 批量插入
-                cur.execute(sql,result[0])
+                sql = 'INSERT INTO invitation_trend(crawl_time,reposts_count,comments_count,attitudes_count,id) values(%s,%s,%s,%s,%s)'
+                result[1].append(trend_id)
+                cur.execute(sql, result[1])
                 conn.commit()
             except Exception as e:
                 print e
                 conn.rollback()
-        else:
-            result[0] = result[0][::-1]
-            try:
-                sql = 'UPDATE invitation SET type_id=%s,push_name=%s,crawl_time=%s,push_time=%s,source=%s,note_context=%s,note_url=%s,note_title=%s WHERE note_id=%s'
-                # 批量更新
-                cur.execute(sql,result[0])
-                conn.commit()
-            except Exception as e:
-                print e
-                conn.rollback()
-        time.sleep(1)
-        try:
-            sql = "select id from invitation where note_id = %s"
-            cur.execute(sql,result[0][-1])
-            id = cur.fetchone()[0]
-            sql = 'INSERT INTO invitation_trend(crawl_time,reposts_count,comments_count,attitudes_count,id) values(%s,%s,%s,%s,%s)'
-            result[1].append(id)
-            cur.execute(sql, result[1])
-            conn.commit()
-        except Exception as e:
-            print e
-            conn.rollback()
-        # 释放数据连接
-        if cur:
-            cur.close()
-        if conn:
-            conn.close()
+            # 释放数据连接
+            if cur:
+                cur.close()
+            if conn:
+                conn.close()
