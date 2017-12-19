@@ -45,36 +45,37 @@ class Handler(BaseHandler):
     @every(minutes=24 * 60)
     def on_start(self):
         for kw in self.key_words:
-            url = 'http://s.weibo.com/weibo/{}'.format(kw)
-            self.crawl(url, fetch_type='js', callback=self.index_page, exetime=time.time()+random.randint(60*60, 24*60*60))#1小时～12小时
+            url = 'http://m.weibo.cn/api/container/getIndex?key={}'.format(kw)
+            self.crawl(url, params={'containerid':"100103type=1&q={}".format(kw)}, callback=self.index_page )#1小时～12小时
 
     @config(age=24 * 60 * 60)
     def index_page(self, response):
         result = []
-        for each in response.doc('div').items():
-            user_id = each.attr.tbinfo
-            user_name = each('div.WB_feed_detail.clearfix > dl > div > div.content.clearfix > div.feed_content.wbcon > a.W_texta.W_fb').attr.title
-            weibo_id = each.attr.mid
-            created_at = each('div.WB_feed_detail.clearfix > dl > div > div.content.clearfix > div.feed_from.W_textb > a.W_textb').text()
-            source = each('div.WB_feed_detail.clearfix > dl > div > div.content.clearfix > div.feed_from.W_textb > a:nth-child(2)').text()
-            if user_id and user_name and weibo_id and created_at and source:
-                user_id = user_id.replace('ouid=','')#微博用户的id
-                url = "https://m.weibo.cn/statuses/extend?id={}".format(weibo_id)
-                self.crawl(url, callback=self.detail_page, save={'user_id':user_id,'user_name':user_name,'weibo_id':weibo_id,'created_at':created_at,'source':source}, exetime=time.time()+random.randint(60*60, 24*60*60))#1小时～12小时
+        ob_json = response.json
+        for i in ob_json.get('data').get('cards'):
+            if i.get('card_type') is 9:
+                result.append(self.detail_page(i))
+            else:
+                card_group = i.get('card_group')
+                if card_group is None:
+                    continue
+                for j in card_group:
+                    if j.get('card_type') is 9:
+                        result.append(self.detail_page(j))
+        return result[0]
 
     @config(priority=2)
     def detail_page(self, response):
-        result = []
-        ob_json = response.json
-        user_id = response.save['user_id']
-        user_name = response.save['user_name']
-        weibo_id = response.save['weibo_id']
-        created_at = response.save['created_at']
-        source = response.save['source']
-        longTextContent = Tool.replace(ob_json.get('longTextContent'))
-        reposts_count = ob_json.get('reposts_count')
-        comments_count = ob_json.get('comments_count')
-        attitudes_count = ob_json.get('attitudes_count')
+        ob_json = response
+        user_id = ob_json.get('mblog').get('user').get('id')
+        user_name = ob_json.get('mblog').get('user').get('screen_name')
+        weibo_id = ob_json.get('id')
+        created_at = ob_json.get('created_at')
+        source = ob_json.get('source')
+        longTextContent = Tool.replace(ob_json.get('mblog').get('text'))
+        reposts_count = ob_json.get('mblog').get('reposts_count')
+        comments_count = ob_json.get('mblog').get('comments_count')
+        attitudes_count = ob_json.get('mblog').get('attitudes_count')
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
         type_id = None
         conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',
@@ -91,12 +92,12 @@ class Handler(BaseHandler):
             cur.close()
         if conn:
             conn.close()
-        result= [[weibo_id,longTextContent[:10]+'...', "https://m.weibo.cn/status/{}".format(weibo_id),longTextContent,u'微博',created_at,crawl_time,user_name,type_id],[crawl_time,reposts_count,comments_count,attitudes_count]]
-        return result
+        return [[weibo_id,longTextContent[:10]+'...', "https://m.weibo.cn/status/{}".format(weibo_id),longTextContent,u'微博',created_at,crawl_time,user_name,type_id],[crawl_time,reposts_count,comments_count,attitudes_count]]
 
     def on_result(self, result):
         if not result:
             return
+        print result
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         cur.execute("select * from invitation where note_id = %s" , result[0][0])
@@ -126,9 +127,7 @@ class Handler(BaseHandler):
             cur.execute(sql,result[0][-1])
             id = cur.fetchone()[0]
             sql = 'INSERT INTO invitation_trend(crawl_time,reposts_count,comments_count,attitudes_count,id) values(%s,%s,%s,%s,%s)'
-            # print 'trend'
             result[1].append(id)
-            # print result[1]
             cur.execute(sql, result[1])
             conn.commit()
         except Exception as e:

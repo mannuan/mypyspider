@@ -11,6 +11,7 @@ CREATE TABLE `invitation` (
   `push_name` varchar(50) CHARACTER SET utf8 NOT NULL,
   `audit` int(1) DEFAULT '0',
   `type_id` int(5) DEFAULT '17',
+  `indexed` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

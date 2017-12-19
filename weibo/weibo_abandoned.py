@@ -97,6 +97,7 @@ class Handler(BaseHandler):
     def on_result(self, result):
         if not result:
             return
+        print result
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         cur.execute("select * from invitation where note_id = %s" , result[0][0])
