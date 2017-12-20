@@ -46,7 +46,7 @@ class Handler(BaseHandler):
     def on_start(self):
         for kw in self.key_words:
             url = 'http://m.weibo.cn/api/container/getIndex?key={}'.format(kw)
-            self.crawl(url, params={'containerid':"100103type=1&q={}".format(kw)}, callback=self.index_page )#1小时～12小时
+            self.crawl(url, params={'containerid':"100103type=1&q={}".format(kw)}, callback=self.index_page, exetime=time.time()+random.randint(60*60, 24*60*60))#1小时～12小时
 
     @config(age=24 * 60 * 60)
     def index_page(self, response):
@@ -100,12 +100,12 @@ class Handler(BaseHandler):
         for r in result:
             conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
             cur = conn.cursor()
-            cur.execute('select max(id) from invitation')
-            trend_id = cur.fetchone()[0] + 1
             cur.execute("select * from invitation where note_id = %s" , r[0][0])
             rows = cur.fetchall()
             if len(rows) == 0:
                 try:
+                    cur.execute('select max(id) from invitation')
+                    trend_id = (lambda x: 0 + 1 if x is None else x + 1)(cur.fetchone()[0])
                     sql = 'INSERT INTO invitation(note_id,note_title,note_url,note_context,source,push_time,crawl_time,push_name,type_id) values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
                     # 批量插入
                     cur.execute(sql,r[0])
@@ -116,6 +116,8 @@ class Handler(BaseHandler):
             else:
                 r[0] = r[0][::-1]
                 try:
+                    cur.execute('select id from invitation where note_id = %s', r[0][-1])
+                    trend_id = cur.fetchone()[0]
                     sql = 'UPDATE invitation SET type_id=%s,push_name=%s,crawl_time=%s,push_time=%s,source=%s,note_context=%s,note_url=%s,note_title=%s WHERE note_id=%s'
                     # 批量更新
                     cur.execute(sql,r[0])
@@ -125,8 +127,8 @@ class Handler(BaseHandler):
                     conn.rollback()
             try:
                 sql = 'INSERT INTO invitation_trend(crawl_time,reposts_count,comments_count,attitudes_count,id) values(%s,%s,%s,%s,%s)'
-                result[1].append(trend_id)
-                cur.execute(sql, result[1])
+                r[1].append(trend_id)
+                cur.execute(sql, r[1])
                 conn.commit()
             except Exception as e:
                 print e

@@ -15,7 +15,7 @@ CREATE TABLE `invitation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
+DROP TABLE IF EXISTS `invitation_trend`;
 CREATE TABLE `invitation_trend` (
   `id` int(10) NOT NULL,
   `crawl_time` varchar(20) NOT NULL,
