@@ -8,12 +8,17 @@ import pymysql,time,requests
 
 class Handler(BaseHandler):
     crawl_config = {
+        "headers":{
+            'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+            'Upgrade-Insecure-Requests':'1',
+            'Content-Encoding': 'gzip',
+            'Content-Type': 'text/html',
+        }
     }
 
     @every(minutes=24 * 60)
     def on_start(self):
-        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',
-                               charset='utf8mb4')
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository', charset='utf8mb4')
         cur = conn.cursor()
         cur.execute("select name from river")
         rows = cur.fetchall()
@@ -21,8 +26,8 @@ class Handler(BaseHandler):
         cur.close()
         conn.close()
         for row in rows:
-            url = 'http://wapbaike.baidu.com/item/{}'.format(row[0])
-            self.crawl(url, fetch_type='js', save={'river_name':row[0]}, callback=self.index_page, retries=1)
+            url = u'http://wapbaike.baidu.com/item/{}'.format(row[0])
+            self.crawl(url, save={'river_name':row[0]}, callback=self.index_page)
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
