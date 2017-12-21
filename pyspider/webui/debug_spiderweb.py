@@ -37,7 +37,7 @@ default_script_spiderweb = inspect.getsource(sample_handler_spiderweb)
 
 @app.route('/spiderweb/debug/<project>', methods=['GET', 'POST'])
 def spiderweb_debug(project):
-    # print(request.values)
+    print(request.values)
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
