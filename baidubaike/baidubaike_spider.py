@@ -44,7 +44,11 @@ class Handler(BaseHandler):
         reference = response.doc('div.reference#J-reference').text()
         quick_pic = ''
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
-        return [basic_info,content,crawl_time,pic_url,quick_pic,reference,river_name,summary,title]
+        html = u"<html><head><meta http-equiv='Content-Type' content='text/html;charset=utf-8'><base href='" + response.url + u"'></head><body><div style='position:relative'>"
+        html += response.doc("HEAD").html()
+        html += response.doc("BODY").html()
+        html += u"</div></body></html>"
+        return [html,basic_info,content,crawl_time,pic_url,quick_pic,reference,river_name,summary,title]
 
     def on_result(self, result):
         if not result:
@@ -54,7 +58,7 @@ class Handler(BaseHandler):
         try:
             sql = 'REPLACE INTO baidubaike values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
-            cur.execute(sql,result)
+            cur.execute(sql,result[1:])
             conn.commit()
         except Exception as e:
             print e
@@ -64,3 +68,7 @@ class Handler(BaseHandler):
             cur.close()
         if conn:
             conn.close()
+        file_path = u"/home/quick_picture/{}_baidubaike.html".format(result[7])
+        file = open(file_path, "wt+")
+        file.write(result[0])
+        file.close()
