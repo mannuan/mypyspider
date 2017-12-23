@@ -4,7 +4,10 @@
 # Project: baidubaike
 
 from pyspider.libs.base_handler import *
-import pymysql,time,requests
+import pymysql,time,codecs
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class Handler(BaseHandler):
     crawl_config = {
@@ -69,6 +72,6 @@ class Handler(BaseHandler):
         if conn:
             conn.close()
         file_path = u"/home/quick_picture/{}_baidubaike.html".format(result[7])
-        file = open(file_path, "wt+")
+        file = codecs.open(file_path, "wt+", 'utf-8')
         file.write(result[0])
         file.close()
