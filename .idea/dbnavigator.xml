@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -38,8 +38,8 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/other_crawl/type.sql" connection-id="virtual-mysql-connection" current-schema="ROOT" />
     <mapping file-url="file://$PROJECT_DIR$/other_crawl/test.sql" connection-id="e46d2024-9984-4e2f-9ccf-cc50ba1a704f" current-schema="REPOSITORY" />
+    <mapping file-url="file://$PROJECT_DIR$/other_crawl/type.sql" connection-id="virtual-mysql-connection" current-schema="ROOT" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -261,6 +261,7 @@
       <qualified-text-editor text-length-threshold="300">
         <content-types>
           <content-type name="Text" enabled="true" />
+          <content-type name="Properties" enabled="true" />
           <content-type name="XML" enabled="true" />
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />

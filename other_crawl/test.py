@@ -1,33 +1,29 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov 23 08:36:17 2017
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+# Created on 2017-12-25 15:24:21
+# Project: test8
 
-@author: mininet
-"""
+from pyspider.libs.base_handler import *
+import lxml
 
-import pymysql
 
-conn = pymysql.connect(host='122.224.129.35', port=23306, user='repository', passwd='repository', db='repository',
-                       charset='utf8')
-cur = conn.cursor()
-cur.execute("select url from website where source = '浙江省水利厅/五水共治' and file_name != ''")
-rows = cur.fetchall()
-# 释放数据连接
-if cur:
-    cur.close()
-if conn:
-    conn.close()
-for row in rows:
-    sql = "update website set file_name = '',file_url = '' where url = %s"
-    conn = pymysql.connect(host='122.224.129.35', port=23306, user='repository', passwd='repository', db='repository',
-                           charset='utf8')
-    cur = conn.cursor()
-    cur.execute(sql,row[0])
-    conn.commit()
-    # 释放数据连接
-    if cur:
-        cur.close()
-    if conn:
-        conn.close()
-    print row[0]
+class Handler(BaseHandler):
+    crawl_config = {
+    }
+
+    @every(minutes=24 * 60)
+    def on_start(self):
+        self.crawl('http://www.tba.gov.cn//tba/content/TBA/xwzx/jczt/hcz/gzdt/0000000000012456.html', fetch_type='js',
+                   callback=self.index_page)
+
+    @config(age=10 * 24 * 60 * 60)
+    def index_page(self, response):
+        for c in response.doc('#print > tbody > tr:nth-child(5) > td > table > tbody > tr > td').items('p'):
+            print c.html()
+
+    @config(priority=2)
+    def detail_page(self, response):
+        return {
+            "url": response.url,
+            "title": response.doc('title').text(),
+        }

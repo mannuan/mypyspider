@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 # Created on 2017-11-21 16:41:40
-# Project: taihuliuyuhezhangzhi
+# Project:
 
 from pyspider.libs.base_handler import *
 import time,pymysql,sys,random
@@ -55,7 +55,20 @@ class Handler(BaseHandler):
         come_from = u"水利部太湖流域管理局"
         forum_name = response.save['name']
         forum_type = response.save['type']
-        type_id = (lambda x:1 if x is u'动态' else 0)(type)
+        type_id = None
+        conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
+        cur = conn.cursor()
+        try:
+            cur.execute("select id from type where name=%s", forum_type)
+            row = cur.fetchone()
+            type_id = row[0]
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
         result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'太湖流域河长制']
         # print text

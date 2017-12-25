@@ -9,5 +9,6 @@ CREATE TABLE `baidubaike` (
   `river_name` varchar(100) NOT NULL,
   `summary` text,
   `title` varchar(100),
+  `url` varchar(100),
   PRIMARY KEY (`river_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

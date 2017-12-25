@@ -4,7 +4,7 @@
 # Project: baidubaike
 
 from pyspider.libs.base_handler import *
-import pymysql,time,codecs
+import pymysql,time,urllib
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -35,6 +35,7 @@ class Handler(BaseHandler):
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         river_name = response.save['river_name']
+        url = response.url
         pic_url = response.doc('img.J-imgPlaceholder').attr.src
         title = response.doc('span.lemma-title').text()
         summary = ''
@@ -45,13 +46,13 @@ class Handler(BaseHandler):
             basic_info+=each.text()+' '
         content = response.doc('div.BK-main-content').text()
         reference = response.doc('div.reference#J-reference').text()
-        quick_pic = ''
+        quick_pic = "/home/quick_picture/{}_baidubaike.html".format(river_name)
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
         html = u"<html><head><meta http-equiv='Content-Type' content='text/html;charset=utf-8'><base href='" + response.url + u"'></head><body><div style='position:relative'>"
         html += response.doc("HEAD").html()
         html += response.doc("BODY").html()
         html += u"</div></body></html>"
-        return [html,basic_info,content,crawl_time,pic_url,quick_pic,reference,river_name,summary,title]
+        return [html,basic_info,content,crawl_time,pic_url,quick_pic,reference,river_name,summary,title,url]
 
     def on_result(self, result):
         if not result:
@@ -59,7 +60,7 @@ class Handler(BaseHandler):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
         cur = conn.cursor()
         try:
-            sql = 'REPLACE INTO baidubaike values(%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+            sql = 'REPLACE INTO baidubaike values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
             # 批量插入
             cur.execute(sql,result[1:])
             conn.commit()
@@ -71,7 +72,6 @@ class Handler(BaseHandler):
             cur.close()
         if conn:
             conn.close()
-        file_path = u"/home/quick_picture/{}_baidubaike.html".format(result[7])
-        file = codecs.open(file_path, "wt+", 'utf-8')
-        file.write(result[0])
-        file.close()
+        url = 'http://wapbaike.baidu.com/item/{}'.format(result[7])
+        local = "/home/quick_picture/{}_baidubaike.html".format(result[7])
+        urllib.urlretrieve(url, local)
