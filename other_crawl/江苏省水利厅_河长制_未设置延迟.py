@@ -4,7 +4,7 @@
 # Project:
 
 from pyspider.libs.base_handler import *
-import time,pymysql,sys,random
+import time,pymysql,sys,random,os
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -14,7 +14,7 @@ class Handler(BaseHandler):
         "Proxy-Connection": "keep-alive",
         "Pragma": "no-cache",
         "Cache-Control": "no-cache",
-        "User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36",
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13C75 Safari/601.1',
         "Accept": "*/*",
         "DNT": "1",
         "Accept-Encoding": "gzip, deflate, sdch",
@@ -33,8 +33,7 @@ class Handler(BaseHandler):
         for forum in self.list_forums:
             for p in range(1,forum.get('page')+1):
                 url = 'http://jswater.jiangsu.gov.cn/col/{}/index.html?uid=191194&pageNum={}'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},
-                           exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')})
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
@@ -47,8 +46,7 @@ class Handler(BaseHandler):
             # print url
             # print title
             # print created_at
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type},
-                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type})
 
     @config(priority=2)
     def detail_page(self, response):
@@ -56,8 +54,21 @@ class Handler(BaseHandler):
         title = response.save['title']
         created_at = response.save['created_at']
         text = ''
-        for each in response.doc('div#zoom>p').items():
-            text += each.text()
+        for each in response.doc('#barrierfree_container > div.w1100.center > div.main-fl.bt-left > div:nth-child(6)').items('p'):
+            img_url = each('a>img').attr.src
+            if img_url is not None:
+                img_name = img_url.replace('http://','').replace('https://','').replace('/','_')
+                img_tail = '.'+img_name.split('.')[-1]
+                img_head = img_name.replace(img_tail,'').replace('.','-')
+                img_name = img_head+img_tail
+                server_path = '/picture_hzz/'+img_name
+                local_path = os.getcwd()+'/.picture_hzz/'+img_name
+                os.system('wget {} -O {}'.format(img_url,local_path))
+                part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
+            else:
+                part = '<p>{}</p>'.format(each.text())
+                part = part.replace('\'','\\\'').replace('\"','\\\"')
+            text+=part
         come_from = ''
         forum_name = response.save['name']
         forum_type = response.save['type']

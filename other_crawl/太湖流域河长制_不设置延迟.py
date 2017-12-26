@@ -10,16 +10,16 @@ sys.setdefaultencoding('utf8')
 
 class Handler(BaseHandler):
     crawl_config = {
-        "headers":{
-        "Proxy-Connection": "keep-alive",
-        "Pragma": "no-cache",
-        "Cache-Control": "no-cache",
-        "User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36",
-        "Accept": "*/*",
-        "DNT": "1",
-        "Accept-Encoding": "gzip, deflate, sdch",
-        "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
-    }
+        "headers": {
+            "Proxy-Connection": "keep-alive",
+            "Pragma": "no-cache",
+            "Cache-Control": "no-cache",
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13C75 Safari/601.1',
+            "Accept": "*/*",
+            "DNT": "1",
+            "Accept-Encoding": "gzip, deflate, sdch",
+            "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
+        }
     }
 
     list_forums = [{'forum':'gzdt','page':1,'name':u'工作动态','type':u'动态'},
@@ -53,12 +53,17 @@ class Handler(BaseHandler):
         for each in response.doc('#print > tbody > tr:nth-child(5) > td > table > tbody > tr > td').items('p'):
             img_url = each('img').attr.src
             if img_url is not None:
-                server_path = '/picture_hzz/'+img_url.replace('/','_')
-                local_path = os.getcwd()+'/.picture_hzz/'+img_url.replace('/','_')
-                # os.system('wget {} -O {}'.format(img_url,local_path))
-                part = "<img src=\"{}\">".format(server_path);
+                img_name = img_url.replace('http://','').replace('https://','').replace('/','_')
+                img_tail = '.'+img_name.split('.')[-1]
+                img_head = img_name.replace(img_tail,'').replace('.','-')
+                img_name = img_head+img_tail
+                server_path = '/picture_hzz/'+img_name
+                local_path = os.environ['HOME']+'/.picture_hzz/'+img_name
+                os.system('wget {} -O {}'.format(img_url,local_path))
+                part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
             else:
                 part = '<p>{}</p>'.format(each.text())
+                part = part.replace('\'','\\\'').replace('\"','\\\"')
             text+=part
         come_from = u"水利部太湖流域管理局"
         forum_name = response.save['name']

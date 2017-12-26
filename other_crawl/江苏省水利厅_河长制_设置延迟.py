@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 # Created on 2017-11-21 16:41:40
-# Project: taihuliuyuhezhangzhi
+# Project:
 
 from pyspider.libs.base_handler import *
 import time,pymysql,sys,random,os
@@ -22,27 +22,33 @@ class Handler(BaseHandler):
     }
     }
 
-    list_forums = [{'forum':'gzdt','page':1,'name':u'工作动态','type':u'动态'},
-                   {'forum':'zcwj','page':1,'name':u'政策文件,中央/地方','type':u'政府发文'},
-                   {'forum':'jyjl','page':1,'name':u'经验交流','type':u'动态'},
-                   {'forum':'mtbg','page':1,'name':u'媒体报道','type':u'动态'}]
+    list_forums = [{'forum':'col43216','page':4,'name':u'时事要闻','type':u'动态'},
+                   {'forum':'col42975','page':5,'name':u'各地动态','type':u'动态'},
+                   {'forum':'col42896','page':2,'name':u'媒体聚焦','type':u'动态'}]
+
+    list_text_css_selector = ['td.content>div.TRS_Editor>p','div.model#about_txt>div.mbd>div.cnt_bd>p','div.slnewscon.autoHeight','div.vintro>p','div.content1']
 
     @every(minutes=24 * 60)
     def on_start(self):
         for forum in self.list_forums:
-            url = 'http://www.tba.gov.cn/tba/content/TBA/xwzx/jczt/hcz/{}/'.format(forum.get('forum'))
-            self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},exetime=time.time()+random.randint(60*60, 12*60*60))#1h~12h
+            for p in range(1,forum.get('page')+1):
+                url = 'http://jswater.jiangsu.gov.cn/col/{}/index.html?uid=191194&pageNum={}'.format(forum.get('forum'),p)
+                self.crawl(url, fetch_type='js', callback=self.index_page,save={'name':forum.get('name'),'type':forum.get('type')},
+                           exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        for each in response.doc('tbody#pageNumRows_1>tr>td>li').items():
-            url = each('a').attr.href
-            title = each('a').attr.title
-            created_at = each('span').text().replace('&nbsp','')
+        for each in response.doc('div.default_pgContainer>table>tbody>tr').items():
+            url = each('td:nth-child(1)>div>a').attr.href
+            title = each('td:nth-child(1)>div>a').attr.title
+            created_at = each('td:nth-child(2)').text()
             name = response.save['name']
             type = response.save['type']
-            # print url,title,created_at,name,type
-            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type},exetime=time.time()+random.randint(60*60, 12*60*60))#1h~12h
+            # print url
+            # print title
+            # print created_at
+            self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'name':name,'type':type},
+                       exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(priority=2)
     def detail_page(self, response):
@@ -50,30 +56,41 @@ class Handler(BaseHandler):
         title = response.save['title']
         created_at = response.save['created_at']
         text = ''
-        for each in response.doc('#print > tbody > tr:nth-child(5) > td > table > tbody > tr > td').items('p'):
-            img_url = each('img').attr.src
+        for each in response.doc('#barrierfree_container > div.w1100.center > div.main-fl.bt-left > div:nth-child(6)').items('p'):
+            img_url = each('a>img').attr.src
             if img_url is not None:
                 img_name = img_url.replace('http://','').replace('https://','').replace('/','_')
                 img_tail = '.'+img_name.split('.')[-1]
                 img_head = img_name.replace(img_tail,'').replace('.','-')
                 img_name = img_head+img_tail
                 server_path = '/picture_hzz/'+img_name
-                local_path = os.environ['HOME']+'/.picture_hzz/'+img_name
+                local_path = os.getcwd()+'/.picture_hzz/'+img_name
                 os.system('wget {} -O {}'.format(img_url,local_path))
                 part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
             else:
                 part = '<p>{}</p>'.format(each.text())
                 part = part.replace('\'','\\\'').replace('\"','\\\"')
             text+=part
-        come_from = u"水利部太湖流域管理局"
+        come_from = ''
         forum_name = response.save['name']
         forum_type = response.save['type']
-        type_id = (lambda x:1 if x == u'动态' else 0)(type)
+        type_id = None
+        conn = pymysql.connect(host='localhost', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
+        cur = conn.cursor()
+        try:
+            cur.execute("select id from type where name=%s", forum_type)
+            row = cur.fetchone()
+            type_id = row[0]
+            conn.commit()
+        except Exception as e:
+            conn.rollback()
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-        result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'太湖流域河长制']
+        result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'江苏省水利厅/河长制']
         # print text
-        # print come_from
-        # print type_id
         return result
 
     def on_result(self, result):
