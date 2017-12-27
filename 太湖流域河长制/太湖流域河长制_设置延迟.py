@@ -68,7 +68,7 @@ class Handler(BaseHandler):
         come_from = u"水利部太湖流域管理局"
         forum_name = response.save['name']
         forum_type = response.save['type']
-        type_id = (lambda x:1 if x == u'动态' else 0)(type)
+        type_id = (lambda x:1 if x == u'动态' else 0)(forum_type)
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
         result = [url,title,created_at,text,come_from,forum_name,type_id,crawl_time,u'太湖流域河长制']
         # print text
