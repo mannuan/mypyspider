@@ -4,78 +4,48 @@
 # Project: test8
 
 from pyspider.libs.base_handler import *
-import wget,os
+import os
 
 
 class Handler(BaseHandler):
     crawl_config = {
-        "headers":{
-        "Proxy-Connection": "keep-alive",
-        "Pragma": "no-cache",
-        "Cache-Control": "no-cache",
-        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13C75 Safari/601.1',
-        "Accept": "*/*",
-        "DNT": "1",
-        "Accept-Encoding": "gzip, deflate, sdch",
-        "Accept-Language": "zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4",
-    }
+        "headers": {
+            "Host": "www.jswater.gov.cn",
+            "Connection": "keep-alive",
+            "Cache-Control": "max-age=0",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13C75 Safari/601.1",
+            "Accept-Encoding": "gzip, deflate",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+        }
     }
 
     @every(minutes=24 * 60)
     def on_start(self):
-        self.crawl('http://www.jswater.gov.cn/art/2017/9/27/art_23_196380.html', fetch_type='js',
-                   callback=self.index_page)
+        self.crawl('http://jswater.jiangsu.gov.cn/art/2017/11/13/art_43216_6461270.html', fetch_type='js', callback=self.index_page)
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        # text = ''
-        # for each in response.doc('#barrierfree_container > div.w1100.center > div.main-fl.bt-left > div:nth-child(6)').items('p'):
-        #     img_url = each('a>img').attr.src
-        #     if img_url is not None:
-        #         img_name = img_url.replace('http://','').replace('https://','').replace('/','_')
-        #         img_tail = '.'+img_name.split('.')[-1]
-        #         img_head = img_name.replace(img_tail,'').replace('.','-')
-        #         img_name = img_head+img_tail
-        #         server_path = '/picture_hzz/'+img_name
-        #         local_path = os.getcwd()+'/.picture_hzz/'+img_name
-        #         os.system('wget {} -O {}'.format(img_url,local_path))
-        #         part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
-        #     else:
-        #         part = '<p>{}</p>'.format(each.text())
-        #         part = part.replace('\'','\\\'').replace('\"','\\\"')
-        #     text+=part
-        # text = ''
-        # for each in response.doc('#zoom').items('p'):
-        #     img_url = each('img').attr.src
-        #     if img_url is not None:
-        #         img_name = img_url.replace('http://','').replace('https://','').replace('/','_')
-        #         img_tail = '.'+img_name.split('.')[-1]
-        #         img_head = img_name.replace(img_tail,'').replace('.','-')
-        #         img_name = img_head+img_tail
-        #         server_path = '/picture_hzz/'+img_name
-        #         local_path = os.getcwd()+'/.picture_hzz/'+img_name
-        #         os.system('wget {} -O {}'.format(img_url,local_path))
-        #         part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
-        #     else:
-        #         part = '<p>{}</p>'.format(each.text())
-        #         part = part.replace('\'','\\\'').replace('\"','\\\"')
-        #     text+=part
+        selectors = [('#barrierfree_container > div.w1100.center > div.main-fl.bt-left > div:nth-child(6)','a>img'),('#zoom','img')]
         text = ''
-        for each in response.doc('#c > tbody > tr > td > table > tbody > tr:nth-child(6)').items('p'):
-            img_url = each('img').attr.src
-            if img_url is not None:
-                img_name = img_url.replace('http://','').replace('https://','').replace('/','_')
-                img_tail = '.'+img_name.split('.')[-1]
-                img_head = img_name.replace(img_tail,'').replace('.','-')
-                img_name = img_head+img_tail
-                server_path = '/picture_hzz/'+img_name
-                local_path = os.getcwd()+'/.picture_hzz/'+img_name
-                os.system('wget {} -O {}'.format(img_url,local_path))
-                part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
-            else:
-                part = '<p>{}</p>'.format(each.text())
-                part = part.replace('\'','\\\'').replace('\"','\\\"')
-            text+=part
+        for (selector1,selector2) in selectors:
+            for each in response.doc(selector1).items('p'):
+                img_url = each(selector2).attr.src
+                if img_url is not None:
+                    img_name = img_url.replace('http://','').replace('https://','').replace('/','_')
+                    img_tail = '.'+img_name.split('.')[-1]
+                    img_head = img_name.replace(img_tail,'').replace('.','-')
+                    img_name = img_head+img_tail
+                    server_path = '/picture_hzz/'+img_name
+                    local_path = os.getcwd()+'/.picture_hzz/'+img_name
+                    os.system('wget {} -O {}'.format(img_url,local_path))
+                    part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
+                else:
+                    part = '<p>{}</p>'.format(each.text())
+                    part = part.replace('\'','\\\'').replace('\"','\\\"')
+                text+=part
+            if text != '':
+                break
         print text
 
     @config(priority=2)
