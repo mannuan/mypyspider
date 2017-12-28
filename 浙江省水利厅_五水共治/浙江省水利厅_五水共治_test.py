@@ -23,11 +23,11 @@ class Handler(BaseHandler):
 
     @every(minutes=24 * 60)
     def on_start(self):
-        self.crawl('http://www.zjwater.com/pages/document/136/document_877.htm', fetch_type='js', callback=self.index_page)
+        self.crawl('http://www.zjwater.com/pages/document/123/document_942.htm', fetch_type='js', callback=self.index_page)
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        selectors = [('#NewsContent','p','span>img')]
+        selectors = [('#NewsContent','p','img'),('#NewsContent > p:nth-child(2) > table > tbody > tr:nth-child(4) > td','p','img'),('#NewsContent > table > tbody > tr:nth-child(3) > td','p','img')]
         text = ''
         for (selector1, selector2, selector3) in selectors:
             for each in response.doc(selector1).items(selector2):
@@ -49,6 +49,24 @@ class Handler(BaseHandler):
             if text.replace(' ', '').replace('　', '').replace('\n', '').replace('\r', '') != '':
                 break
         print text
+        file_url = None
+        file_name = None
+        for selector in selectors:
+            for each in response.doc(selector[0]).items(selector[1]):
+                file_url = each('a').attr.href
+                if file_url is not None:
+                    file_url_tmp = file_url.split('?')[0]  # 去除url后面的参数部分
+                    file = file_url_tmp.replace('http://', '').replace('https://', '').replace('/', '_')
+                    file_tail = '.' + file.split('.')[-1]
+                    file_head = file.replace(file_tail, '').replace('.', '-')
+                    file = file_head + file_tail
+                    server_path = '/document_hzz/' + file
+                    local_path = os.environ['HOME'] + '/.document_hzz/' + file
+                    os.system('wget {} -O {}'.format(file_url, local_path))
+                    file_name = server_path
+                else:
+                    file_name = ''
+        print file_url,file_name
 
     @config(priority=2)
     def detail_page(self, response):
