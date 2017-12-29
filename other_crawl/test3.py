@@ -1,16 +1,31 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+# Created on 2017-12-29 20:30:17
+# Project: 20171229203015
 
-from __future__ import absolute_import
-from __future__ import unicode_literals
+from pyspider.libs.base_handler import *
 
-import requests
 
-base_url = 'https://mmbiz.qpic.cn/mmbiz_jpg/qJickicXOV5OGsAwcl6tOsHF0BdU4YWO7GDnlEbjKMy4o0ayfPI8WCRIej6yd19R2Nch1NUEhy9QUqRG02fgpDpA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1'
+class Handler(BaseHandler):
+    crawl_config = {
+        'Connection': 'keep-alive',
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+        'Accept': 'image/webp,image/apng,image/*,*/*;q=0.8',
+        'Accept-Encoding': 'gzip, deflate',
+        'Accept-Language': 'zh-CN,zh;q=0.9',
+    }
 
-r = requests.get(base_url)
+    @every(minutes=24 * 60)
+    def on_start(self):
+        self.crawl('https://mp.weixin.qq.com/s?timestamp=1514549969&src=3&ver=1&signature=r-LEUp0996QoM55LKxjO3V8JWdF*JWAA6daP3xpv7tY6uArmIQz3bv3rzbBqTMcXfWr6F63tfUoaVe64HITQ3HOsZwfMXuw-hCgOd0BmXN*wi9-Gtj4SMo2G-SWJbRVxw4F50DxqZiblNUsPL4s9ZmStGttw7kbDoGwfOuFwAks=', fetch_type='js', callback=self.index_page)
 
-# 注意下面的处理方式
-if r.status_code == requests.codes.ok:
-    with open('/home/mininet/m0.jpg', 'wb+') as fd:
-        for chunk in r.iter_content(100):
-            fd.write(chunk)
+    @config(age=10 * 24 * 60 * 60)
+    def index_page(self, response):
+        print response.doc('#js_content').html().replace('\n','').replace('  ','')
+
+    @config(priority=2)
+    def detail_page(self, response):
+        return {
+            "url": response.url,
+            "title": response.doc('title').text(),
+        }
