@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 # Created on 2017-11-20 13:26:05
-# Project: weibo_user_test
+# Project: weibo
 
 from pyspider.libs.base_handler import *
-import time,pymysql,re,random
+import time,pymysql,re,random,os
 
 class Tool:
     #去除img标签
@@ -73,12 +73,26 @@ class Handler(BaseHandler):
         created_at = ob_json.get('mblog').get('created_at')
         source = ob_json.get('mblog').get('source')
         longTextContent = Tool.replace(ob_json.get('mblog').get('text'))
+        title = longTextContent[:10]+'...'
+        longTextContent = '<p>'+longTextContent+'</p>'
+        pics = ob_json.get('mblog').get('pics')
+        if pics is not None:
+            for pic in ob_json.get('mblog').get('pics'):
+                img_url = pic.get('large').get('url')
+                img_name = img_url.replace('https://', '').replace('http://', '').replace('/', '_')
+                img_tail = '.' + img_name.split('.')[-1]
+                img_head = img_name.replace(img_tail, '').replace('.', '-')
+                img_name = img_head + img_tail
+                server_path = '/picture_hzz/' + img_name
+                local_path = os.environ['HOME'] + '/.picture_hzz/' + img_name
+                os.system('wget {} -t 3 -T 10 -O {}'.format(img_url, local_path))
+                longTextContent += "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
         reposts_count = ob_json.get('mblog').get('reposts_count')
         comments_count = ob_json.get('mblog').get('comments_count')
         attitudes_count = ob_json.get('mblog').get('attitudes_count')
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
         type_id = 1
-        return [[weibo_id,longTextContent[:10]+'...', "https://m.weibo.cn/status/{}".format(weibo_id),longTextContent,u'微博',created_at,crawl_time,user_name,type_id],[crawl_time,reposts_count,comments_count,attitudes_count]]
+        return [[weibo_id,title, "https://m.weibo.cn/status/{}".format(weibo_id),longTextContent,u'微博',created_at,crawl_time,user_name,type_id],[crawl_time,reposts_count,comments_count,attitudes_count]]
 
     def on_result(self, result):
         if not result:

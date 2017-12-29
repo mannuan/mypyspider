@@ -61,7 +61,7 @@ class Handler(BaseHandler):
                 list_comments = list_comments[0:9]
         result = []
         for comment in list_comments:
-            user_id = comment.get('user').get('id')  # 发表评论者的id
+            # user_id = comment.get('user').get('id')  # 发表评论者的id
             user_name = comment.get('user').get('screen_name')  # 发表评论者的昵称
             weibo_id = response.save['weibo_id']#评论所对应的微博的id
             id = response.save['id']
