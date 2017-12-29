@@ -54,7 +54,7 @@ class Handler(BaseHandler):
             ('#js_content > section > section', 'section', 'img')]
         text = ''
         for (selector1, selector2, selector3) in selectors:
-            for each in response.doc(selector1).items():
+            for each in response.doc(selector1).items(selector2):
                 for each2 in each(selector2).items():
                     img_url = each2.attr.src
                     if img_url is not None:

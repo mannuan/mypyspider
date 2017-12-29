@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/weixin_localtest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/weixin_localtest2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/微信.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_未设置延迟.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_设置延迟.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/微信/微信_test.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test1.py" afterPath="$PROJECT_DIR$/other_crawl/test1.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_test.py" afterPath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_test.py" />
+      <change beforePath="$PROJECT_DIR$/微信/微信.py" afterPath="$PROJECT_DIR$/微信/微信.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,31 +53,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="微信.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/微信/微信.py">
+      <file leaf-file-name="微博_未设置延迟.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/微博/微博_未设置延迟.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="60" column="62" lean-forward="true" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
+            <state relative-caret-position="306">
+              <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
               <folding>
-                <element signature="e#192#232#0" expanded="true" />
-                <marker date="1514470411398" expanded="true" signature="527:554" ph="select * fro... weixin_public" />
-                <marker date="1514470411398" expanded="true" signature="3744:3786" ph="select * fro... weixin_info" />
-                <marker date="1514470411398" expanded="true" signature="3905:4004" ph="insert into weixin_info... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="浙江省环保厅_设置延迟.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_设置延迟.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="10" />
-              <folding>
-                <element signature="e#93#133#0" expanded="true" />
-                <marker date="1514375009899" expanded="true" signature="4953:4989" ph="select * fro... website" />
-                <marker date="1514375009899" expanded="true" signature="5101:5256" ph="INSERT INTO website... " />
-                <marker date="1514375009899" expanded="true" signature="5530:5681" ph="UPDATE website... " />
+                <marker date="1514380807633" expanded="true" signature="3487:3530" ph="select * fro... invitation" />
+                <marker date="1514380807633" expanded="true" signature="3662:3692" ph="select max(i... invitation" />
+                <marker date="1514380807633" expanded="true" signature="3814:3959" ph="INSERT INTO invitation... " />
+                <marker date="1514380807633" expanded="true" signature="4273:4317" ph="select id fr... invitation" />
+                <marker date="1514380807633" expanded="true" signature="4406:4547" ph="UPDATE invitation... " />
+                <marker date="1514380807633" expanded="true" signature="4795:4906" ph="INSERT INTO invitation_trend... " />
               </folding>
             </state>
           </provider>
@@ -148,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/elong/elong_shop.sql" />
         <option value="$PROJECT_DIR$/elong/shop_spider.py" />
         <option value="$PROJECT_DIR$/elong/test" />
         <option value="$PROJECT_DIR$/elong/elong_comment.sql" />
@@ -199,6 +180,7 @@
         <option value="$PROJECT_DIR$/微信/weixin_localtest.py" />
         <option value="$PROJECT_DIR$/微信/weixin_localtest2.py" />
         <option value="$PROJECT_DIR$/微信/微信.py" />
+        <option value="$PROJECT_DIR$/微信/微信_test.py" />
       </list>
     </option>
   </component>
@@ -239,12 +221,7 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="微信" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="浙江省环保厅" type="462c0819:PsiDirectoryNode" />
+              <item name="微博" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -576,13 +553,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/baidubaike/river.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/baidubaike/river_insert.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -646,7 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -697,13 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="56" column="29" lean-forward="false" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -774,13 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="61" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="164" selection-end-column="24" />
-          <folding>
-            <marker date="1513902588078" expanded="true" signature="3306:3339" ph="select id fr... type" />
-            <marker date="1513902588078" expanded="true" signature="5194:5227" ph="select id fr... type" />
-            <marker date="1513902588078" expanded="true" signature="6012:6048" ph="select * fro... website" />
-            <marker date="1513902588078" expanded="true" signature="6160:6290" ph="INSERT INTO website... " />
-            <marker date="1513902588078" expanded="true" signature="6564:6690" ph="UPDATE website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,12 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1584">
           <caret line="90" column="90" lean-forward="true" selection-start-line="90" selection-start-column="90" selection-end-line="90" selection-end-column="96" />
-          <folding>
-            <element signature="e#93#133#0" expanded="true" />
-            <marker date="1514374994538" expanded="true" signature="4804:4840" ph="select * fro... website" />
-            <marker date="1514374994538" expanded="true" signature="4952:5107" ph="INSERT INTO website... " />
-            <marker date="1514374994538" expanded="true" signature="5381:5532" ph="UPDATE website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="13" column="40" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,11 +757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
           <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="63" />
-          <folding>
-            <marker date="1514373780886" expanded="true" signature="3807:3843" ph="select * fro... website" />
-            <marker date="1514373780886" expanded="true" signature="3955:4085" ph="INSERT INTO website... " />
-            <marker date="1514373780886" expanded="true" signature="4359:4485" ph="UPDATE website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,17 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="24" />
-          <folding>
-            <element signature="e#99#139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,7 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="35" column="130" lean-forward="true" selection-start-line="35" selection-start-column="130" selection-end-line="36" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,11 +778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1116">
           <caret line="85" column="20" lean-forward="true" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
-          <folding>
-            <marker date="1514374186346" expanded="true" signature="4718:4754" ph="select * fro... website" />
-            <marker date="1514374186346" expanded="true" signature="4866:4996" ph="INSERT INTO website... " />
-            <marker date="1514374186346" expanded="true" signature="5270:5396" ph="UPDATE website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,11 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="49" column="140" lean-forward="true" selection-start-line="49" selection-start-column="140" selection-end-line="50" selection-end-column="93" />
-          <folding>
-            <marker date="1514374197202" expanded="true" signature="4965:5001" ph="select * fro... website" />
-            <marker date="1514374197202" expanded="true" signature="5113:5243" ph="INSERT INTO website... " />
-            <marker date="1514374197202" expanded="true" signature="5517:5643" ph="UPDATE website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,12 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="187" column="24" lean-forward="true" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="24" />
-          <folding>
-            <element signature="e#93#133#0" expanded="true" />
-            <marker date="1514446202096" expanded="true" signature="8399:8435" ph="select * fro... website" />
-            <marker date="1514446202096" expanded="true" signature="8547:8702" ph="INSERT INTO website... " />
-            <marker date="1514446202096" expanded="true" signature="8976:9127" ph="UPDATE website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -884,12 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding>
-            <element signature="e#93#133#0" expanded="true" />
-            <marker date="1514447831922" expanded="true" signature="8775:8811" ph="select * fro... website" />
-            <marker date="1514447831922" expanded="true" signature="8923:9078" ph="INSERT INTO website... " />
-            <marker date="1514447831922" expanded="true" signature="9352:9503" ph="UPDATE website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -897,9 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding>
-            <marker date="1513902588000" expanded="true" signature="1003:1054" ph="select id,no... invitation" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -907,9 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
           <caret line="68" column="56" lean-forward="true" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
-          <folding>
-            <marker date="1514382516567" expanded="true" signature="1003:1054" ph="select id,no... invitation" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -917,29 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="42" column="161" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="125" selection-end-column="28" />
-          <folding>
-            <marker date="1514380576750" expanded="true" signature="3549:3592" ph="select * fro... invitation" />
-            <marker date="1514380576750" expanded="true" signature="3724:3754" ph="select max(i... invitation" />
-            <marker date="1514380576750" expanded="true" signature="3876:4021" ph="INSERT INTO invitation... " />
-            <marker date="1514380576750" expanded="true" signature="4335:4379" ph="select id fr... invitation" />
-            <marker date="1514380576750" expanded="true" signature="4468:4609" ph="UPDATE invitation... " />
-            <marker date="1514380576750" expanded="true" signature="4857:4968" ph="INSERT INTO invitation_trend... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/微博/微博_未设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
-          <folding>
-            <marker date="1514380807633" expanded="true" signature="3487:3530" ph="select * fro... invitation" />
-            <marker date="1514380807633" expanded="true" signature="3662:3692" ph="select max(i... invitation" />
-            <marker date="1514380807633" expanded="true" signature="3814:3959" ph="INSERT INTO invitation... " />
-            <marker date="1514380807633" expanded="true" signature="4273:4317" ph="select id fr... invitation" />
-            <marker date="1514380807633" expanded="true" signature="4406:4547" ph="UPDATE invitation... " />
-            <marker date="1514380807633" expanded="true" signature="4795:4906" ph="INSERT INTO invitation_trend... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,16 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="10" column="129" lean-forward="true" selection-start-line="10" selection-start-column="129" selection-end-line="10" selection-end-column="129" />
-          <folding>
-            <element signature="e#93#133#0" expanded="true" />
-            <marker date="1514450580019" expanded="true" signature="368:375" ph="select url f... website" />
-            <marker date="1514450580019" expanded="true" signature="368:406" ph="select * fro... website" />
-            <marker date="1514450580019" expanded="true" signature="368:420" ph="select * fro... website" />
-            <marker date="1514450580019" expanded="true" signature="368:443" ph="select * fro... website" />
-            <marker date="1514450580019" expanded="true" signature="368:451" ph="select * fro... website" />
-            <marker date="1514450580019" expanded="true" signature="368:453" ph="select * fro... website" />
-            <marker date="1514450580019" expanded="true" signature="581:615" ph="delete from website... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,7 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,9 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -982,24 +848,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="10" />
-          <folding>
-            <element signature="e#93#133#0" expanded="true" />
-            <marker date="1514375009899" expanded="true" signature="4953:4989" ph="select * fro... website" />
-            <marker date="1514375009899" expanded="true" signature="5101:5256" ph="INSERT INTO website... " />
-            <marker date="1514375009899" expanded="true" signature="5530:5681" ph="UPDATE website... " />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="36" column="50" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/微信/微信_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="39" column="55" lean-forward="true" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/微信/微信.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="60" column="62" lean-forward="true" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
+        <state relative-caret-position="216">
+          <caret line="64" column="36" lean-forward="false" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/微博/微博_未设置延迟.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
           <folding>
-            <element signature="e#192#232#0" expanded="true" />
-            <marker date="1514470411398" expanded="true" signature="527:554" ph="select * fro... weixin_public" />
-            <marker date="1514470411398" expanded="true" signature="3744:3786" ph="select * fro... weixin_info" />
-            <marker date="1514470411398" expanded="true" signature="3905:4004" ph="insert into weixin_info... " />
+            <marker date="1514380807633" expanded="true" signature="3487:3530" ph="select * fro... invitation" />
+            <marker date="1514380807633" expanded="true" signature="3662:3692" ph="select max(i... invitation" />
+            <marker date="1514380807633" expanded="true" signature="3814:3959" ph="INSERT INTO invitation... " />
+            <marker date="1514380807633" expanded="true" signature="4273:4317" ph="select id fr... invitation" />
+            <marker date="1514380807633" expanded="true" signature="4406:4547" ph="UPDATE invitation... " />
+            <marker date="1514380807633" expanded="true" signature="4795:4906" ph="INSERT INTO invitation_trend... " />
           </folding>
         </state>
       </provider>
