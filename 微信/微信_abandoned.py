@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-# Created on 2017-11-21 16:41:40
-# Project: weixin
-
 host = "127.0.0.1"
 port = 3306
 user = "repository"
@@ -10,7 +5,10 @@ passwd = "repository"
 db = 'repository'
 
 from pyspider.libs.base_handler import *
-import time,json,pymysql,os
+import datetime
+import time
+import json
+import pymysql
 
 
 class Handler(BaseHandler):
@@ -50,34 +48,11 @@ class Handler(BaseHandler):
 
     @config(priority=2)
     def detail_page(self, response):
-        selectors = [
-            ('#js_content > section > section', 'section', 'img')]
-        text = ''
-        for (selector1, selector2, selector3) in selectors:
-            for each in response.doc(selector1).items(selector2):
-                for each2 in each(selector2).items():
-                    img_url = each2.attr.src
-                    if img_url is not None:
-                        img_url_tmp = img_url.replace('?','#')
-                        img_name = img_url_tmp.replace('http://', '').replace('https://', '').replace('/', '_')
-                        img_tail = '.' + img_name.split('.')[-1]
-                        img_head = img_name.replace(img_tail, '').replace('.', '-')
-                        img_name = img_head + img_tail
-                        server_path = '/picture_hzz/' + img_name
-                        local_path = os.environ['HOME'] + '/.picture_hzz/' + img_name
-                        os.system('wget {} -O {}'.format(img_url, local_path))
-                        part = "<p><img src={}></p>".format(server_path)  # 为了显示图片更加清楚把img标签加入p标签里面
-                else:
-                    part = '<p>{}</p>'.format(each.text())
-                    part = part.replace('\'', '\\\'').replace('\"', '\\\"')
-                text += part
-            if text.replace(' ', '').replace('　', '').replace('\n', '').replace('\r', '') != '':
-                break
         result = {
             "title": response.doc('#activity-name').text(),
             "time": response.doc('#post-date').text(),
-            "public_signal": response.doc('#meta_content > span').text(),
-            "main_body": text,
+            "public_signal": response.doc('span.rich_media_meta.rich_media_meta_text.rich_media_meta_nickname').text(),
+            "main_body": response.doc('div#js_content').text(),
             "spider_time": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
             "url": response.url,
         }

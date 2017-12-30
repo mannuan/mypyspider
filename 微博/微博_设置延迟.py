@@ -46,7 +46,8 @@ class Handler(BaseHandler):
     def on_start(self):
         for kw in self.key_words:
             url = 'http://m.weibo.cn/api/container/getIndex?key={}'.format(kw)
-            self.crawl(url, params={'containerid':"100103type=1&q={}".format(kw)}, callback=self.index_page, exetime=time.time()+30*60)#30min
+            self.crawl(url, params={'containerid':"100103type=1&q={}".format(kw)}, callback=self.index_page,
+                           exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     @config(age=24 * 60 * 60)
     def index_page(self, response):

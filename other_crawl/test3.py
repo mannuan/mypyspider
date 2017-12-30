@@ -17,11 +17,14 @@ class Handler(BaseHandler):
 
     @every(minutes=24 * 60)
     def on_start(self):
-        self.crawl('http://mp.weixin.qq.com/s?timestamp=1514549969&src=3&ver=1&signature=r-LEUp0996QoM55LKxjO3V8JWdF*JWAA6daP3xpv7tY6uArmIQz3bv3rzbBqTMcXfWr6F63tfUoaVe64HITQ3HOsZwfMXuw-hCgOd0BmXN*wi9-Gtj4SMo2G-SWJbRVxw4F50DxqZiblNUsPL4s9ZmStGttw7kbDoGwfOuFwAks=', fetch_type='js', callback=self.index_page)
+        self.crawl('http://mp.weixin.qq.com/s?timestamp=1514599465&src=3&ver=1&signature=lnI*JA95chL8RkecUITurw6sb*n3hmTupWkOPu7eNgNuGhO-TIQ8JV1bthslEA1UAT6PDFQmcgjuNVzx68UB5D6m2nHwtfol6S*GTMM5eLawXwAoN6QEj7JjJ5dhw5IjyixM4Oe6ykYawvRwsjpWKLLEP9crH4GG*5C7lACM-uk=', fetch_type='js', callback=self.index_page)
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        content = response.doc('#js_content').html().replace('\n','').strip()
+        content = response.doc('#js_content').html().strip()
+        with open('/home/mininet/content.html','w+') as f:
+            f.write(content)
+            f.close()
         print content
 
     @config(priority=2)
