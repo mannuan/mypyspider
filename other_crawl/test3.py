@@ -17,11 +17,12 @@ class Handler(BaseHandler):
 
     @every(minutes=24 * 60)
     def on_start(self):
-        self.crawl('https://mp.weixin.qq.com/s?timestamp=1514549969&src=3&ver=1&signature=r-LEUp0996QoM55LKxjO3V8JWdF*JWAA6daP3xpv7tY6uArmIQz3bv3rzbBqTMcXfWr6F63tfUoaVe64HITQ3HOsZwfMXuw-hCgOd0BmXN*wi9-Gtj4SMo2G-SWJbRVxw4F50DxqZiblNUsPL4s9ZmStGttw7kbDoGwfOuFwAks=', fetch_type='js', callback=self.index_page)
+        self.crawl('http://mp.weixin.qq.com/s?timestamp=1514549969&src=3&ver=1&signature=r-LEUp0996QoM55LKxjO3V8JWdF*JWAA6daP3xpv7tY6uArmIQz3bv3rzbBqTMcXfWr6F63tfUoaVe64HITQ3HOsZwfMXuw-hCgOd0BmXN*wi9-Gtj4SMo2G-SWJbRVxw4F50DxqZiblNUsPL4s9ZmStGttw7kbDoGwfOuFwAks=', fetch_type='js', callback=self.index_page)
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
-        print response.doc('#js_content').html().replace('\n','').replace('  ','')
+        content = response.doc('#js_content').html().replace('\n','').strip()
+        print content
 
     @config(priority=2)
     def detail_page(self, response):
