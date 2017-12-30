@@ -8,18 +8,18 @@ import time,pymysql,sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-conn = pymysql.connect(host='122.224.129.35', port=23306, user='repository', passwd='repository', db='repository',charset='utf8')
+conn = pymysql.connect(host='10.1.17.25', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
 cur = conn.cursor()
 try:
-    sql = 'select note_id from invitation where source = \'微博\' and note_context not like \'%<p>%\''
+    sql = 'select note_id from invitation where source = \'微博\''
     cur.execute(sql)
     rows = cur.fetchall()
-    for row in rows:
-        print row[0]
-    print len(rows)
-    # sql = 'delete from invitation where note_id = %s'
-    # cur.executemany(sql,rows)
-    # conn.commit()
+    # for row in rows:
+    #     print row[0]
+    # print len(rows)
+    sql = 'UPDATE `invitation` SET `type_id`=\'0\' WHERE `note_id`=%s;'
+    cur.executemany(sql,rows)
+    conn.commit()
 except Exception as e:
     print e
     conn.rollback()

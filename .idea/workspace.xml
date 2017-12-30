@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/other_crawl/mmbiz-qpic-cn_mmbiz_gif_qJickicXOV5OEGFMhDXkVOlDTZcnptvP2p0l5iaNpZ3TnG3zaHiasudtoWPcbiafjJBFGzia07s1GEA60IdxFPUZW4eg_0" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/other_crawl/test.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/other_crawl/test5.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/other_crawl/test6.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/weixin_info.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/weixin_pic.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/微信_abandoned.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/微信_未设置延迟.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/微信/微信_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test3.py" afterPath="$PROJECT_DIR$/other_crawl/test3.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test4.py" afterPath="$PROJECT_DIR$/other_crawl/test4.py" />
-      <change beforePath="$PROJECT_DIR$/微信/微信.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/other_crawl/test1.py" afterPath="$PROJECT_DIR$/other_crawl/test1.py" />
+      <change beforePath="$PROJECT_DIR$/other_crawl/test6.py" afterPath="$PROJECT_DIR$/other_crawl/test6.py" />
+      <change beforePath="$PROJECT_DIR$/微博/微博_未设置延迟.py" afterPath="$PROJECT_DIR$/微博/微博_未设置延迟.py" />
       <change beforePath="$PROJECT_DIR$/微博/微博_设置延迟.py" afterPath="$PROJECT_DIR$/微博/微博_设置延迟.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -40,14 +30,14 @@
     <SUITE FILE_PATH="coverage/mypyspider$test1__1_.coverage" NAME="test1 (1) Coverage Results" MODIFIED="1514362585386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/浙江省环保厅" />
     <SUITE FILE_PATH="coverage/mypyspider$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1514541221728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
     <SUITE FILE_PATH="coverage/mypyspider$weixin_localtest.coverage" NAME="weixin_localtest Coverage Results" MODIFIED="1514459628326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/微信" />
-    <SUITE FILE_PATH="coverage/mypyspider$test6.coverage" NAME="test6 Coverage Results" MODIFIED="1514600600196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
+    <SUITE FILE_PATH="coverage/mypyspider$test6.coverage" NAME="test6 Coverage Results" MODIFIED="1514630450156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
     <SUITE FILE_PATH="coverage/mypyspider$Nosetests_in_test_shop_py.coverage" NAME="Nosetests in test_shop.py Coverage Results" MODIFIED="1512979923205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiecheng" />
     <SUITE FILE_PATH="coverage/mypyspider$test_pymysql.coverage" NAME="test_pymysql Coverage Results" MODIFIED="1510932369363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/mypyspider$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1513867149481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baidubaike" />
     <SUITE FILE_PATH="coverage/mypyspider$baidubaike_test.coverage" NAME="baidubaike_test Coverage Results" MODIFIED="1513857912275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baidubaike" />
     <SUITE FILE_PATH="coverage/mypyspider$test__3_.coverage" NAME="test (3) Coverage Results" MODIFIED="1514188299859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
-    <SUITE FILE_PATH="coverage/mypyspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1514536983950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
     <SUITE FILE_PATH="coverage/mypyspider$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1514617398308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
+    <SUITE FILE_PATH="coverage/mypyspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1514627871342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
     <SUITE FILE_PATH="coverage/mypyspider$test_shop2.coverage" NAME="test_shop2 Coverage Results" MODIFIED="1512709787259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
     <SUITE FILE_PATH="coverage/mypyspider$test_main.coverage" NAME="test_main Coverage Results" MODIFIED="1512650557951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
     <SUITE FILE_PATH="coverage/mypyspider$wb.coverage" NAME="wb Coverage Results" MODIFIED="1510933839857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
@@ -69,7 +59,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test6.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/other_crawl/test6.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-709">
+              <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -165,13 +168,10 @@
         <option value="$PROJECT_DIR$/微信/weixin_localtest.py" />
         <option value="$PROJECT_DIR$/微信/weixin_localtest2.py" />
         <option value="$PROJECT_DIR$/微信/微信_test.py" />
-        <option value="$PROJECT_DIR$/微博/微博_未设置延迟.py" />
-        <option value="$PROJECT_DIR$/other_crawl/test1.py" />
         <option value="$PROJECT_DIR$/微博/微博_评论_未设置延迟.py" />
         <option value="$PROJECT_DIR$/other_crawl/test2.py" />
         <option value="$PROJECT_DIR$/other_crawl/test3.py" />
         <option value="$PROJECT_DIR$/other_crawl/test5.py" />
-        <option value="$PROJECT_DIR$/other_crawl/test6.py" />
         <option value="$PROJECT_DIR$/other_crawl/test4.py" />
         <option value="$PROJECT_DIR$/other_crawl/test.html" />
         <option value="$PROJECT_DIR$/微信/weixin_pic.sql" />
@@ -179,7 +179,10 @@
         <option value="$PROJECT_DIR$/微信/微信_abandoned.py" />
         <option value="$PROJECT_DIR$/微信/weixin_info.sql" />
         <option value="$PROJECT_DIR$/微信/微信_设置延迟.py" />
+        <option value="$PROJECT_DIR$/微博/微博_未设置延迟.py" />
         <option value="$PROJECT_DIR$/微博/微博_设置延迟.py" />
+        <option value="$PROJECT_DIR$/other_crawl/test1.py" />
+        <option value="$PROJECT_DIR$/other_crawl/test6.py" />
       </list>
     </option>
   </component>
@@ -218,6 +221,11 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="other_crawl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -261,8 +269,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test4">
-    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test6">
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -275,7 +283,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="mypyspider" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other_crawl/test2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other_crawl/test1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -439,19 +447,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test2" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test3" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test4" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test5" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test6" />
+      <item index="0" class="java.lang.String" itemvalue="Python.test3" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test4" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test5" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test6" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test4" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test6" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test5" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test3" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test6" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test4" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test5" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test3" />
       </list>
     </recent_temporary>
   </component>
@@ -498,7 +506,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25277779" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25277779" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
@@ -647,27 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/other_crawl/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/微博/微博_未设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/微博/微博_评论_未设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="56" column="41" lean-forward="true" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/微信/weixin_localtest.py" />
     <entry file="file://$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_设置延迟.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -692,30 +679,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/other_crawl/m0.jpg" />
     <entry file="file://$PROJECT_DIR$/other_crawl/test.png" />
-    <entry file="file://$PROJECT_DIR$/other_crawl/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/other_crawl/test3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="23" column="60" lean-forward="true" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/other_crawl/test6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/other_crawl/中国水网.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -806,16 +769,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="55" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/other_crawl/test4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-          <folding>
-            <element signature="e#24#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -913,17 +866,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/微博/微博_评论_未设置延迟.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="89" column="39" lean-forward="true" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding>
+            <marker date="1514599301140" expanded="true" signature="1003:1054" ph="select id,no... invitation" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/微博/微博_未设置延迟.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="93" column="19" lean-forward="false" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+          <folding>
+            <marker date="1514627562555" expanded="true" signature="4346:4389" ph="select * fro... invitation" />
+            <marker date="1514627562555" expanded="true" signature="4521:4551" ph="select max(i... invitation" />
+            <marker date="1514627562555" expanded="true" signature="4673:4818" ph="INSERT INTO invitation... " />
+            <marker date="1514627562555" expanded="true" signature="5132:5176" ph="select id fr... invitation" />
+            <marker date="1514627562555" expanded="true" signature="5265:5406" ph="UPDATE invitation... " />
+            <marker date="1514627562555" expanded="true" signature="5654:5765" ph="INSERT INTO invitation_trend... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other_crawl/test4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="e#24#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other_crawl/test3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="23" column="60" lean-forward="true" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other_crawl/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other_crawl/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding>
+            <marker date="1514627868951" expanded="true" signature="363:415" ph="select note_... invitation" />
+            <marker date="1514627868951" expanded="true" signature="543:577" ph="UPDATE `repository`.`invitation`... " />
+            <marker date="1514627868951" expanded="true" signature="543:599" ph="UPDATE `repository`.`invitation`... " />
+            <marker date="1514627868951" expanded="true" signature="543:601" ph="UPDATE `invitation`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/微博/微博_设置延迟.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="28" />
+        <state relative-caret-position="304">
+          <caret line="91" column="34" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="140" selection-end-column="28" />
           <folding>
-            <marker date="1514627209086" expanded="true" signature="4444:4487" ph="select * fro... invitation" />
-            <marker date="1514627209086" expanded="true" signature="4619:4649" ph="select max(i... invitation" />
-            <marker date="1514627209086" expanded="true" signature="4771:4916" ph="INSERT INTO invitation... " />
-            <marker date="1514627209086" expanded="true" signature="5230:5274" ph="select id fr... invitation" />
-            <marker date="1514627209086" expanded="true" signature="5363:5504" ph="UPDATE invitation... " />
-            <marker date="1514627209086" expanded="true" signature="5752:5863" ph="INSERT INTO invitation_trend... " />
+            <marker date="1514627570227" expanded="true" signature="4444:4487" ph="select * fro... invitation" />
+            <marker date="1514627570227" expanded="true" signature="4619:4649" ph="select max(i... invitation" />
+            <marker date="1514627570227" expanded="true" signature="4771:4916" ph="INSERT INTO invitation... " />
+            <marker date="1514627570227" expanded="true" signature="5230:5274" ph="select id fr... invitation" />
+            <marker date="1514627570227" expanded="true" signature="5363:5504" ph="UPDATE invitation... " />
+            <marker date="1514627570227" expanded="true" signature="5752:5863" ph="INSERT INTO invitation_trend... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/other_crawl/test6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-709">
+          <caret line="13" column="44" lean-forward="true" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

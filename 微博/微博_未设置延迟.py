@@ -91,7 +91,7 @@ class Handler(BaseHandler):
         comments_count = ob_json.get('mblog').get('comments_count')
         attitudes_count = ob_json.get('mblog').get('attitudes_count')
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
-        type_id = 1
+        type_id = 0
         return [[weibo_id,title, "https://m.weibo.cn/status/{}".format(weibo_id),longTextContent,u'微博',created_at,crawl_time,user_name,type_id],[crawl_time,reposts_count,comments_count,attitudes_count]]
 
     def on_result(self, result):
