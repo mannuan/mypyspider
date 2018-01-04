@@ -79,6 +79,84 @@ def spiderweb_debug(project):
     default_task['project'] = project
     return render_template("debug_spiderweb.html", task=task, script=script, project_name=project)
 
+@app.route('/spiderweb/debug/<project>/get_script_save_run', methods=['GET', 'POST'])
+def spiderweb_debug_get_script_save_run(project):
+    print(request.values)
+    projectdb = app.config['projectdb']
+    if not projectdb.verify_project_name(project):
+        return 'project name is not allowed!', 400
+    info = projectdb.get(project, fields=['name', 'script'])
+    if info:
+        script = info['script']
+    else:
+        script = (default_script_spiderweb
+                  .replace('__DATE__', datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+                  .replace('__PROJECT_NAME__', project)
+                  .replace('__START_URL__', request.values.get('start-url') or '__START_URL__')
+                  .replace('__KEY_NAME__', request.values.get('key-name') or '__KEY_NAME__')
+                  .replace('__KEY_TAG_SELECTOR__', request.values.get('key-tag-selector') or '__KEY_TAG_SELECTOR__')
+                  .replace('__KEY_ATTR__', request.values.get('key-attr') or '__KEY_ATTR__')
+
+                  .replace('__NEXTPAGE_NAME__', request.values.get('nextpage-name') or '__NEXTPAGE_NAME__')
+                  .replace('__NEXTPAGE_TAG_SELECTOR__', request.values.get('nextpage-tag-selector') or '__NEXTPAGE_TAG_SELECTOR__')
+                  .replace('__NEXTPAGE_ATTR__', request.values.get('nextpage-attr') or '__NEXTPAGE_ATTR__')
+                  .replace('__PAGE_NUM__', request.values.get('page-num') or '__PAGE_NUM__')
+
+                  .replace('__TITLE_TAG_SELECTOR__', request.values.get('title-tag-selector') or '__TITLE_TAG_SELECTOR__')
+                  .replace('__TITLE_ATTR__', request.values.get('title-attr') or '__TITLE_ATTR__')
+
+                  .replace('__CONTENT_TAG_SELECTOR__', request.values.get('content-tag-selector') or '__CONTENT_TAG_SELECTOR__')
+                  .replace('__PUBLISH_TIME_NAME__', request.values.get('publish-time-name') or '__PUBLISH_TIME_NAME__')
+                  .replace('__PUBLISH_TIME_TAG_SELECTOR__', request.values.get('publish-time-tag-selector') or '__PUBLISH_TIME_TAG_SELECTOR__')
+
+                  .replace('__FILTER_WORDS__', request.values.get('filter-words') or ''))
+
+
+    taskid = request.args.get('taskid')
+    if taskid:
+        taskdb = app.config['taskdb']
+        task = taskdb.get_task(
+            project, taskid, ['taskid', 'project', 'url', 'fetch', 'process'])
+    else:
+        task = default_task
+
+    default_task['project'] = project
+    # return render_template("debug_spiderweb.html", task=task, script=script, project_name=project)
+    # projectdb = app.config['projectdb']
+    # if not projectdb.verify_project_name(project):
+    #     return 'project name is not allowed!', 400
+    # script = request.form['script']
+    project_info = projectdb.get(project, fields=['name', 'status', 'group'])
+    if project_info and 'lock' in projectdb.split_group(project_info.get('group')) \
+            and not login.current_user.is_active():
+        return app.login_response
+
+    if project_info:
+        info = {
+            'script': script,
+        }
+        if project_info.get('status') in ('DEBUG', 'RUNNING', ):
+            info['status'] = 'CHECKING'
+        projectdb.update(project, info)
+    else:
+        info = {
+            'name': project,
+            'script': script,
+            'status': 'TODO',
+            'rate': app.config.get('max_rate', 1),
+            'burst': app.config.get('max_burst', 3),
+        }
+        projectdb.insert(project, info)
+
+    rpc = app.config['scheduler_rpc']
+    if rpc is not None:
+        try:
+            rpc.update_project()
+        except socket.error as e:
+            app.logger.warning('connect to scheduler rpc error: %r', e)
+            return 'rpc error', 200
+
+    return 'ok', 200
 
 @app.before_first_request
 def spiderweb_enable_projects_import():
@@ -187,6 +265,7 @@ def spiderweb_run(project):
 
 @app.route('/spiderweb/debug/<project>/save', methods=['POST', ])
 def spiderweb_save(project):
+    print(request.values)
     projectdb = app.config['projectdb']
     if not projectdb.verify_project_name(project):
         return 'project name is not allowed!', 400
@@ -222,7 +301,6 @@ def spiderweb_save(project):
             return 'rpc error', 200
 
     return 'ok', 200
-
 
 @app.route('/spiderweb/debug/<project>/get')
 def spiderweb_get_script(project):
