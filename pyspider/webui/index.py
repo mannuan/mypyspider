@@ -27,6 +27,13 @@ def index():
                       key=lambda k: (0 if k['group'] else 1, k['group'] or '', k['name']))
     return render_template("index.html", projects=projects)
 
+@app.route('/projects', methods=['GET', ])
+def projects():
+    projectdb = app.config['projectdb']
+    projects = sorted(projectdb.get_all(fields=index_fields),
+                      key=lambda k: (0 if k['group'] else 1, k['group'] or '', k['name']))
+    return json.dumps(projects), 200, {'Content-Type': 'application/json'}
+
 
 @app.route('/queues')
 def get_queues():
@@ -156,3 +163,13 @@ Allow: /$
 Allow: /debug
 Disallow: /debug/*?taskid=*
 """, 200, {'Content-Type': 'text/plain'}
+
+@app.route('/delete/<project>', methods=['GET'])
+def delete(project):
+    projectdb = app.config['projectdb']
+    # resultdb = app.config['resultdb']
+    # taskdb = app.config['taskdb']
+    projectdb.drop(project)
+    # resultdb.drop(project)
+    # taskdb.drop(project)
+    return 'ok', 200

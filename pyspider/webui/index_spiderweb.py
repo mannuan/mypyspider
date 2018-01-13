@@ -25,6 +25,7 @@ def spiderweb_index():
     projectdb = app.config['projectdb']
     projects = sorted(projectdb.get_all(fields=index_fields),
                       key=lambda k: (0 if k['group'] else 1, k['group'] or '', k['name']))
+    # print projects
     return render_template("index_spiderweb.html", projects=projects)
 
 
@@ -113,6 +114,7 @@ def spiderweb_counter():
 
 @app.route('/spiderweb/run', methods=['POST', ])
 def spiderweb_runtask():
+    print(request.values)
     rpc = app.config['scheduler_rpc']
     if rpc is None:
         return json.dumps({})

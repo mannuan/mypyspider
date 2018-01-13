@@ -27,6 +27,13 @@ def hzz_index():
                       key=lambda k: (0 if k['group'] else 1, k['group'] or '', k['name']))
     return render_template("index_hzz.html", projects=projects)
 
+@app.route('/hzz/projects', methods=['GET', ])
+def hzz_projects():
+    projectdb = app.config['projectdb']
+    projects = sorted(projectdb.get_all(fields=index_fields),
+                      key=lambda k: (0 if k['group'] else 1, k['group'] or '', k['name']))
+    return json.dumps(projects), 200, {'Content-Type': 'application/json'}
+
 
 @app.route('/hzz/queues')
 def hzz_get_queues():

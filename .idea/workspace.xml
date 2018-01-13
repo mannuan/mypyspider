@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" afterPath="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/index.py" afterPath="$PROJECT_DIR$/pyspider/webui/index.py" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/index_hzz.py" afterPath="$PROJECT_DIR$/pyspider/webui/index_hzz.py" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/index_spiderweb.py" afterPath="$PROJECT_DIR$/pyspider/webui/index_spiderweb.py" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/task.py" afterPath="$PROJECT_DIR$/pyspider/webui/task.py" />
+      <change beforePath="$PROJECT_DIR$/tmp/test_pymysql.py" afterPath="$PROJECT_DIR$/tmp/test_pymysql.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,6 +39,7 @@
     <SUITE FILE_PATH="coverage/mypyspider$test__3_.coverage" NAME="test (3) Coverage Results" MODIFIED="1514188299859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
     <SUITE FILE_PATH="coverage/mypyspider$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1514617398308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
     <SUITE FILE_PATH="coverage/mypyspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1514627871342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
+    <SUITE FILE_PATH="coverage/mypyspider$Nosetests_in_test_pymysql_py.coverage" NAME="Nosetests in test_pymysql.py Coverage Results" MODIFIED="1515825276942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/mypyspider$test_shop2.coverage" NAME="test_shop2 Coverage Results" MODIFIED="1512709787259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
     <SUITE FILE_PATH="coverage/mypyspider$test_main.coverage" NAME="test_main Coverage Results" MODIFIED="1512650557951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
     <SUITE FILE_PATH="coverage/mypyspider$wb.coverage" NAME="wb Coverage Results" MODIFIED="1510933839857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
@@ -56,31 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="debug_spiderweb.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py">
+      <file leaf-file-name="task.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pyspider/webui/task.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="158" column="20" lean-forward="true" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_spiderweb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyspider/webui/index_spiderweb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="116" column="19" lean-forward="true" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_spiderweb.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3229">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="427">
+              <caret line="103" column="32" lean-forward="false" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -100,7 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>invitation_comment</find>
       <find>website</find>
       <find>index_page</find>
       <find>self.crawl</find>
@@ -130,6 +115,7 @@
       <find>progress</find>
       <find>quick</find>
       <find>group</find>
+      <find>/task/</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pyspider/webui/static/hzz</dir>
@@ -146,11 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/baidubaike/baidubaike_test.py" />
-        <option value="$PROJECT_DIR$/baidubaike/temp.py" />
-        <option value="$PROJECT_DIR$/pyspider/webui/index_hzz.py" />
-        <option value="$PROJECT_DIR$/baidubaike/test.py" />
-        <option value="$PROJECT_DIR$/baidubaike/baidubaike.sql" />
         <option value="$PROJECT_DIR$/baidubaike/baidubaike_spider.py" />
         <option value="$PROJECT_DIR$/other_crawl/website.sql" />
         <option value="$PROJECT_DIR$/other_crawl/太湖流域河长制.py" />
@@ -197,6 +178,11 @@
         <option value="$PROJECT_DIR$/other_crawl/test1.py" />
         <option value="$PROJECT_DIR$/other_crawl/test6.py" />
         <option value="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/index_spiderweb.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/index_hzz.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/index.py" />
+        <option value="$PROJECT_DIR$/tmp/test_pymysql.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/task.py" />
       </list>
     </option>
   </component>
@@ -226,7 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,26 +222,14 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="webui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="webui" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="tmp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -295,7 +268,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test6">
+  <component name="RunManager" selected="Python tests.Nosetests in test_pymysql.py">
     <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -310,25 +283,6 @@
       <module name="mypyspider" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other_crawl/test1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="test3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/other_crawl" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="mypyspider" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/other_crawl/test3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -472,20 +426,36 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <configuration name="Nosetests in test_pymysql.py" type="tests" factoryName="Nosetests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tmp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="mypyspider" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tmp/test_pymysql.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test3" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test4" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test5" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test6" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test1" />
+      <item index="0" class="java.lang.String" itemvalue="Python.test4" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test5" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test6" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test1" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Nosetests in test_pymysql.py" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test6" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test1" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test4" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test5" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test3" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Nosetests in test_pymysql.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test6" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test4" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test5" />
       </list>
     </recent_temporary>
   </component>
@@ -513,6 +483,21 @@
     <history-entry file="Nosetests_in_test_comment_py - 2017.12.11 at 10h 49m 50s.xml">
       <configuration name="Nosetests in test_comment.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Nosetests_in_test_pymysql_py - 2018.01.13 at 09h 59m 40s.xml">
+      <configuration name="Nosetests in test_pymysql.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_pymysql_py - 2018.01.13 at 10h 04m 03s.xml">
+      <configuration name="Nosetests in test_pymysql.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_pymysql_py - 2018.01.13 at 14h 27m 34s.xml">
+      <configuration name="Nosetests in test_pymysql.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_pymysql_py - 2018.01.13 at 14h 34m 16s.xml">
+      <configuration name="Nosetests in test_pymysql.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Nosetests_in_test_pymysql_py - 2018.01.13 at 14h 34m 37s.xml">
+      <configuration name="Nosetests in test_pymysql.py" configurationId="tests" />
+    </history-entry>
     <history-entry file="Nosetests_in_test_shop_py - 2017.12.11 at 16h 12m 09s.xml">
       <configuration name="Nosetests in test_shop.py" configurationId="tests" />
     </history-entry>
@@ -528,7 +513,7 @@
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988507" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3611111" sideWeight="0.50238097" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35694444" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
@@ -571,6 +556,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -581,58 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_未设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="90" column="90" lean-forward="true" selection-start-line="90" selection-start-column="90" selection-end-line="90" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/太湖流域河长制/太湖流域河长制_abandoned.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" column="40" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="108" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/太湖流域河长制/太湖流域河长制_不设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_abandoned.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="35" column="130" lean-forward="true" selection-start-line="35" selection-start-column="130" selection-end-line="36" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_未设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="85" column="20" lean-forward="true" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_未设置延迟.py" />
-    <entry file="file://$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_设置延迟.py" />
-    <entry file="file://$PROJECT_DIR$/微博/微博_评论_设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="22" column="38" lean-forward="true" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/微信/weixin_localtest2.py" />
     <entry file="file://$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="587">
@@ -818,13 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/微博/微博_未设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="93" column="19" lean-forward="false" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/other_crawl/test4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -864,21 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="13" column="44" lean-forward="false" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug_hzz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1514599301132" expanded="true" signature="1364:1503" ph="CREATE TABLE... IF" />
-            <marker date="1514599301132" expanded="true" signature="1551:1586" ph="select * fro... hzz" />
-            <marker date="1514599301132" expanded="true" signature="8113:8240" ph="CREATE TABLE... IF" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,30 +807,132 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-889">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3229">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/index_spiderweb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="116" column="19" lean-forward="true" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="158" column="20" lean-forward="true" selection-start-line="158" selection-start-column="20" selection-end-line="158" selection-end-column="20" />
+        <state relative-caret-position="108">
+          <caret line="83" column="10" lean-forward="false" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/index_spiderweb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug_hzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-918">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/index_hzz.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="166" column="25" lean-forward="false" selection-start-line="166" selection-start-column="25" selection-end-line="166" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/CodeMirror_ Python mode.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/url_list">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/微博/微博_未设置延迟.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="91" column="40" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="139" selection-end-column="28" />
+          <folding>
+            <marker date="1514627562555" expanded="true" signature="4346:4389" ph="select * fro... invitation" />
+            <marker date="1514627562555" expanded="true" signature="4521:4551" ph="select max(i... invitation" />
+            <marker date="1514627562555" expanded="true" signature="4673:4818" ph="INSERT INTO invitation... " />
+            <marker date="1514627562555" expanded="true" signature="5132:5176" ph="select id fr... invitation" />
+            <marker date="1514627562555" expanded="true" signature="5265:5406" ph="UPDATE invitation... " />
+            <marker date="1514627562555" expanded="true" signature="5654:5765" ph="INSERT INTO invitation_trend... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="205" column="20" lean-forward="true" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/flask/templating.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="120" column="54" lean-forward="true" selection-start-line="120" selection-start-column="54" selection-end-line="120" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/test_pymysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="157" column="25" lean-forward="true" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/templates/tasks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="103" column="32" lean-forward="false" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
           <folding />
         </state>
       </provider>

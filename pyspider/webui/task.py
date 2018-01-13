@@ -27,7 +27,7 @@ def task(taskid):
     result = {}
     if resultdb:
         result = resultdb.get(project, taskid)
-
+    # print task
     return render_template("task.html", task=task, json=json, result=result,
                            status_to_string=app.config['taskdb'].status_to_string)
 
@@ -75,6 +75,36 @@ def tasks():
         tasks=result,
         status_to_string=taskdb.status_to_string
     )
+
+@app.route('/tasks/<project>', methods=['GET'])
+def tasks_projects(project):
+    rpc = app.config['scheduler_rpc']
+    taskdb = app.config['taskdb']
+    limit = int(request.args.get('limit', 100))
+
+    try:
+        updatetime_tasks = rpc.get_active_tasks(project, limit)
+    except socket.error as e:
+        app.logger.warning('connect to scheduler rpc error: %r', e)
+        return 'connect to scheduler error', 502
+
+    tasks = {}
+    result = []
+    for updatetime, task in sorted(updatetime_tasks, key=lambda x: x[0]):
+        key = '%(project)s:%(taskid)s' % task
+        task['updatetime'] = updatetime
+        if key in tasks and tasks[key].get('status', None) != taskdb.ACTIVE:
+            result.append(tasks[key])
+        tasks[key] = task
+    result.extend(tasks.values())
+    print result
+    task_results = []
+    for r in result:
+        taskid = r['taskid']
+        if taskid != 'on_start':
+            task = taskdb.get_task(project, taskid)
+            task_results.append(task)
+    return json.dumps(task_results), 200, {'Content-Type': 'application/json'}
 
 
 @app.route('/active_tasks')
