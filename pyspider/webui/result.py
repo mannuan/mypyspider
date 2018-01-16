@@ -41,6 +41,8 @@ def dump_result(project, _format):
     offset = int(request.args.get('offset', 0)) or None
     limit = int(request.args.get('limit', 0)) or None
     results = resultdb.select(project, offset=offset, limit=limit)
+    # print '##################################################################'
+    # print type(results)
 
     if _format == 'json':
         valid = request.args.get('style', 'rows') == 'full'

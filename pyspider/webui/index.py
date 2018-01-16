@@ -117,6 +117,27 @@ def counter():
 
     return json.dumps(result), 200, {'Content-Type': 'application/json'}
 
+@app.route('/counter/<project_name>')
+def counter_project(project_name):
+    rpc = app.config['scheduler_rpc']
+    if rpc is None:
+        return json.dumps({})
+
+    result = {}
+    try:
+        data = rpc.webui_update()
+        for type, counters in iteritems(data['counter']):
+            for project, counter in iteritems(counters):
+                result.setdefault(project, {})[type] = counter
+        for project, paused in iteritems(data['pause_status']):
+            result.setdefault(project, {})['paused'] = paused
+    except socket.error as e:
+        app.logger.warning('connect to scheduler rpc error: %r', e)
+        return json.dumps({}), 200, {'Content-Type': 'application/json'}
+    # print project_name
+    result = result.get(project_name)
+    return json.dumps(result), 200, {'Content-Type': 'application/json'}
+
 
 @app.route('/run', methods=['POST', ])
 def runtask():

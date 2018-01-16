@@ -2,149 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/baidubaike/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/elong/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/other_crawl/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/tmp/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/weibo/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/微信/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/微博/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/baidubaike.sql" afterPath="$PROJECT_DIR$/wjl/baidubaike/baidubaike.sql" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/baidubaike_spider.py" afterPath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_spider.py" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/baidubaike_test.py" afterPath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_test.py" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/river.sql" afterPath="$PROJECT_DIR$/wjl/baidubaike/river.sql" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/river.txt" afterPath="$PROJECT_DIR$/wjl/baidubaike/river.txt" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/river_insert.py" afterPath="$PROJECT_DIR$/wjl/baidubaike/river_insert.py" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/temp.html" afterPath="$PROJECT_DIR$/wjl/baidubaike/temp.html" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/temp.py" afterPath="$PROJECT_DIR$/wjl/baidubaike/temp.py" />
-      <change beforePath="$PROJECT_DIR$/baidubaike/test.py" afterPath="$PROJECT_DIR$/wjl/baidubaike/test.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/city.sql" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/city.sql" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/comment.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/comment.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/comment_spider.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/comment_spider.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/dazhongdianping_comment.sql" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/dazhongdianping_comment.sql" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/dazhongdianping_shop.sql" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/dazhongdianping_shop.sql" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/result" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/result" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/shop.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/shop.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/shop_spider.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/shop_spider.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/shop_spider2.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/shop_spider2.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/temp.js" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/temp.js" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test_1.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_1.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test_city.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_city.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test_comment.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_comment.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test_main.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_main.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test_result" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_result" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test_shop.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_shop.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/test_shop2.py" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_shop2.py" />
-      <change beforePath="$PROJECT_DIR$/dazhongdianping/大众点评.xlsx" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/大众点评.xlsx" />
-      <change beforePath="$PROJECT_DIR$/elong/comment_spider.py" afterPath="$PROJECT_DIR$/wjl/elong/comment_spider.py" />
-      <change beforePath="$PROJECT_DIR$/elong/elong_comment.sql" afterPath="$PROJECT_DIR$/wjl/elong/elong_comment.sql" />
-      <change beforePath="$PROJECT_DIR$/elong/elong_shop.sql" afterPath="$PROJECT_DIR$/wjl/elong/elong_shop.sql" />
-      <change beforePath="$PROJECT_DIR$/elong/param" afterPath="$PROJECT_DIR$/wjl/elong/param" />
-      <change beforePath="$PROJECT_DIR$/elong/shop.py" afterPath="$PROJECT_DIR$/wjl/elong/shop.py" />
-      <change beforePath="$PROJECT_DIR$/elong/shop_spider.py" afterPath="$PROJECT_DIR$/wjl/elong/shop_spider.py" />
-      <change beforePath="$PROJECT_DIR$/elong/test" afterPath="$PROJECT_DIR$/wjl/elong/test" />
-      <change beforePath="$PROJECT_DIR$/elong/test_shop.py" afterPath="$PROJECT_DIR$/wjl/elong/test_shop.py" />
-      <change beforePath="$PROJECT_DIR$/elong/tmp" afterPath="$PROJECT_DIR$/wjl/elong/tmp" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/19楼.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/19楼.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/download_file.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/download_file.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/mmbiz-qpic-cn_mmbiz_gif_qJickicXOV5OEGFMhDXkVOlDTZcnptvP2p0l5iaNpZ3TnG3zaHiasudtoWPcbiafjJBFGzia07s1GEA60IdxFPUZW4eg_0" afterPath="$PROJECT_DIR$/wjl/other_crawl/mmbiz-qpic-cn_mmbiz_gif_qJickicXOV5OEGFMhDXkVOlDTZcnptvP2p0l5iaNpZ3TnG3zaHiasudtoWPcbiafjJBFGzia07s1GEA60IdxFPUZW4eg_0" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test.html" afterPath="$PROJECT_DIR$/wjl/other_crawl/test.html" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test.sql" afterPath="$PROJECT_DIR$/wjl/other_crawl/test.sql" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test1.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/test1.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test2.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/test2.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test3.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/test3.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test4.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/test4.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test5.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/test5.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/test6.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/test6.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/type.sql" afterPath="$PROJECT_DIR$/wjl/other_crawl/type.sql" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/website.sql" afterPath="$PROJECT_DIR$/wjl/other_crawl/website.sql" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/中国水网.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/中国水网.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/中国水网.sql" afterPath="$PROJECT_DIR$/wjl/other_crawl/中国水网.sql" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/中国水网_文件下载.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/中国水网_文件下载.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/广东省水利厅.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/广东省水利厅.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/最初的爬虫sqlite数据库.db" afterPath="$PROJECT_DIR$/wjl/other_crawl/最初的爬虫sqlite数据库.db" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/水利部河长制.sql" afterPath="$PROJECT_DIR$/wjl/other_crawl/水利部河长制.sql" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/浙江水利厅_anbandon.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/浙江水利厅_anbandon.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/浙江水利厅_hjc_write.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/浙江水利厅_hjc_write.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/环保部.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/环保部.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/百度.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/百度.py" />
-      <change beforePath="$PROJECT_DIR$/other_crawl/重庆水利水务网_河长办.py" afterPath="$PROJECT_DIR$/wjl/other_crawl/重庆水利水务网_河长办.py" />
-      <change beforePath="$PROJECT_DIR$/tmp/CodeMirror_ Python mode.html" afterPath="$PROJECT_DIR$/wjl/tmp/CodeMirror_ Python mode.html" />
-      <change beforePath="$PROJECT_DIR$/tmp/hzz/codemirror.css" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/codemirror.css" />
-      <change beforePath="$PROJECT_DIR$/tmp/hzz/codemirror.js" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/codemirror.js" />
-      <change beforePath="$PROJECT_DIR$/tmp/hzz/docs.css" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/docs.css" />
-      <change beforePath="$PROJECT_DIR$/tmp/hzz/logo.png" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/logo.png" />
-      <change beforePath="$PROJECT_DIR$/tmp/hzz/matchbrackets.js" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/matchbrackets.js" />
-      <change beforePath="$PROJECT_DIR$/tmp/hzz/python.js" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/python.js" />
-      <change beforePath="$PROJECT_DIR$/tmp/temp.html" afterPath="$PROJECT_DIR$/wjl/tmp/temp.html" />
-      <change beforePath="$PROJECT_DIR$/tmp/test.html" afterPath="$PROJECT_DIR$/wjl/tmp/test.html" />
-      <change beforePath="$PROJECT_DIR$/tmp/test_1.html" afterPath="$PROJECT_DIR$/wjl/tmp/test_1.html" />
-      <change beforePath="$PROJECT_DIR$/tmp/test_pymysql.py" afterPath="$PROJECT_DIR$/wjl/tmp/test_pymysql.py" />
-      <change beforePath="$PROJECT_DIR$/tmp/tmp.js" afterPath="$PROJECT_DIR$/wjl/tmp/tmp.js" />
-      <change beforePath="$PROJECT_DIR$/tmp/url_list" afterPath="$PROJECT_DIR$/wjl/tmp/url_list" />
-      <change beforePath="$PROJECT_DIR$/weibo/__init__.py" afterPath="$PROJECT_DIR$/wjl/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/invitation_invitation_trend.sql" afterPath="$PROJECT_DIR$/wjl/weibo/invitation_invitation_trend.sql" />
-      <change beforePath="$PROJECT_DIR$/weibo/invitattion_comment.sql" afterPath="$PROJECT_DIR$/wjl/weibo/invitattion_comment.sql" />
-      <change beforePath="$PROJECT_DIR$/weibo/note.sql" afterPath="$PROJECT_DIR$/wjl/weibo/note.sql" />
-      <change beforePath="$PROJECT_DIR$/weibo/test" afterPath="$PROJECT_DIR$/wjl/weibo/test" />
-      <change beforePath="$PROJECT_DIR$/weibo/test.py" afterPath="$PROJECT_DIR$/wjl/weibo/test.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/test_weibo.py" afterPath="$PROJECT_DIR$/wjl/weibo/test_weibo.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/test_weibo_source.py" afterPath="$PROJECT_DIR$/wjl/weibo/test_weibo_source.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_abandoned.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_abandoned.sql" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_abandoned.sql" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_comment.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_comment.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_comment_abandoned.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_comment_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_crawl_user_info.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_crawl_user_info.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_local_test.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_local_test.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_user_abandoned.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_user_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_weibo_abandoned.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_weibo_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/weibo/weibo_weibo_test_abandoned.py" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_weibo_test_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/太湖流域河长制/__init__.py" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/太湖流域河长制/test1.py" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/test1.py" />
-      <change beforePath="$PROJECT_DIR$/太湖流域河长制/太湖流域河长制_abandoned.py" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/太湖流域河长制/太湖流域河长制_test.py" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_test.py" />
-      <change beforePath="$PROJECT_DIR$/太湖流域河长制/太湖流域河长制_不设置延迟.py" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_不设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/太湖流域河长制/太湖流域河长制_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/微信/weixin_info.sql" afterPath="$PROJECT_DIR$/wjl/微信/weixin_info.sql" />
-      <change beforePath="$PROJECT_DIR$/微信/weixin_localtest.py" afterPath="$PROJECT_DIR$/wjl/微信/weixin_localtest.py" />
-      <change beforePath="$PROJECT_DIR$/微信/weixin_localtest2.py" afterPath="$PROJECT_DIR$/wjl/微信/weixin_localtest2.py" />
-      <change beforePath="$PROJECT_DIR$/微信/weixin_pic.sql" afterPath="$PROJECT_DIR$/wjl/微信/weixin_pic.sql" />
-      <change beforePath="$PROJECT_DIR$/微信/微信_abandoned.py" afterPath="$PROJECT_DIR$/wjl/微信/微信_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/微信/微信_test.py" afterPath="$PROJECT_DIR$/wjl/微信/微信_test.py" />
-      <change beforePath="$PROJECT_DIR$/微信/微信_未设置延迟.py" afterPath="$PROJECT_DIR$/wjl/微信/微信_未设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/微信/微信_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/微信/微信_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/微博/微博_未设置延迟.py" afterPath="$PROJECT_DIR$/wjl/微博/微博_未设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/微博/微博_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/微博/微博_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/微博/微博_评论_未设置延迟.py" afterPath="$PROJECT_DIR$/wjl/微博/微博_评论_未设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/微博/微博_评论_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/微博/微博_评论_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/水利部河长制/__init__.py" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/水利部河长制/水利部河长制_abandoned.py" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/水利部河长制/水利部河长制_test.py" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_test.py" />
-      <change beforePath="$PROJECT_DIR$/水利部河长制/水利部河长制_未设置延迟.py" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_未设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/水利部河长制/水利部河长制_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/江苏省水利厅_河长制/__init__.py" afterPath="$PROJECT_DIR$/wjl/水利部河长制/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/江苏省水利厅_河长制/test1.py" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/test1.py" />
-      <change beforePath="$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_abandoned.py" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_test.py" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_test.py" />
-      <change beforePath="$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_未设置延迟.py" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_未设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/江苏省水利厅_河长制/江苏省水利厅_河长制_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省水利厅_五水共治/__init__.py" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/__init__.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_abandoned.py" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_test.py" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_test.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_未设置延迟.py" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_未设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省水利厅_五水共治/浙江省水利厅_五水共治_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省环保厅/10server_table_clear.py" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/10server_table_clear.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省环保厅/test1.py" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/test1.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_abandoned.py" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_abandoned.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_test.py" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_test.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_未设置延迟.py" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_未设置延迟.py" />
-      <change beforePath="$PROJECT_DIR$/浙江省环保厅/浙江省环保厅_设置延迟.py" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_设置延迟.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/index.py" afterPath="$PROJECT_DIR$/pyspider/webui/index.py" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/result.py" afterPath="$PROJECT_DIR$/pyspider/webui/result.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -198,7 +58,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -258,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/baidubaike/baidubaike_spider.py" />
         <option value="$PROJECT_DIR$/other_crawl/website.sql" />
         <option value="$PROJECT_DIR$/other_crawl/太湖流域河长制.py" />
         <option value="$PROJECT_DIR$/other_crawl/test.py" />
@@ -306,9 +165,10 @@
         <option value="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" />
         <option value="$PROJECT_DIR$/pyspider/webui/index_spiderweb.py" />
         <option value="$PROJECT_DIR$/pyspider/webui/index_hzz.py" />
-        <option value="$PROJECT_DIR$/pyspider/webui/index.py" />
         <option value="$PROJECT_DIR$/tmp/test_pymysql.py" />
         <option value="$PROJECT_DIR$/pyspider/webui/task.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/result.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/index.py" />
       </list>
     </option>
   </component>
@@ -344,6 +204,17 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="webui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -696,28 +567,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="54" column="34" lean-forward="true" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="36" column="50" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/微信/weixin_localtest.py" />
-    <entry file="file://$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wjl/tmp/hzz/codemirror.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -934,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,21 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="91" column="40" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="139" selection-end-column="28" />
-          <folding>
-            <marker date="1514627562555" expanded="true" signature="4346:4389" ph="select * fro... invitation" />
-            <marker date="1514627562555" expanded="true" signature="4521:4551" ph="select max(i... invitation" />
-            <marker date="1514627562555" expanded="true" signature="4673:4818" ph="INSERT INTO invitation... " />
-            <marker date="1514627562555" expanded="true" signature="5132:5176" ph="select id fr... invitation" />
-            <marker date="1514627562555" expanded="true" signature="5265:5406" ph="UPDATE invitation... " />
-            <marker date="1514627562555" expanded="true" signature="5654:5765" ph="INSERT INTO invitation_trend... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="205" column="20" lean-forward="true" selection-start-line="205" selection-start-column="20" selection-end-line="205" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1023,14 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/webui/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="157" column="25" lean-forward="true" selection-start-line="157" selection-start-column="25" selection-end-line="157" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1045,6 +868,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="97" column="25" lean-forward="false" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/result_dump.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="44" column="25" lean-forward="true" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wjl/weibo/weibo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="103" column="33" lean-forward="true" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
+          <folding>
+            <marker date="1514599301140" expanded="true" signature="3261:3294" ph="select id fr... type" />
+            <marker date="1514599301140" expanded="true" signature="4054:4097" ph="select * fro... invitation" />
+            <marker date="1514599301140" expanded="true" signature="4229:4259" ph="select max(i... invitation" />
+            <marker date="1514599301140" expanded="true" signature="4381:4526" ph="INSERT INTO invitation... " />
+            <marker date="1514599301140" expanded="true" signature="4840:4884" ph="select id fr... invitation" />
+            <marker date="1514599301140" expanded="true" signature="4973:5114" ph="UPDATE invitation... " />
+            <marker date="1514599301140" expanded="true" signature="5362:5473" ph="INSERT INTO invitation_trend... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/database/basedb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="54" column="12" lean-forward="false" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="21" />
+          <folding>
+            <marker date="1514599301128" expanded="true" signature="1103:1118" ph="SELECT missi... missing_value" />
+            <marker date="1514599301128" expanded="true" signature="1872:1887" ph="SELECT missi... missing_value" />
+            <marker date="1514599301128" expanded="true" signature="3379:3410" ph="INSERT INTO missing_value... " />
+            <marker date="1514599301128" expanded="true" signature="3481:3510" ph="INSERT INTO missing_value... " />
+            <marker date="1514599301128" expanded="true" signature="4036:4059" ph="UPDATE missing_value... " />
+            <marker date="1514599301128" expanded="true" signature="4386:4398" ph="DELETE FROM missing_value... " />
+            <marker date="1514599301128" expanded="true" signature="4872:4939" ph="CREATE TABLE... missing_value" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/debug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="209" column="24" lean-forward="false" selection-start-line="209" selection-start-column="24" selection-end-line="209" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="136" column="24" lean-forward="true" selection-start-line="136" selection-start-column="24" selection-end-line="136" selection-end-column="24" />
           <folding />
         </state>
       </provider>
