@@ -1,6 +1,5 @@
-DROP TABLE IF EXISTS `localpicture`;
-CREATE TABLE `localpicture` (
-  `id` bigint(255) NOT NULL AUTO_INCREMENT,
-  `url` text NOT NULL,
-  PRIMARY KEY (`id`)
+DROP TABLE IF EXISTS `hzz_local_picture`;
+CREATE TABLE `hzz_local_picture` (
+  `name` varchar(100) NOT NULL,
+  `url` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -4,20 +4,13 @@
 # Project: baidubaike
 
 from pyspider.libs.base_handler import *
-import pymysql,time
-import sys,re
-from pyquery import PyQuery as pq
+import pymysql,time,sys,re,os,urlparse
 reload(sys)
 sys.setdefaultencoding('utf-8')
+from pyquery import PyQuery
 
 class Handler(BaseHandler):
     crawl_config = {
-        "headers":{
-            'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
-            'Upgrade-Insecure-Requests':'1',
-            'Content-Encoding': 'gzip',
-            'Content-Type': 'text/html',
-        }
     }
 
     @every(minutes=24 * 60)
@@ -31,28 +24,66 @@ class Handler(BaseHandler):
         conn.close()
         for row in rows:
             url = u'http://wapbaike.baidu.com/item/{}'.format(row[0])
-            self.crawl(url, save={'river_name':row[0]}, callback=self.index_page)
+            self.crawl(url, fetch_type='js', save={'river_name':row[0]}, callback=self.index_page)
 
-    def filter_page(self,response,*args):
+    def filter_page(self, response, *args):
+        server_path = '/picture_hzz/'
+        local_path = os.environ['HOME'] + '/.picture_hzz/'
         content = ''
         for cs in args:
-            rd = response.doc(cs)#rd是一个PyQuery对象
-            rd('script').remove()
-            rd('style').remove()
-            content += (lambda x:'' if x is None else re.sub(r'(\s+[^\s\"]+\s*=\s*?\"(?!https://|http://)[^\">]+?\")|[\f\n\r]+', '', x))(rd.html())
-        regex = re.compile(r'(<)[^\/\s\"\=>]+(\s+)(?!href)[^\s\"]+(\s*=\s*?\")((?=https://|http://)[^\">]+?)(\"\s*/>)')
-        content = regex.sub(r'\1img\2src\3\4\5', content)
-        url_list = [i[3] for i in regex.findall(content)]
-        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8mb4')
+            p = response.doc(cs)  # rd是一个PyQuery对象
+            p('script').remove()  # 去除script标签
+            p('style').remove()  # 去除style标签
+            content += (
+                lambda x: '' if x is None else re.sub(
+                    r'[ ]+[^ \"</>=]+[ ]*=[ ]*?\"(?!https://|http://)[^\"<>]*?\"|[\f\n\r]+', '', x))(
+                p.html())  # 先去除没有用的class和style属性
+        original_url_list = []
+        regex = re.compile(
+            r'<(?!div|img)[^ </>\"]+([^<>]*)[ ]+(?!href)[^ </>\"]+[ ]*=[ ]*?\"((?=https://|http://)[^ \"<>]+)?\"([^<>]*)[/]{0,1}?>')  # 标签不是img
+        content = regex.sub(r'<img\1 src="\2"\3>', content)  # 更改为img标签
+        original_url_list.extend([url[1] for url in regex.findall(content)])  # 原始的img url
+        regex = re.compile(
+            r'<(?=img)[^ </>\"]+([^<>]*)[ ]+(?=src)[^ </>\"]+[ ]*=[ ]*?\"((?=https://|http://)[^ \"<>]+)?\"([^<>]*)[/]{0,1}?>')  # 标签是img
+        content = regex.sub(r'<img\1 src="\2"\3>', content)  # 更改为img标签
+        original_url_list.extend([url[1] for url in regex.findall(content)])  # 原始的img url
+        url_list = []  # 可用于下载的img url
+        for i in range(len(original_url_list)):  # 过滤img url
+            params = dict(
+                [(k, v[0]) for k, v in urlparse.parse_qs(urlparse.urlparse(original_url_list[i]).query).items()])
+            if len(params) != 0:
+                url = (lambda url, src: url.split('?')[0] if src is None else src)(original_url_list[i],
+                                                                                   params.get('src'))  # 修改后的img url
+                url_list.append(url)
+                content = content.replace(original_url_list[i], url)
+            else:
+                url_list.append(original_url_list[i])
+        time_list = []
+        for i in range(len(original_url_list)):
+            name = str(time.time()).replace('.', '')
+            time_list.append(name)
+            time.sleep(0.01)
+        pic_list = []
+        download_pic_list = []
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',
+                               charset='utf8')
         cur = conn.cursor()
-        cur.execute("select id from localpicture")
-        maxid = (lambda x:0 if x is None else x[0])(cur.fetchone())
-        cur.executemany("insert into localpicture(url) values(%s)",url_list)
-        conn.commit()
+        for i in range(len(original_url_list)):
+            cur.execute("select name,url from hzz_local_picture where url = %s", url_list[i])
+            row = cur.fetchone()
+            if row is None:
+                cur.execute("insert into hzz_local_picture values(%s,%s)", [time_list[i], url_list[i]])
+                pic_list.append((time_list[i], url_list[i]))
+                download_pic_list.append((time_list[i], url_list[i]))
+            else:
+                pic_list.append((row[0].encode('utf-8'), row[1].encode('utf-8')))
+            conn.commit()
         cur.close()
         conn.close()
-        for i in range(len(url_list)):
-            content.replace(url_list[i],str(maxid+i+1))
+        for pic in pic_list:
+            content = content.replace(pic[1], server_path + pic[0])
+        for pic in download_pic_list:
+            os.system('wget {} -O {}'.format(pic[1], local_path + pic[0]))
         return content
 
     @config(age=10 * 24 * 60 * 60)
@@ -63,7 +94,7 @@ class Handler(BaseHandler):
                          '#J-lemma > div.BK-body-wrapper > div.BK-before-content-wrapper',
                          '#J-lemma > div.BK-body-wrapper > div.BK-content-wrapper')
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
-        return [content,crawl_time,river_name,url]
+        return [content,crawl_time,river_name,url.encode('utf-8')]
 
     def on_result(self, result):
         if not result:

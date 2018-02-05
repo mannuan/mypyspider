@@ -5,4 +5,4 @@ CREATE TABLE `baidubaike` (
   `river_name` varchar(100) NOT NULL,
   `url` text,
   PRIMARY KEY (`river_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
