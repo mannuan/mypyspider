@@ -18,14 +18,14 @@ class Handler(BaseHandler):
     def on_start(self):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository', charset='utf8')
         cur = conn.cursor()
-        cur.execute("select name,url,state from baidubaike_entry")
+        cur.execute("select name,url from baidubaike_entry")
         rows = cur.fetchall()
         conn.commit()
         cur.close()
         conn.close()
         for row in rows:
-            if row[2] == 1:
-                self.crawl(row[1], fetch_type='js', save={'river_name':row[0]}, callback=self.index_page)
+            url = row[1]
+            self.crawl(url, fetch_type='js', save={'river_name':url[0]}, callback=self.index_page)
 
     def filter_page(self, response, *args):
         server_path = '/picture_hzz/'
