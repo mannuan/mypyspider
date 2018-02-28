@@ -23,23 +23,22 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="e46d2024-9984-4e2f-9ccf-cc50ba1a704f">
-        <schema name="repository" object-types="table, view" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="e46d2024-9984-4e2f-9ccf-cc50ba1a704f">
       <console name="repository" type="STANDARD" />
     </connection>
   </component>
+  <component name="DBNavigator.Project.DatabaseSessionManager">
+    <connection id="e46d2024-9984-4e2f-9ccf-cc50ba1a704f" />
+  </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/other_crawl/test.sql" connection-id="e46d2024-9984-4e2f-9ccf-cc50ba1a704f" current-schema="REPOSITORY" />
-    <mapping file-url="file://$PROJECT_DIR$/other_crawl/type.sql" connection-id="virtual-mysql-connection" current-schema="ROOT" />
+    <mapping file-url="file://$PROJECT_DIR$/other_crawl/type.sql" connection-id="virtual-mysql-connection" session-id="MAIN" current-schema="ROOT" />
+    <mapping file-url="file://$PROJECT_DIR$/other_crawl/test.sql" connection-id="e46d2024-9984-4e2f-9ccf-cc50ba1a704f" session-id="MAIN" current-schema="REPOSITORY" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -95,6 +94,7 @@
         </ssh-settings>
         <details>
           <charset value="UTF-8" />
+          <session-management value="true" />
           <ddl-file-binding value="true" />
           <database-logging value="false" />
           <connect-automatically value="true" />
@@ -450,7 +450,6 @@
         <debug-execution-timeout value="600" />
         <focus-result value="false" />
         <prompt-execution value="false" />
-        <target-connection value="ASK" />
       </statement-execution>
       <script-execution>
         <command-line-interfaces />
