@@ -88,7 +88,7 @@ class Handler(BaseHandler):
             elif flag[0] == 'center' and flag[1] == None and flag[2] != None and flag[3] != None:#如果是图片下的文字
                 text+="<figcaption>{}</figcaption>".format(flag[2])
             elif flag[0] != 'center' and flag[1] == None and flag[2] != None:#如果是正文
-                text+="<p>{}</p>".format('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+flag[2])
+                text+="<p>{}</p>".format('&nbsp;&nbsp;&nbsp;&nbsp;'+flag[2])
         text = re.sub('^<h3','<div class=\"entry__article\"><h3',text)#开头就是标题
         text = re.sub('</h3>$', '</div></h3>', text)#以标题结尾
         text = re.sub('^<img','<div class=\"entry__img-holder text-center\"><img',text)#开头就是图片

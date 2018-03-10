@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function f(item) {
+        return String.fromCharCode(item - 38620)
+    }
+    var res = [],j=0,arr = [38679, 38653, 38722, 38737];
+    for (var i = 0,l = arr.length; i < l; i++) {
+        res[j++] = f(arr[i], i, arr);
+        document.write(res[i])
+    }
+
+</script>
+</html>

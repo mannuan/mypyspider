@@ -4,8 +4,10 @@
 # Project: 百度百科网站版
 
 from pyspider.libs.base_handler import *
-import pymysql,time,re,os,urlparse
+import pymysql,time,re,os,urlparse,sys
 from pyquery import PyQuery
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class Handler(BaseHandler):
     crawl_config = {
@@ -25,7 +27,7 @@ class Handler(BaseHandler):
         conn.close()
         for row in rows:
             if row[2] == 1:
-                self.crawl(row[1], fetch_type='js', save={'river_name':row[0]}, callback=self.index_page)
+                self.crawl(row[1], save={'river_name':row[0]}, callback=self.index_page)
 
     def filter_page(self, response, *args):
         server_path = '/picture_hzz/'
@@ -152,6 +154,7 @@ class Handler(BaseHandler):
             # with open('/home/mininet/test.txt','w+') as f:
             #     f.write(context)
             # print context
+            context = context.replace('data-src','src')
             result = [title,url, '', context, '', '', type_id, spider_time, source]
         return result
 

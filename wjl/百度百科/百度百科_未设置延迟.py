@@ -24,7 +24,7 @@ class Handler(BaseHandler):
         conn.close()
         for row in rows:
             url = u'http://wapbaike.baidu.com/item/{}'.format(row[0])
-            self.crawl(url, fetch_type='js', save={'river_name':row[0]}, callback=self.index_page)
+            self.crawl(url, save={'river_name':row[0]}, callback=self.index_page)
 
     def filter_page(self, response, *args):
         server_path = '/picture_hzz/'

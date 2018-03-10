@@ -4,8 +4,10 @@
 # Project: 百度百科网站版
 
 from pyspider.libs.base_handler import *
-import pymysql,time,re,os,urlparse,random
+import pymysql,time,re,os,urlparse,sys,random
 from pyquery import PyQuery
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 class Handler(BaseHandler):
     crawl_config = {
@@ -18,14 +20,14 @@ class Handler(BaseHandler):
     def on_start(self):
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository', charset='utf8')
         cur = conn.cursor()
-        cur.execute("select name,url from baidubaike_entry")
+        cur.execute("select name,url,state from baidubaike_entry")
         rows = cur.fetchall()
         conn.commit()
         cur.close()
         conn.close()
         for row in rows:
             if row[2] == 1:
-                self.crawl(row[1], fetch_type='js', save={'river_name':row[0]}, callback=self.index_page,exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))
+                self.crawl(row[1], save={'river_name':row[0]}, callback=self.index_page,exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))  # 1h~12h
 
     def filter_page(self, response, *args):
         server_path = '/picture_hzz/'
@@ -45,7 +47,7 @@ class Handler(BaseHandler):
         content = regex.sub(r'<img\1 src="\2"\3>', content)  # 更改为img标签
         original_url_list.extend([url[1] for url in regex.findall(content)])  # 原始的img url
         regex = re.compile(
-            r'<(?=img)[^ </>\"]+([^<>]*)[ ]+(?=src)[^ </>\"]+[ ]*=[ ]*?\"((?=https://|http://)[^ \"<>]+)?\"([^<>]*)[/]{0,1}?>')  # 标签是img
+            r'<(?=img)[^ </>\"]+([^<>]*)[ ]+(?=src|data-src)[^ </>\"]+[ ]*=[ ]*?\"((?=https://|http://)[^ \"<>]+)?\"([^<>]*)[/]{0,1}?>')  # 标签是img
         content = regex.sub(r'<img\1 src="\2"\3>', content)  # 更改为img标签
         original_url_list.extend([url[1] for url in regex.findall(content)])  # 原始的img url
         url_list = []  # 可用于下载的img url
@@ -152,6 +154,7 @@ class Handler(BaseHandler):
             # with open('/home/mininet/test.txt','w+') as f:
             #     f.write(context)
             # print context
+            context = context.replace('data-src','src')
             result = [title,url, '', context, '', '', type_id, spider_time, source]
         return result
 
@@ -160,7 +163,7 @@ class Handler(BaseHandler):
             return
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
-        cur.execute("select * from website where url = %s" , result[0])
+        cur.execute("select * from website where url = %s" , result[1])
         rows = cur.fetchall()
         if len(rows) == 0:
             try:
