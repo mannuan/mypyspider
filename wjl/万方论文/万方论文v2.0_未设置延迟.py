@@ -27,7 +27,7 @@ class Handler(BaseHandler):
     search_key_list = ["河长制", "智慧治水", "水利厅", "污水治理", "一河一策", "一河一档", "水政执法", "水资源保护", "河湖水域岸线保护", "水污染防治", "污染源类型", "污染企业","水利工程管理", "环保督查", "环境改善", "河道治理", "河流治理", "水功能区", "污染源分布", "水生态修复", "水利工程管理", "环境改善", "水质监测","涉河水利工程","岸线规划", "污水治理", "水环境治理"]
     search_type_dict = {"TV":"水利工程", "TP":"自动化技术、计算机技术", "F":"经济", "P":"天文学、地球科学", "D":"政治、法律"}
 
-    context_css = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">"
+    context_css = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/articleDetail.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">"
     context_html_tmp = "<article class=\"entry\"><div class=\"entry__article\">{}</div></article>"
 
     @every(minutes=24 * 60)

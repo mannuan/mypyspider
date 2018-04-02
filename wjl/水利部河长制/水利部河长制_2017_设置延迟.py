@@ -36,7 +36,7 @@ class Handler(BaseHandler):
                    {'forum':'mtjj','forum_num':13,'forum_type':u'媒体聚焦','forum_id':1},
                    {'forum':'gzjb','forum_num':10,'forum_type':u'工作简报','forum_id':1}]
 
-    context_css = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">"
+    context_css = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/articleDetail.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">"
     context_html_tmp = "<article class=\"entry\">{}</article>"
 
     @every(minutes=24 * 60)
@@ -106,6 +106,7 @@ class Handler(BaseHandler):
         forum_type = response.save['forum_type']
         forum_id = response.save['forum_id']
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
+
         result = [url,title,created_at,text,'',forum_type,forum_id,crawl_time,u'水利部河长制']
         return result
 

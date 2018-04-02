@@ -36,7 +36,7 @@ class Handler(BaseHandler):
                    {'forum':'mtjj','forum_num':13,'forum_type':u'媒体聚焦','forum_id':1},
                    {'forum':'gzjb','forum_num':10,'forum_type':u'工作简报','forum_id':1}]
 
-    context_css = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">"
+    context_css = "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/articleDetail.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/bootstrap.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"css/font-awesome.min.css\">"
     context_html_tmp = "<article class=\"entry\">{}</article>"
 
     @every(minutes=24 * 60)

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MongoConfiguration">
+    <option name="serverConfigurations">
+      <list>
+        <ServerConfiguration>
+          <option name="label" value="xiecheng_qiandaohu" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="xiecheng_qiandaohu" />
+        </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="mafengwo_qiandaohu" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="mafengwo_qiandaohu" />
+        </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="fliggy_qiandaohu" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="fliggy_qiandaohu" />
+        </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="lvmama_qiandaohu" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="lvmama_qiandaohu" />
+        </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="tuniu_qiandaohu" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="tuniu_qiandaohu" />
+        </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="dianping_qiandaohu" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="dianping_qiandaohu" />
+        </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="qunar_qiandaohu" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="qunar_qiandaohu" />
+        </ServerConfiguration>
+      </list>
+    </option>
+  </component>
+</project>
