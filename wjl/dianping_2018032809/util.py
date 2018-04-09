@@ -93,6 +93,7 @@ def getCommentInfo2(driver,shop_id,shop_name,comment_list_url,page):
             'comment_img':comment_img,
             'comment_like':comment_like,
             'comment_replay':comment_replay,
+            'data_source':'景点',
             'page':page,
             'item_count':item_count,
             'crawl_time' : crawl_time
@@ -250,7 +251,7 @@ def getShopInfo(driver):
             'shop_comment' : shop_comment,
             'shop_feature': shop_feature,
             'shop_distance':shop_distance,
-            'shop_type' : '景点',
+            'data_source' : '景点',
             'crawl_time' : crawl_time,
             'item_count':item_count
         })

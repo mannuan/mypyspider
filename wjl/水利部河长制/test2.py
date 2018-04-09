@@ -4,14 +4,15 @@ import time,pymysql,sys,random,re,os
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-conn = pymysql.connect(host='122.224.129.35', port=23306, user='repository', passwd='repository', db='repository',charset='utf8')
+conn = pymysql.connect(host='10.1.17.25', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
 cur = conn.cursor()
-cur.execute("SELECT url,Main_body FROM repository.weixin_info where Main_body like '%picture_hzz%'")
+cur.execute("SELECT url,context FROM repository.wanfang")
 rows = cur.fetchall()
 for row in rows:
-    context = row[1].replace('/picture_hzz/','http://122.224.129.35:28080/picture_hzz/')
-    cur.execute("update website set context = %s where url = %s",(context,row[0]))
+    context = row[1].replace('<link rel="stylesheet" type="text/css" href="css/bootstrap.css">','')
     print context
+    cur.execute("update wanfang set context = %s where url = %s",(context,row[0]))
+    # print row[0]
     conn.commit()
 # if len(rows) == 0:
 #     try:

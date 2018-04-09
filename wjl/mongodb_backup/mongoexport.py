@@ -16,7 +16,7 @@ if file_num > 0:
     mongodb_folder = 'mongodb_backup_{}'.format(file_num)
 qiandaohu_mongodb_list = conn.database_names()
 for i in qiandaohu_mongodb_list:
-    if 'qiandaohu' in i:
+    if 'dspider' in i:
         exec 'db = conn.{}'.format(i)
         for j in db.collection_names():
             export_collection = 'mongoexport --db {} --collection {} --out /home/mininet/文档/{}/{}/{}.json'.format(i,j,mongodb_folder,i,j)
