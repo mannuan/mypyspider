@@ -28,8 +28,7 @@ time.sleep(3)
 # while(True):
 for i in range(200):
     ActionChains(driver).move_to_element(
-        driver.find_element_by_css_selector('body > div.headBlank > div.headFixed > div > nav > div')).send_keys(
-        Keys.ARROW_DOWN).perform()
+        driver.find_element_by_css_selector('body > div.headBlank > div.headFixed > div > nav > div')).send_keys(Keys.ARROW_DOWN).perform()
     # try:
     #     driver.find_element_by_css_selector('#ticket_nomore')
     #     break

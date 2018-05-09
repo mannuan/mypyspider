@@ -11,7 +11,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.remote.command import Command
 
-driver = getChromeHeaderlessWebDriver()
+driver = getChromeWebDriver()
 print '进入大众点评移动版主页...'
 driver.get('https://m.dianping.com/')
 # time.sleep(1)

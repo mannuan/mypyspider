@@ -1,26 +1,19 @@
 # -*- coding:utf-8 -*-
 
-import re,sys
+import re,sys,time
+# from pymongo import MongoClient
+#
+# MONGODB_PORT = 27017
+# MONGODB_IP = 'localhost'
+# CONN = MongoClient(MONGODB_IP, MONGODB_PORT)
+# MONGODB = CONN.dspider2
+# shops = MONGODB.shops
+# comments = MONGODB.comments
+#
+# key = {'data_website':"飞猪",'data_source':"景点",'data_region':"千岛湖",'shop_name':"千岛湖中心湖区"}
+#
+# print comments.find(key).count()
 
-# def regex(str):
-#     result = ''
-#     if re.sub(r'^::/128$|^([0]{4}:){7}[0]{4}$',r'Unspecified',str) == 'Unspecified':
-#         result = 'Unspecified'
-#     elif re.sub(r'^::1/128$|^([0]{4}:){7}[0]{3}1$',r'Loopback',str) == 'Loopback':
-#         result = 'Loopback'
-#     elif re.sub(r'^FE80::/10$|^FE[89AB]{1}[0-9A-F]{1}(:[0-9A-F]{4}){6}:[0-9A-F]{4}$',r'LinkLocal',str) == 'LinkLocal':
-#         result = 'LinkLocal'
-#     elif re.sub(r'^FEC0::/10$|^FE[CDEF]{1}[0-9A-F]{1}(:[0-9A-F]{4}){6}:[0-9A-F]{4}$',r'SiteLocal',str) == 'SiteLocal':
-#         result = 'SiteLocal'
-#     elif re.sub(r'^FF00::/10$|^FF[0-9A-F]{2}(:[0-9A-F]{4}){6}:[0-9A-F]{4}$',r'Multicast',str) == 'Multicast':
-#         result = 'Multicast'
-#     elif re.sub(r'^([0-9A-F]{4}:){7}[0-9A-F]{4}$',r'Globalcast',str) == 'Globalcast':
-#         result = 'Globalcast'
-#     else:
-#         result = 'Error'
-#     return result
-# str = sys.stdin.readline().strip()
-# print regex(str)
-
-regex = re.compile(r'([\w]+)\w\1')
-print regex.findall('131')
+b = dict({'a':1}, **{})
+print b.has_key('b')
+print b

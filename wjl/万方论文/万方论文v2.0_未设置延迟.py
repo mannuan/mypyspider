@@ -111,7 +111,7 @@ class Handler(BaseHandler):
         cur = conn.cursor()
 
         # 先查找是否存在
-        cur.execute("select * from wanfang where url = %s", result["url"])
+        cur.execute("select * from wanfang where title = %s", result["title"])
         rows = cur.fetchall()
         if len(rows) == 0:
             cur.execute(

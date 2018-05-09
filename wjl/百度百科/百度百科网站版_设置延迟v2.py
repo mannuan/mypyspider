@@ -48,7 +48,7 @@ class Handler(BaseHandler):
             content = content.replace('data-src=\"','src=\"')
             content= re.sub(r'src=\"data:image/[^\"<>]*\"', r'', content)
             origin_pic_url_list = re.findall(r'src=\"([^\"<>]*.jpg)\"',content)
-            server_path = '/picture_hzz/'  # 图片的服务器路径
+            server_path = 'http://122.224.129.35:28080/picture_hzz/'  # 图片的服务器路径
             local_path = os.environ['HOME'] + '/.picture_hzz/'  # 图片的本地路径
             for pic_url in origin_pic_url_list:
                 pic_name = pic_url.split('/')[-1]#得到图片的名称
@@ -62,7 +62,7 @@ class Handler(BaseHandler):
             return
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
-        cur.execute("select * from website where url = %s" , result[1])
+        cur.execute("select * from website where title = %s" , result[0])
         rows = cur.fetchall()
         if len(rows) == 0:
             try:

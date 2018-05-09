@@ -178,7 +178,6 @@ def getShopInfo2(driver,shop_id,shop_name):
         'shop_statistics':shop_statistics
     }
     return shop_data
-    return ''
 
 def getShopInfo(driver):
     print 'shopinfo'

@@ -43,10 +43,10 @@ class Handler(BaseHandler):
     def on_start(self):
         for forum in self.list_forums:
             url = 'http://www.mwr.gov.cn/ztpd/gzzt/hzz/{}/index.html'.format(forum.get('forum'))
-            self.crawl(url, fetch_type='js', callback=self.index_page, save={'forum_type':forum.get('forum_type'),'forum_id':forum.get('forum_id')},exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))
+            self.crawl(url, fetch_type='js', callback=self.index_page, save={'forum_type':forum.get('forum_type'),'forum_id':forum.get('forum_id')})
             for p in range(1,forum.get('forum_num')):
                 url = 'http://www.mwr.gov.cn/ztpd/gzzt/hzz/{}/index_{}.html'.format(forum.get('forum'),p)
-                self.crawl(url, fetch_type='js', callback=self.index_page, save={'forum_type':forum.get('forum_type'),'forum_id':forum.get('forum_id')},exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))
+                self.crawl(url, fetch_type='js', callback=self.index_page, save={'forum_type':forum.get('forum_type'),'forum_id':forum.get('forum_id')})
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
@@ -57,7 +57,7 @@ class Handler(BaseHandler):
                 created_at = each('td:nth-child(3)').text().strip()
                 forum_type = response.save['forum_type']
                 forum_id = response.save['forum_id']
-                self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'forum_type':forum_type,'forum_id':forum_id},exetime=time.time() + random.randint(60 * 60, 12 * 60 * 60))
+                self.crawl(url, fetch_type='js', callback=self.detail_page, save={'title':title,'created_at':created_at,'forum_type':forum_type,'forum_id':forum_id})
 
     @config(priority=2)
     def detail_page(self, response):
@@ -80,7 +80,7 @@ class Handler(BaseHandler):
                 img_url = flag[1]
                 img_name = img_url.split('/')[-1]
                 local_path = os.environ['HOME'] + '/.picture_hzz/{}'.format(img_name)
-                server_path = '/picture_hzz/{}'.format(img_name)
+                server_path = 'http://122.224.129.35:28080/picture_hzz/{}'.format(img_name)
                 text += "<img src=\"{}\" alt="" class=\"entry__img\">".format(server_path)
                 os.system('wget {} -O {}'.format(img_url, local_path))
             elif flag[0] == 'center' and flag[1] == None and flag[2] != None and flag[3] == None:#如果是标题
@@ -106,7 +106,6 @@ class Handler(BaseHandler):
         forum_type = response.save['forum_type']
         forum_id = response.save['forum_id']
         crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))#爬虫的时间
-
         result = [url,title,created_at,text,'',forum_type,forum_id,crawl_time,u'水利部河长制']
         return result
 
@@ -115,7 +114,7 @@ class Handler(BaseHandler):
             return
         conn = pymysql.connect(host='127.0.0.1', port=3306, user='repository', passwd='repository', db='repository',charset='utf8')
         cur = conn.cursor()
-        cur.execute("select * from website where url = %s" , result[0])
+        cur.execute("select * from website where title = %s" , result[1])
         rows = cur.fetchall()
         if len(rows) == 0:
             try:

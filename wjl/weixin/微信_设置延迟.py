@@ -7,7 +7,7 @@ from pyspider.libs.base_handler import *
 import time,json,pymysql,os
 from lxml import etree
 from pyquery import PyQuery as py
-import lxml
+import lxml,random
 
 class Handler(BaseHandler):
     crawl_config = {
@@ -24,12 +24,12 @@ class Handler(BaseHandler):
         conn.close()
         for row in rows:
             url = "http://weixin.sogou.com/weixin?type=1&s_from=input&query=" + row[1] + "&ie=utf8&_sug_=n&_sug_type_="
-            self.crawl(url, callback=self.index_page)
+            self.crawl(url, callback=self.index_page,exetime=time.time()+random.randint(60*60, 12*60*60))#1h~12h
 
     @config(age=10 * 24 * 60 * 60)
     def index_page(self, response):
         for each in response.doc('UL.news-list2>LI:nth-child(1)>DIV.gzh-box2>DIV.txt-box>P.tit>a').items():
-            self.crawl(each.attr.href, callback=self.list_page)
+            self.crawl(each.attr.href, callback=self.list_page,exetime=time.time()+random.randint(60*60, 12*60*60))#1h~12h
 
     @config(priority=3)
     def list_page(self, response):
@@ -42,7 +42,7 @@ class Handler(BaseHandler):
             for each in msg["list"]:
                 url = each["app_msg_ext_info"]["content_url"]
                 url = url.replace("amp;", "")
-                self.crawl("http://mp.weixin.qq.com" + url, callback=self.detail_page)
+                self.crawl("http://mp.weixin.qq.com" + url, callback=self.detail_page,exetime=time.time()+random.randint(60*60, 12*60*60))#1h~12h
 
     @config(priority=2)
     def detail_page(self, response):
@@ -53,7 +53,7 @@ class Handler(BaseHandler):
         def Download_Pic(url, img_name):
             # os.system('wget {} -T 10 -t 6 -O {}/.picture_hzz/{}'.format(url, os.environ['HOME'], img_name))
             img_url = url
-            server_path = '/picture_hzz/{}'.format(img_name)
+            server_path = 'http://122.224.129.35:28080/picture_hzz/{}'.format(img_name)
             local_path = '{}/.picture_hzz/{}'.format(os.environ['HOME'],img_name)
 
             result = [img_url,server_path,local_path,time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())]
