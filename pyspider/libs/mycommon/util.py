@@ -20,10 +20,10 @@ def get_db_conn(host='localhost',port=3306,user='repository',passwd='repository'
 @:param data :要插入的数据,数据类型是字典
 @:return 无返回值
 '''
-def save_data(table='',key='',data={}):
+def save_data(host='localhost',port=3306,user='repository',passwd='repository',db='repository',charset='utf8',table='',key='',data={}):
     if not table or not key or not data:#如果数据为空
         return
-    conn = get_db_conn()
+    conn = get_db_conn(host=host,port=port,user=user,passwd=passwd,db=db,charset=charset)
     cur = conn.cursor()
     cur.execute("select * from %s where %s = \'%s\'"%(table, key, data[key]))
     rows = cur.fetchall()
@@ -52,13 +52,13 @@ def save_data(table='',key='',data={}):
 '''
 @return 返回值是一个列表
 '''
-def query_data(table='',key='',key_value='',field=''):
+def query_data(host='localhost',port=3306,user='repository',passwd='repository',db='repository',charset='utf8',table='',key='',key_value='',field=''):
     if not table:
         print 'table不可以为空!!!'
         return
     if not field:
         field = '*'
-    conn = get_db_conn()
+    conn = get_db_conn(host=host,port=port,user=user,passwd=passwd,db=db,charset=charset)
     cur = conn.cursor()
     if not key:
         cur.execute("select %s from %s"%(field,table))

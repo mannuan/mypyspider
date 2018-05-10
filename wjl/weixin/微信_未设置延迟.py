@@ -49,7 +49,6 @@ class Handler(BaseHandler):
         content = re.sub('[ ]{2,}', '', content)
         img_list = re.findall(Regex.HTML_IMG_SRC_REGEX,content)
         img_name_list = [list(filter(lambda d: True if len(d) >= max([len(i) for i in img.split('/')]) else False, img.split('/')))[0] for img in img_list]
-        print img_name_list
         for i in range(len(img_list)):
             content = content.replace(img_list[i], 'http://122.224.129.35:28080/picture_hzz/%s' % img_name_list[i])
             download_img(img_list[i],'%s/.picture_hzz/%s'%(os.environ['HOME'], img_name_list[i]))
@@ -57,4 +56,4 @@ class Handler(BaseHandler):
         return result
 
     def on_result(self, result):
-        save_data(table='weixin_info',key='url',data=result)
+        save_data(host='10.1.17.15',table='weixin_info',key='url',data=result)
