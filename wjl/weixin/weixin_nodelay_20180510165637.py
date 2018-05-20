@@ -11,11 +11,19 @@ import time
 import json
 import re
 import os
+from pymongo import MongoClient
 
 class Handler(BaseHandler):
+    MONGODB_PORT = 27017
+    MONGODB_HOST = '10.1.17.15'
+    CONN = MongoClient(MONGODB_HOST, MONGODB_PORT)
+    db = CONN.weixin
+    imgs = db.imgs
+    host = '122.224.129.35'
+    port = 23306
     @every(minutes=24 * 60 * 10)
     def on_start(self):#对数据库里面的关键字进行公众号的搜索
-        for row in query_data(table='weixin_public',field='public_name'):
+        for row in query_data(host=self.host,port=self.port,table='weixin_public',field='public_name'):
             url = str("http://weixin.sogou.com/weixin?type=1&s_from=input&query=%s&ie=utf8&_sug_=n&_sug_type_="%row)
             self.crawl(url, callback=self.index_page,headers=HeadersSelector.headers_sougou)
 
@@ -51,9 +59,10 @@ class Handler(BaseHandler):
         img_name_list = [list(filter(lambda d: True if len(d) >= max([len(i) for i in img.split('/')]) else False, img.split('/')))[0] for img in img_list]
         for i in range(len(img_list)):
             content = content.replace(img_list[i], 'http://122.224.129.35:28080/picture_hzz/%s' % img_name_list[i])
-            download_img(img_list[i],'%s/.picture_hzz/%s'%(os.environ['HOME'], img_name_list[i]))
+            save_data_to_mongodb(target=self.imgs,key={'url':img_list[i]},data={'url':img_list[i],'name':img_name_list[i],
+                                                                                'path':'%s/.picture_hzz/%s'%(os.environ['HOME'], img_name_list[i])})
         result = merge_dict(result,{'main_body':content,'spider_time':time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),'url':response.url})
         return result
 
     def on_result(self, result):
-        save_data(host='10.1.17.15',table='weixin_info',key='url',data=result)
+        save_data(host=self.host,port=self.port,table='weixin_info',key='url',data=result)

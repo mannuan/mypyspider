@@ -2,6 +2,7 @@
 import pymysql
 import json
 import os
+import time
 
 '''
 合并字典类型数据
@@ -79,6 +80,14 @@ def query_data(host='localhost',port=3306,user='repository',passwd='repository',
 '''
 def download_img(url,path):
     os.system('wget %s -O %s' % (url, path))
+
+def save_data_to_mongodb(target,key,data):
+    crawl_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 爬虫的时间
+    data.setdefault('crawl_time',crawl_time)
+    if len(list(target.find(key))) == 0:
+        target.insert(data)
+    else:
+        target.update(key, {'$set': data})
 
 
 if __name__ == '__main__':
