@@ -27,9 +27,6 @@ filter_words_arr = filter_words.split(',')
 from pyspider.libs.base_handler import *
 import sys, time, pymysql
 
-reload(sys)
-sys.setdefaultencoding('utf8')
-
 
 class Handler(BaseHandler):
     crawl_config = {
@@ -53,7 +50,7 @@ class Handler(BaseHandler):
     def index_page(self, response):
         for each in response.doc(key_tag_selector).items():
             if str(each.text().decode('utf-8')).find(key_name) is not -1:
-                exec ('key_url = each.attr.' + key_attr)
+                exec('key_url = each.attr.' + key_attr)
             self.crawl(key_url, fetch_type='js', callback=self.list_page)
 
     def get_nextpage_url_list(self, url):
@@ -83,7 +80,7 @@ class Handler(BaseHandler):
     def list_page(self, response):
         for each in response.doc(nextpage_tag_selector).items():
             if str(each.text().decode('utf-8')).find(nextpage_name) is not -1:
-                exec ('nextpage_url = each.attr.' + nextpage_attr)
+                exec('nextpage_url = each.attr.' + nextpage_attr)
                 nextpage_url_list = self.get_nextpage_url_list(nextpage_url)
                 for i in range(1, int(page_num) + 1):
                     if len(nextpage_url_list) is 2:
@@ -109,7 +106,7 @@ class Handler(BaseHandler):
     @config(priority=3)
     def detail_page(self, response):
         for each in response.doc(title_tag_selector).items():
-            exec "url = each.attr." + title_attr
+            exec("url = each.attr.%s"%title_attr)
             if url.find(start_url) == -1 and url.find('http://') == -1:
                 if start_url[len(start_url) - 1:] is '/':
                     url = start_url[:len(start_url) - 1] + url

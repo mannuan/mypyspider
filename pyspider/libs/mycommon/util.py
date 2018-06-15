@@ -34,7 +34,7 @@ def save_data(host='localhost',port=3306,user='repository',passwd='repository',d
             cur.execute(sql,data.values())
             conn.commit()
         except Exception as e:
-            print e
+            print(e)
             conn.rollback()
     else:
         try:
@@ -42,7 +42,7 @@ def save_data(host='localhost',port=3306,user='repository',passwd='repository',d
             cur.execute(sql,list(data.get(k) for k in filter(lambda d:False if d == key else True, data.keys())))
             conn.commit()
         except Exception as e:
-            print e
+            print(e)
             conn.rollback()
     # 释放数据连接
     if cur:
@@ -55,7 +55,7 @@ def save_data(host='localhost',port=3306,user='repository',passwd='repository',d
 '''
 def query_data(host='localhost',port=3306,user='repository',passwd='repository',db='repository',charset='utf8',table='',key='',key_value='',field=''):
     if not table:
-        print 'table不可以为空!!!'
+        print('table不可以为空!!!')
         return
     if not field:
         field = '*'
@@ -65,7 +65,7 @@ def query_data(host='localhost',port=3306,user='repository',passwd='repository',
         cur.execute("select %s from %s"%(field,table))
     else:
         if not key_value:
-            print 'key_value不可以为空!!!'
+            print('key_value不可以为空!!!')
             return
         else:
             cur.execute("select %s from %s where %s = %s" % (field, table,key,key_value))
@@ -92,4 +92,4 @@ def save_data_to_mongodb(target,key,data):
 
 if __name__ == '__main__':
     # save_data(table='weixin_info', key='url',data={'title': 'www.你妈.com', 'time': 'www.2020年.com', 'public_name': 'www.御姐.com', 'main_body': 'www.卡上就付款链接打开了.com', 'spider_time': 'www.2030年.com','url': 'www.fuck.com'})
-    print query_data(table='weixin_public',field='public_name')
+    print(query_data(table='weixin_public',field='public_name'))

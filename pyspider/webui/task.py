@@ -97,7 +97,7 @@ def tasks_projects(project):
             result.append(tasks[key])
         tasks[key] = task
     result.extend(tasks.values())
-    print result
+    print(result)
     task_results = []
     for r in result:
         taskid = r['taskid']

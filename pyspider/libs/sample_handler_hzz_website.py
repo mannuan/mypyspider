@@ -56,7 +56,7 @@ class Handler(BaseHandler):
                 cur.execute(sql,result)
                 conn.commit()
             except Exception as e:
-                print e
+                print(e)
                 conn.rollback()
         else:
             result = result[::-1]
@@ -66,7 +66,7 @@ class Handler(BaseHandler):
                 cur.execute(sql,result)
                 conn.commit()
             except Exception as e:
-                print e
+                print(e)
                 conn.rollback()
         # 释放数据连接
         if cur:

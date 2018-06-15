@@ -2,15 +2,533 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c21ca88-20e3-42a0-9d65-c886c464adb9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pyspider/libs/mycommon/selenium_spider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyspider/libs/mycommon/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wjl/mongodb_remove_same/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wjl/mongodb_remove_same/remove_same.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wjl/test/test4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mongoSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mongoSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mypyspider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mypyspider.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/preferred-vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/preferred-vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MANIFEST.in" beforeDir="false" afterPath="$PROJECT_DIR$/MANIFEST.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/data/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scheduler.1d" beforeDir="false" afterPath="$PROJECT_DIR$/data/scheduler.1d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scheduler.1h" beforeDir="false" afterPath="$PROJECT_DIR$/data/scheduler.1h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/scheduler.all" beforeDir="false" afterPath="$PROJECT_DIR$/data/scheduler.all" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/About-Projects.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/About-Projects.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/About-Tasks.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/About-Tasks.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Architecture.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Command-Line.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Command-Line.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Deployment-demo.pyspider.org.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Deployment-demo.pyspider.org.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Deployment.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Deployment.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Frequently-Asked-Questions.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Frequently-Asked-Questions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Quickstart.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Quickstart.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Running-pyspider-with-Docker.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Running-pyspider-with-Docker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Script-Environment.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Script-Environment.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Working-with-Results.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Working-with-Results.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/apis/@catch_status_code_error.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/apis/@catch_status_code_error.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/apis/@every.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/apis/@every.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/apis/Response.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/apis/Response.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/apis/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/apis/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/apis/self.crawl.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/apis/self.crawl.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/apis/self.send_message.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/apis/self.send_message.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/docs/conf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/creating_a_project.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/creating_a_project.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/css_selector_helper.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/css_selector_helper.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/demo.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/demo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/developer-tools-network-filter.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/developer-tools-network-filter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/developer-tools-network.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/developer-tools-network.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/index_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/index_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/inspect_element.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/inspect_element.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/pyspider-arch.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/pyspider-arch.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/request-headers.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/request-headers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/run_one_step.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/run_one_step.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/search-for-request.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/search-for-request.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/tutorial_imdb_front.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/tutorial_imdb_front.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/imgs/twitch.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/imgs/twitch.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tutorial/AJAX-and-more-HTTP.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/AJAX-and-more-HTTP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tutorial/HTML-and-CSS-Selector.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/HTML-and-CSS-Selector.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tutorial/Render-with-PhantomJS.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/Render-with-PhantomJS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tutorial/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tutorial/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/base/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/base/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/base/projectdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/base/projectdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/base/resultdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/base/resultdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/base/taskdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/base/taskdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/basedb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/basedb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/elasticsearch/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/elasticsearch/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/elasticsearch/projectdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/elasticsearch/projectdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/elasticsearch/resultdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/elasticsearch/resultdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/elasticsearch/taskdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/elasticsearch/taskdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/local/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/local/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/local/projectdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/local/projectdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mongodb/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mongodb/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mongodb/mongodbbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mongodb/mongodbbase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mongodb/projectdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mongodb/projectdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mongodb/resultdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mongodb/resultdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mongodb/taskdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mongodb/taskdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mysql/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mysql/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mysql/mysqlbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mysql/mysqlbase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mysql/projectdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mysql/projectdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mysql/resultdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mysql/resultdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/mysql/taskdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/mysql/taskdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/redis/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/redis/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/redis/taskdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/redis/taskdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlalchemy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlalchemy/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlalchemy/projectdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlalchemy/projectdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlalchemy/resultdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlalchemy/resultdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlalchemy/sqlalchemybase.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlalchemy/sqlalchemybase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlalchemy/taskdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlalchemy/taskdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlite/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlite/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlite/projectdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlite/projectdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlite/resultdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlite/resultdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlite/sqlitebase.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlite/sqlitebase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/database/sqlite/taskdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/database/sqlite/taskdb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/fetcher/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/fetcher/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/fetcher/cookie_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/fetcher/cookie_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/fetcher/phantomjs_fetcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/fetcher/phantomjs_fetcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/fetcher/splash_fetcher.lua" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/fetcher/splash_fetcher.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/fetcher/tornado_fetcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/fetcher/tornado_fetcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/ListIO.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/ListIO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/base_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/base_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/bench.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/bench.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/counter.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/counter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/dataurl.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/dataurl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/multiprocessing_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/multiprocessing_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/mycommon/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/mycommon/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/mycommon/regex.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/mycommon/regex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/mycommon/selenium_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/mycommon/selenium_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/mycommon/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/mycommon/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyspider/libs/mycommon/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/mycommon/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wjl/weixin/微信_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_nodelay_20180510165637.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wjl/weixin/微信_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_delay_20180510165637.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/pprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/pprint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/result_dump.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/result_dump.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/sample_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/sample_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/sample_handler_hzz_website.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/sample_handler_hzz_website.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/url.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/weixin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/weixin/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/weixin/header_switch.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/weixin/header_switch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/libs/wsgi_xmlrpc.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/libs/wsgi_xmlrpc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/logging.conf" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/logging.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/message_queue/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/message_queue/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/message_queue/beanstalk.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/message_queue/beanstalk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/message_queue/kombu_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/message_queue/kombu_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/message_queue/rabbitmq.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/message_queue/rabbitmq.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/message_queue/redis_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/message_queue/redis_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/processor/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/processor/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/processor/processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/processor/processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/processor/project_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/processor/project_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/result/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/result/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/result/result_worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/result/result_worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/scheduler/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/scheduler/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/scheduler/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/scheduler/scheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/scheduler/task_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/scheduler/task_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/scheduler/token_bucket.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/scheduler/token_bucket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/bench_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/bench_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/debug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/debug_hzz.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/debug_hzz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/debug_spiderweb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/index_hzz.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/index_hzz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/index_spiderweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/index_spiderweb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/result.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/result.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/result_hzz.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/result_hzz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/result_spiderweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/result_spiderweb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/codemirror.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/codemirror.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/codemirror.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/css_selector_helper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/css_selector_helper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/debug.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/debug.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/debug.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/debug.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/debug_hzz.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/debug_hzz.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/index.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/index.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/index.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/index.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/index_hzz.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/index_hzz.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/index_spiderweb.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/index_spiderweb.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/python.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/python.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/result.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/result.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/result.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/result.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/css_selector_helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/css_selector_helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/debug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/debug.less" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/debug.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/index.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/result.less" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/result.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/splitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/splitter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/task.less" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/task.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/tasks.less" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/tasks.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/src/variable.less" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/src/variable.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/task.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/task.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/task.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/task.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/tasks.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/tasks.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/tasks.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/tasks.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/static/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/static/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/task_hzz.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/task_hzz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/task_spiderweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/task_spiderweb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/debug.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/debug.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/debug_hzz.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/debug_hzz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/debug_spiderweb.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/debug_spiderweb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/index_hzz.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/index_hzz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/index_spiderweb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/result_hzz.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/result_hzz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/result_spiderweb.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/result_spiderweb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/task_hzz.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/task_hzz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/task_spiderweb.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/task_spiderweb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/tasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/tasks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/tasks_hzz.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/tasks_hzz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/templates/tasks_spiderweb.html" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/templates/tasks_spiderweb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyspider/webui/webdav.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyspider/webui/webdav.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/data_fetcher_processor_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/data_fetcher_processor_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/data_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/data_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/data_sample_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/data_sample_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/data_test_webpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/data_test_webpage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_base_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_base_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_bench.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_bench.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_counter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_counter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_fetcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_fetcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_fetcher_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_fetcher_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_message_queue.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_message_queue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_result_dump.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_result_dump.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_result_worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_result_worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_run.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_scheduler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_webdav.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_webdav.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_webui.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_webui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_xmlrpc.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_xmlrpc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tox.ini" beforeDir="false" afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/baidubaike.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/baidubaike.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_entry.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_entry.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/baidubaike_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/local_picture.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/local_picture.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/river.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/river.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/river_insert.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/river_insert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/temp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/temp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/baidubaike/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/baidubaike/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/city.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/city.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/comment_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/comment_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/dazhongdianping_comment.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/dazhongdianping_comment.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/dazhongdianping_shop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/dazhongdianping_shop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/result" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/result" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/shop_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/shop_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/shop_spider2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/shop_spider2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/temp.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/temp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test_city.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_city.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test_result" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_result" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test_shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/test_shop2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/test_shop2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dazhongdianping/大众点评.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dazhongdianping/大众点评.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_2018032809/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_2018032809/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_2018032809/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_2018032809/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_2018032809/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_2018032809/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_2018032809/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_2018032809/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/dianping_hotel_2018033016/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/comment_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/comment_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/elong_comment.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/elong_comment.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/elong_shop.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/elong_shop.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/param" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/param" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/shop_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/shop_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/test" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/test_shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/test_shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong/tmp" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong/tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong_2018032810/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong_2018032810/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong_2018032810/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong_2018032810/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong_2018032810/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong_2018032810/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong_2018032810/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong_2018032810/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong_2018040310/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong_2018040310/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong_2018040310/comment_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong_2018040310/comment_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/elong_2018040310/shop_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/elong_2018040310/shop_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/fliggy_2018033016/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/fliggy_2018033016/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/fliggy_2018033016/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/fliggy_2018033016/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/fliggy_2018033016/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/fliggy_2018033016/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/fliggy_2018033016/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/fliggy_2018033016/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018032708/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018032708/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018032708/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018032708/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018032708/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018032708/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018032708/pyspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018032708/pyspider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018032708/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018032708/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018032708/千岛湖_selenium_网站版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018032708/千岛湖_selenium_网站版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018040120/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018040120/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018040120/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018040120/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018040120/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018040120/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/lvmama_2018040120/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/lvmama_2018040120/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mafengwo_2018032714/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mafengwo_2018032714/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mafengwo_2018032714/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mafengwo_2018032714/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mafengwo_2018032714/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mafengwo_2018032714/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mafengwo_2018032714/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mafengwo_2018032714/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_backup/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_backup/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_backup/add_data_region.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_backup/add_data_region.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_backup/add_data_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_backup/add_data_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_backup/mongoexport.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_backup/mongoexport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_backup/mongoimport.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_backup/mongoimport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_backup/mongostatistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_backup/mongostatistics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_backup/remove_shop_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_backup/remove_shop_type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_remove_same/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_remove_same/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/mongodb_remove_same/remove_same.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/mongodb_remove_same/remove_same.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/19楼.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/19楼.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/download_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/download_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/ipv6_detection.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/ipv6_detection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/ipv6_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/ipv6_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/mmbiz-qpic-cn_mmbiz_gif_qJickicXOV5OEGFMhDXkVOlDTZcnptvP2p0l5iaNpZ3TnG3zaHiasudtoWPcbiafjJBFGzia07s1GEA60IdxFPUZW4eg_0" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/mmbiz-qpic-cn_mmbiz_gif_qJickicXOV5OEGFMhDXkVOlDTZcnptvP2p0l5iaNpZ3TnG3zaHiasudtoWPcbiafjJBFGzia07s1GEA60IdxFPUZW4eg_0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/test6.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/test6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/type.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/type.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/website.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/website.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/中国水网.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/中国水网.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/中国水网.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/中国水网.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/中国水网_文件下载.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/中国水网_文件下载.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/广东省水利厅.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/广东省水利厅.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/最初的爬虫sqlite数据库.db" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/最初的爬虫sqlite数据库.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/水利部河长制.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/水利部河长制.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/浙江水利厅_anbandon.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/浙江水利厅_anbandon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/浙江水利厅_hjc_write.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/浙江水利厅_hjc_write.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/环保部.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/环保部.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/百度.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/百度.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/other/重庆水利水务网_河长办.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/other/重庆水利水务网_河长办.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018032720/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018032720/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018032720/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018032720/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018032720/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018032720/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018032720/pyspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018032720/pyspider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018032720/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018032720/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018040110/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018040110/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018040110/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018040110/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018040110/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018040110/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/qunar_2018040110/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/qunar_2018040110/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/test1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/test1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/test3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/test4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test/web_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test/web_driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/CodeMirror_ Python mode.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/CodeMirror_ Python mode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/hzz/codemirror.css" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/codemirror.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/hzz/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/codemirror.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/hzz/docs.css" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/docs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/hzz/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/hzz/matchbrackets.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/matchbrackets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/hzz/python.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/hzz/python.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/temp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/test_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/test_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/test_pymysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/test_pymysql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/tmp.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/tmp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tmp/url_list" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tmp/url_list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tuniu_2018032813/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tuniu_2018032813/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tuniu_2018032813/pyspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tuniu_2018032813/pyspider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tuniu_2018040101/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tuniu_2018040101/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tuniu_2018040101/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tuniu_2018040101/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tuniu_2018040101/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tuniu_2018040101/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/tuniu_2018040101/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/tuniu_2018040101/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/invitation_invitation_trend.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/invitation_invitation_trend.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/invitattion_comment.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/invitattion_comment.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/note.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/note.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/test" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/test_weibo.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/test_weibo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/test_weibo_source.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/test_weibo_source.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_abandoned.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_abandoned.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_comment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_comment_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_comment_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_crawl_user_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_crawl_user_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_local_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_local_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_user_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_user_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_weibo_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_weibo_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weibo/weibo_weibo_test_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weibo/weibo_weibo_test_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/weixin_delay_20180510165637.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_delay_20180510165637.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/weixin_info.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_info.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/weixin_localtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_localtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/weixin_localtest2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_localtest2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/weixin_nodelay_20180510165637.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_nodelay_20180510165637.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/weixin_pic.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/weixin_pic.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/微信_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/微信_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/weixin/微信_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/weixin/微信_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/wuxiaworld/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/wuxiaworld/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/wuxiaworld/main_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/wuxiaworld/main_local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/wuxiaworld/main_pyspider.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/wuxiaworld/main_pyspider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/xiecheng_2018040211/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/xiecheng_2018040211/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/xiecheng_2018040211/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/xiecheng_2018040211/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/xiecheng_2018040211/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/xiecheng_2018040211/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/xiecheng_2018040211/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/xiecheng_2018040211/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/wanfangnew.sql" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/wanfangnew.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/万方论文_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/万方论文_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/万方论文_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/万方论文_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/万方论文v2.0_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/万方论文v2.0_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/万方论文v2.0_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/万方论文v2.0_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/文件下载.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/文件下载.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/万方论文/论文下载.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/万方论文/论文下载.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/shops.png" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/shops.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/test.json" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/test1.json" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/test1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/test1_网站版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/test1_网站版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/test2_移动版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/test2_移动版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/test3_移动版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/test3_移动版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/大众点评_phantomjs.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/大众点评_phantomjs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/大众点评_selenium_网站版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/大众点评_selenium_网站版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/大众点评/大众点评_店铺_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/大众点评/大众点评_店铺_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/太湖流域河长制/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/太湖流域河长制/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_不设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_不设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/微博/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/微博/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/微博/微博_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/微博/微博_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/微博/微博_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/微博/微博_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/微博/微博_评论_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/微博/微博_评论_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/微博/微博_评论_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/微博/微博_评论_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/qiandaohu.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/qiandaohu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/qiandaohu/ImgMonitor.0117fd75.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/qiandaohu/ImgMonitor.0117fd75.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/qiandaohu/commons.f2bd5fb6.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/qiandaohu/commons.f2bd5fb6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/qiandaohu/loginsdkv1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/qiandaohu/loginsdkv1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/qiandaohu/main.eed31f02.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/qiandaohu/main.eed31f02.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/qiandaohu/vendor.6294adfd.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/qiandaohu/vendor.6294adfd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test1.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test10.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test10.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test11.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test11.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test2.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test3.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test4.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test5.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test6.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test7.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test8.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/test9.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/test9.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/千岛湖_selenium_网站版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/千岛湖_selenium_网站版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/携程-店铺_phantomjs版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/携程-店铺_phantomjs版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/携程-评论_phantomjs版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/携程-评论_phantomjs版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/携程/携程_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/携程/携程_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/list" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/把图片路径相对路径变成绝对路径.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/把图片路径相对路径变成绝对路径.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_2018_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_2018_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_2018_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_2018_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/水利部河长制/水利部河长制_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/江苏省水利厅_河长制/江苏省水利厅_河长制_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省水利厅_五水共治/浙江省水利厅_五水共治_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省环保厅/10server_table_clear.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/10server_table_clear.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省环保厅/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省环保厅/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_abandoned.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_abandoned.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/baidubaike.css" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/baidubaike.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test3.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test4.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test6.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test6.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/test7.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/test7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/河流名称列表.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/河流名称列表.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/百度百科_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/百度百科_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_未设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_未设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_未设置延迟201804291044.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_未设置延迟201804291044.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_设置延迟.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_设置延迟.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_设置延迟v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/百度百科网站版_设置延迟v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/百度百科/百度百科词条生成.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/百度百科/百度百科词条生成.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/飞猪/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/飞猪/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/飞猪/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/飞猪/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/飞猪/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/飞猪/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/飞猪/千岛湖-店铺_selenium_网站版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/飞猪/千岛湖-店铺_selenium_网站版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/飞猪/千岛湖-评论_selenium_移动版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/飞猪/千岛湖-评论_selenium_移动版.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wjl/飞猪/飞猪-店铺_phantomjs版.py" beforeDir="false" afterPath="$PROJECT_DIR$/wjl/飞猪/飞猪-店铺_phantomjs版.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,52 +539,52 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/mypyspider$main.coverage" NAME="main Coverage Results" MODIFIED="1524204271510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/dianping_2018032809" />
+    <SUITE FILE_PATH="coverage/mypyspider$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1522632347543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/tuniu_2018040101" />
+    <SUITE FILE_PATH="coverage/mypyspider$shop__1_.coverage" NAME="shop (1) Coverage Results" MODIFIED="1512700342190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
+    <SUITE FILE_PATH="coverage/mypyspider$backup.coverage" NAME="backup Coverage Results" MODIFIED="1522287183399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_data" />
+    <SUITE FILE_PATH="coverage/mypyspider$weibo_user_spider.coverage" NAME="weibo_user_spider Coverage Results" MODIFIED="1510930079914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
+    <SUITE FILE_PATH="coverage/mypyspider$test_weibo_source.coverage" NAME="test_weibo_source Coverage Results" MODIFIED="1510970614239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
+    <SUITE FILE_PATH="coverage/mypyspider$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1514166978746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baidubaike" />
+    <SUITE FILE_PATH="coverage/mypyspider$main__4_.coverage" NAME="main (4) Coverage Results" MODIFIED="1522626237073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/lvmama_2018040120" />
+    <SUITE FILE_PATH="coverage/mypyspider$shop.coverage" NAME="shop Coverage Results" MODIFIED="1513065497025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/elong" />
+    <SUITE FILE_PATH="coverage/mypyspider$test_pymysql.coverage" NAME="test_pymysql Coverage Results" MODIFIED="1510932369363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
+    <SUITE FILE_PATH="coverage/mypyspider$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1525933669046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
+    <SUITE FILE_PATH="coverage/mypyspider$_selenium_.coverage" NAME="千岛湖_selenium_网站版 Coverage Results" MODIFIED="1522302839319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/携程" />
+    <SUITE FILE_PATH="coverage/mypyspider$test_1.coverage" NAME="test_1 Coverage Results" MODIFIED="1512617947408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
+    <SUITE FILE_PATH="coverage/mypyspider$mongostatistics.coverage" NAME="mongostatistics Coverage Results" MODIFIED="1523175443110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
+    <SUITE FILE_PATH="coverage/mypyspider$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1522639535764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/dianping_hotel_2018033016" />
+    <SUITE FILE_PATH="coverage/mypyspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1524291585914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/水利部河长制" />
+    <SUITE FILE_PATH="coverage/mypyspider$weibo_userid.coverage" NAME="weibo_userid Coverage Results" MODIFIED="1510928066092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
+    <SUITE FILE_PATH="coverage/mypyspider$test6.coverage" NAME="test6 Coverage Results" MODIFIED="1514630450156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
+    <SUITE FILE_PATH="coverage/mypyspider$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1524214727425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
+    <SUITE FILE_PATH="coverage/mypyspider$weixin_localtest.coverage" NAME="weixin_localtest Coverage Results" MODIFIED="1514459628326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/微信" />
     <SUITE FILE_PATH="coverage/mypyspider$Nosetests_in_test_pymysql_py.coverage" NAME="Nosetests in test_pymysql.py Coverage Results" MODIFIED="1515825276942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
     <SUITE FILE_PATH="coverage/mypyspider$baidubaike_test.coverage" NAME="baidubaike_test Coverage Results" MODIFIED="1513857912275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baidubaike" />
-    <SUITE FILE_PATH="coverage/mypyspider$test.coverage" NAME="test Coverage Results" MODIFIED="1525855733948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
-    <SUITE FILE_PATH="coverage/mypyspider$shop.coverage" NAME="shop Coverage Results" MODIFIED="1513065497025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/elong" />
-    <SUITE FILE_PATH="coverage/mypyspider$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1523063953275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/xiecheng_2018040211" />
-    <SUITE FILE_PATH="coverage/mypyspider$test_1.coverage" NAME="test_1 Coverage Results" MODIFIED="1512617947408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
-    <SUITE FILE_PATH="coverage/mypyspider$weibo_user_spider.coverage" NAME="weibo_user_spider Coverage Results" MODIFIED="1510930079914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
-    <SUITE FILE_PATH="coverage/mypyspider$test_pymysql.coverage" NAME="test_pymysql Coverage Results" MODIFIED="1510932369363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
-    <SUITE FILE_PATH="coverage/mypyspider$10server_table_clear.coverage" NAME="10server_table_clear Coverage Results" MODIFIED="1514362757000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/浙江省环保厅" />
-    <SUITE FILE_PATH="coverage/mypyspider$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1524291585914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/水利部河长制" />
-    <SUITE FILE_PATH="coverage/mypyspider$test_weibo_source.coverage" NAME="test_weibo_source Coverage Results" MODIFIED="1510970614239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
-    <SUITE FILE_PATH="coverage/mypyspider$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1525933669046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
-    <SUITE FILE_PATH="coverage/mypyspider$test1__1_.coverage" NAME="test1 (1) Coverage Results" MODIFIED="1524488204826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
-    <SUITE FILE_PATH="coverage/mypyspider$main__2_.coverage" NAME="main (2) Coverage Results" MODIFIED="1522639535764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/dianping_hotel_2018033016" />
-    <SUITE FILE_PATH="coverage/mypyspider$mongostatistics.coverage" NAME="mongostatistics Coverage Results" MODIFIED="1523175443110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
-    <SUITE FILE_PATH="coverage/mypyspider$remove_shop_type.coverage" NAME="remove_shop_type Coverage Results" MODIFIED="1523188056399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
-    <SUITE FILE_PATH="coverage/mypyspider$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1514166978746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/baidubaike" />
-    <SUITE FILE_PATH="coverage/mypyspider$test4__1_.coverage" NAME="test4 (1) Coverage Results" MODIFIED="1526300097321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
-    <SUITE FILE_PATH="coverage/mypyspider$backup.coverage" NAME="backup Coverage Results" MODIFIED="1522287183399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_data" />
-    <SUITE FILE_PATH="coverage/mypyspider$test_main.coverage" NAME="test_main Coverage Results" MODIFIED="1512650557951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
-    <SUITE FILE_PATH="coverage/mypyspider$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1524214513696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
-    <SUITE FILE_PATH="coverage/mypyspider$test5.coverage" NAME="test5 Coverage Results" MODIFIED="1514600018742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
-    <SUITE FILE_PATH="coverage/mypyspider$test_shop__1_.coverage" NAME="test_shop (1) Coverage Results" MODIFIED="1512918337612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
-    <SUITE FILE_PATH="coverage/mypyspider$test__3_.coverage" NAME="test (3) Coverage Results" MODIFIED="1514188299859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
-    <SUITE FILE_PATH="coverage/mypyspider$mongoimport.coverage" NAME="mongoimport Coverage Results" MODIFIED="1523176057858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
-    <SUITE FILE_PATH="coverage/mypyspider$weixin_localtest.coverage" NAME="weixin_localtest Coverage Results" MODIFIED="1514459628326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/微信" />
-    <SUITE FILE_PATH="coverage/mypyspider$util.coverage" NAME="util Coverage Results" MODIFIED="1525870846369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyspider/libs/mycommon" />
     <SUITE FILE_PATH="coverage/mypyspider$test_shop2.coverage" NAME="test_shop2 Coverage Results" MODIFIED="1512709787259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
+    <SUITE FILE_PATH="coverage/mypyspider$main.coverage" NAME="main Coverage Results" MODIFIED="1524204271510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/dianping_2018032809" />
     <SUITE FILE_PATH="coverage/mypyspider$test_shop.coverage" NAME="test_shop Coverage Results" MODIFIED="1512652775940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
-    <SUITE FILE_PATH="coverage/mypyspider$add_data_region.coverage" NAME="add_data_region Coverage Results" MODIFIED="1523189986366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
-    <SUITE FILE_PATH="coverage/mypyspider$main__4_.coverage" NAME="main (4) Coverage Results" MODIFIED="1522626237073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/lvmama_2018040120" />
-    <SUITE FILE_PATH="coverage/mypyspider$_selenium_.coverage" NAME="千岛湖_selenium_网站版 Coverage Results" MODIFIED="1522302839319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/携程" />
-    <SUITE FILE_PATH="coverage/mypyspider$weibo_userid.coverage" NAME="weibo_userid Coverage Results" MODIFIED="1510928066092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
-    <SUITE FILE_PATH="coverage/mypyspider$Nosetests_in_test_comment_py.coverage" NAME="Nosetests in test_comment.py Coverage Results" MODIFIED="1512960590222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
-    <SUITE FILE_PATH="coverage/mypyspider$mongoexport.coverage" NAME="mongoexport Coverage Results" MODIFIED="1525778539389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
-    <SUITE FILE_PATH="coverage/mypyspider$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1522632347543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/tuniu_2018040101" />
     <SUITE FILE_PATH="coverage/mypyspider$insertData.coverage" NAME="insertData Coverage Results" MODIFIED="1522722606440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
+    <SUITE FILE_PATH="coverage/mypyspider$test_main.coverage" NAME="test_main Coverage Results" MODIFIED="1512650557951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
+    <SUITE FILE_PATH="coverage/mypyspider$test_shop__1_.coverage" NAME="test_shop (1) Coverage Results" MODIFIED="1512918337612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
     <SUITE FILE_PATH="coverage/mypyspider$wb.coverage" NAME="wb Coverage Results" MODIFIED="1510933839857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tmp" />
-    <SUITE FILE_PATH="coverage/mypyspider$test6.coverage" NAME="test6 Coverage Results" MODIFIED="1514630450156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
-    <SUITE FILE_PATH="coverage/mypyspider$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1521213056241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/大众点评" />
-    <SUITE FILE_PATH="coverage/mypyspider$test_2.coverage" NAME="test_2 Coverage Results" MODIFIED="1512650554844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
+    <SUITE FILE_PATH="coverage/mypyspider$mongoimport.coverage" NAME="mongoimport Coverage Results" MODIFIED="1523176057858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
     <SUITE FILE_PATH="coverage/mypyspider$Nosetests_in_test_shop_py.coverage" NAME="Nosetests in test_shop.py Coverage Results" MODIFIED="1512979923205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiecheng" />
-    <SUITE FILE_PATH="coverage/mypyspider$shop__1_.coverage" NAME="shop (1) Coverage Results" MODIFIED="1512700342190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
-    <SUITE FILE_PATH="coverage/mypyspider$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1524214727425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
+    <SUITE FILE_PATH="coverage/mypyspider$test1__1_.coverage" NAME="test1 (1) Coverage Results" MODIFIED="1524488204826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
+    <SUITE FILE_PATH="coverage/mypyspider$test_2.coverage" NAME="test_2 Coverage Results" MODIFIED="1512650554844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping" />
+    <SUITE FILE_PATH="coverage/mypyspider$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1521213056241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/大众点评" />
+    <SUITE FILE_PATH="coverage/mypyspider$test.coverage" NAME="test Coverage Results" MODIFIED="1525855733948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
+    <SUITE FILE_PATH="coverage/mypyspider$Nosetests_in_test_comment_py.coverage" NAME="Nosetests in test_comment.py Coverage Results" MODIFIED="1512960590222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dazhongdianping_meishi" />
+    <SUITE FILE_PATH="coverage/mypyspider$test4__1_.coverage" NAME="test4 (1) Coverage Results" MODIFIED="1526300097321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
+    <SUITE FILE_PATH="coverage/mypyspider$add_data_region.coverage" NAME="add_data_region Coverage Results" MODIFIED="1523189986366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
+    <SUITE FILE_PATH="coverage/mypyspider$main__3_.coverage" NAME="main (3) Coverage Results" MODIFIED="1523063953275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/xiecheng_2018040211" />
+    <SUITE FILE_PATH="coverage/mypyspider$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1524214513696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/test" />
     <SUITE FILE_PATH="coverage/mypyspider$util__1_.coverage" NAME="util (1) Coverage Results" MODIFIED="1522501389589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/fliggy_2018033016" />
+    <SUITE FILE_PATH="coverage/mypyspider$util.coverage" NAME="util Coverage Results" MODIFIED="1525870846369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyspider/libs/mycommon" />
+    <SUITE FILE_PATH="coverage/mypyspider$remove_shop_type.coverage" NAME="remove_shop_type Coverage Results" MODIFIED="1523188056399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
+    <SUITE FILE_PATH="coverage/mypyspider$mongoexport.coverage" NAME="mongoexport Coverage Results" MODIFIED="1527398107751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wjl/mongodb_backup" />
+    <SUITE FILE_PATH="coverage/mypyspider$test__3_.coverage" NAME="test (3) Coverage Results" MODIFIED="1514188299859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
+    <SUITE FILE_PATH="coverage/mypyspider$test5.coverage" NAME="test5 Coverage Results" MODIFIED="1514600018742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/other_crawl" />
+    <SUITE FILE_PATH="coverage/mypyspider$10server_table_clear.coverage" NAME="10server_table_clear Coverage Results" MODIFIED="1514362757000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/浙江省环保厅" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -80,7 +598,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="task.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pyspider/webui/task.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding>
+                <element signature="e#185#198#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,7 +625,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>processKey</find>
       <find>webapp/hotel/j/hotellistbody</find>
       <find>useCasKey</find>
       <find>execOndemand</find>
@@ -124,12 +654,15 @@
       <find>merge_dict</find>
       <find>json</find>
       <find>os</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>a</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/pyspider/webui/static/hzz</dir>
+      <dir>$PROJECT_DIR$/wjl/other</dir>
+      <dir>$PROJECT_DIR$/pyspider/libs</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -143,9 +676,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wjl/dianping_2018032809/util.py" />
-        <option value="$PROJECT_DIR$/wjl/mongodb_backup/insertData.py" />
-        <option value="$PROJECT_DIR$/wjl/elong_2018040310.py" />
         <option value="$PROJECT_DIR$/wjl/elong_2018040310/shop_spider.py" />
         <option value="$PROJECT_DIR$/wjl/other_crawl/ipv6_detection.py" />
         <option value="$PROJECT_DIR$/wjl/other/ipv6_detection.js" />
@@ -189,11 +719,14 @@
         <option value="$PROJECT_DIR$/pyspider/libs/mycommon/spider.py" />
         <option value="$PROJECT_DIR$/pyspider/libs/mycommon/selenium_spider.py" />
         <option value="$PROJECT_DIR$/pyspider/libs/mycommon/test.py" />
-        <option value="$PROJECT_DIR$/pyspider/libs/mycommon/util.py" />
         <option value="$PROJECT_DIR$/wjl/weixin/微信_未设置延迟.py" />
         <option value="$PROJECT_DIR$/wjl/weixin/weixin_nodelay_20180510165637.py" />
         <option value="$PROJECT_DIR$/wjl/mongodb_remove_same/remove_same.py" />
         <option value="$PROJECT_DIR$/wjl/test/test4.py" />
+        <option value="$PROJECT_DIR$/pyspider/libs/sample_handler_hzz_website.py" />
+        <option value="$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py" />
+        <option value="$PROJECT_DIR$/pyspider/libs/mycommon/util.py" />
+        <option value="$PROJECT_DIR$/pyspider/webui/task.py" />
       </list>
     </option>
   </component>
@@ -203,17 +736,23 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/pyspider/webui/static/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="228" />
-    <option name="y" value="96" />
-    <option name="width" value="830" />
-    <option name="height" value="742" />
+    <option name="x" value="910" />
+    <option name="y" value="95" />
+    <option name="width" value="820" />
+    <option name="height" value="749" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,13 +763,18 @@
             <path>
               <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
-              <item name="wjl" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mypyspider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mypyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="pyspider" type="462c0819:PsiDirectoryNode" />
+              <item name="webui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -240,8 +784,8 @@
     <property name="SearchEverywhereHistoryKey" value="mongo&#9;ACTION&#9;ActivateMongoExplorerToolWindow&#10;mong&#9;ACTION&#9;ActivateMongoExplorerToolWindow&#10;mon&#9;ACTION&#9;ActivateMongoExplorerToolWindow&#10;:&#9;null&#9;null&#10;mangodb&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/qol-apps/qosoverlldp_mininet-v5.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -271,7 +815,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test4 (1)">
+  <component name="RunManager" selected="Python.mongoexport">
     <configuration name="util.py" type="OdpsQLRunnerConfigurationType" factoryName="MaxCompute SQL">
       <odps_target_file />
       <odps_output_dir>/tmp</odps_output_dir>
@@ -461,11 +1005,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mongoexport" />
         <item itemvalue="Python.test4 (1)" />
         <item itemvalue="Python.test4" />
         <item itemvalue="Python.util" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.mongoexport" />
       </list>
     </recent_temporary>
   </component>
@@ -513,23 +1057,25 @@
     <option name="totallyTimeSpent" value="200000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1680" height="990" extended-state="6" />
+    <frame x="51" y="27" width="1629" height="990" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50238097" side_tool="true" weight="0.3611111" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50238097" side_tool="true" weight="0.3607143" />
       <window_info anchor="bottom" id="Database Changes" order="16" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49761903" weight="0.22380953" />
       <window_info anchor="bottom" id="Version Control" order="17" weight="0.32916668" />
       <window_info anchor="bottom" id="Python Console" order="14" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49761903" weight="0.22380953" />
       <window_info anchor="bottom" id="Terminal" order="16" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22321428" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27255985" />
       <window_info anchor="bottom" id="Docker" order="18" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="11" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286908" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3986111" />
       <window_info id="Favorites" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3986111" />
+      <window_info anchor="bottom" id="Console" order="19" />
       <window_info anchor="bottom" id="DB Execution Console" order="15" weight="0.32988507" />
       <window_info id="Designer" order="5" />
       <window_info active="true" anchor="bottom" id="REST Client" order="16" visible="true" weight="0.3875" />
@@ -547,27 +1093,27 @@
       <window_info anchor="bottom" id="Log Manager" order="13" />
       <window_info anchor="right" id="Mongo Explorer" order="3" weight="0.33472222" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Salesforce" order="11" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="right" id="FAQ Robot" order="5" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286908" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Salesforce" order="11" />
       <window_info id="Job Explorer" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="bottom" id="Console" order="19" />
       <window_info anchor="bottom" id="Debug Logs" order="9" />
       <window_info anchor="right" id="Data View" order="7" />
       <window_info anchor="bottom" id="MaxCompute Console" order="12" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Console" order="20" />
       <window_info anchor="bottom" id="DB Execution Console" order="15" weight="0.32988507" />
       <window_info id="Designer" order="5" />
       <window_info active="true" anchor="bottom" id="REST Client" order="16" visible="true" weight="0.3875" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="Salesforce" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="14" />
+      <window_info id="Image Layers" order="8" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49761903" weight="0.35694444" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -583,23 +1129,21 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50238097" side_tool="true" weight="0.3611111" />
-      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="FAQ Robot" order="5" />
       <window_info anchor="bottom" id="Debug Logs" order="9" />
       <window_info anchor="right" id="Data View" order="7" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="FAQ Robot" order="5" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Salesforce" order="11" />
       <window_info id="Job Explorer" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19513889" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="11" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Image Layers" order="8" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="bottom" id="Python Console" order="14" />
       <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="bottom" id="Console" order="20" />
+      <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="18" weight="0.32916668" />
       <window_info anchor="bottom" id="Execute Anonymous" order="10" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -630,48 +1174,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wjl/fliggy_2018033016/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="94" column="58" lean-forward="true" selection-start-line="94" selection-start-column="58" selection-end-line="94" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/lvmama_2018040120/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="267" column="10" lean-forward="true" selection-start-line="191" selection-end-line="267" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/携程/千岛湖_selenium_网站版.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1863">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/lvmama_2018040120/driver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585">
-          <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/浙江省环保厅/浙江省环保厅_未设置延迟.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="90" column="117" lean-forward="true" selection-start-line="90" selection-start-column="117" selection-end-line="90" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/lvmama_2018040120/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="30" selection-end-column="139" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wjl/test1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -679,13 +1181,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/floodlight_latest/floodlight/src/main/resources/web/pages/tables.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="444" column="45" lean-forward="true" selection-end-line="1145" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/floodlight_latest/floodlight/src/main/resources/web/pages/tables.html" />
     <entry file="file://$PROJECT_DIR$/wjl/test/test.html" />
     <entry file="file://$PROJECT_DIR$/wjl/dianping_2018032809/util.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -807,34 +1303,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/mongodb_backup/mongoimport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="1207" column="8" selection-start-line="1207" selection-start-column="8" selection-end-line="1207" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/mongodb_backup/mongoexport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/test/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/mongo_client.py" />
     <entry file="file://$PROJECT_DIR$/wjl/百度百科/百度百科网站版_未设置延迟.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
@@ -920,13 +1389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pyspider/libs/mycommon/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wjl/weixin/weixin_nodelay_20180510165637.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -955,6 +1417,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wjl/mongodb_backup/mongoexport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wjl/mongodb_backup/mongoimport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wjl/other/test6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wjl/太湖流域河长制/太湖流域河长制_不设置延迟.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="89" column="39" lean-forward="true" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wjl/test/test4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -962,11 +1452,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wjl/wuxiaworld/main_pyspider.py">
+    <entry file="file://$PROJECT_DIR$/wjl/test/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wjl/other/test.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wjl/other/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler_hzz_website.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
           <folding>
-            <element signature="e#108#148#0" expanded="true" />
+            <element signature="e#99#139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/sample_handler_spiderweb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="108" column="38" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
+          <folding>
+            <element signature="e#730#770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/libs/mycommon/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyspider/webui/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="e#185#198#0" expanded="true" />
           </folding>
         </state>
       </provider>
